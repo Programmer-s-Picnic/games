@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Realtime Tic-Tac-Toe | Programmer's Picnic</title>
+  <meta name="description" content="Play realtime multiplayer Tic-Tac-Toe with a friend.">
+  <meta property="og:title" content="Realtime Tic-Tac-Toe">
+  <meta property="og:description" content="Create a room, share the code and play online.">
+  <meta property="og:image" content="https://programmer-s-picnic.github.io/games/tictactoe/og.svg">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">PROGRAMMER'S PICNIC</p>
+      <h1>Tic-Tac-Toe</h1>
+      <p>Realtime two-player game. Create a room or join with a code.</p>
+    </section>
+    <section id="lobby" class="panel">
+      <label>Your name<input id="name" maxlength="24" placeholder="Your name"></label>
+      <div class="actions"><button id="createBtn" class="primary">Create room</button></div>
+      <div class="joinRow"><input id="roomCode" maxlength="5" placeholder="ROOM CODE" autocomplete="off"><button id="joinBtn">Join room</button></div>
+      <p id="connectionNote" class="note">Connecting to game server…</p>
+    </section>
+    <section id="game" class="panel hidden">
+      <div class="roomBar"><div><span class="muted">Room</span><strong id="roomLabel">—</strong></div><button id="copyBtn">Copy code</button></div>
+      <div class="players"><div id="playerX" class="player"><b>X</b><span>Player X</span></div><div id="playerO" class="player"><b>O</b><span>Player O</span></div></div>
+      <p id="status" class="status">Waiting…</p>
+      <div id="board" class="board" aria-label="Tic Tac Toe board"></div>
+      <div class="actions"><button id="restartBtn">Restart</button><button id="leaveBtn">Leave room</button></div>
+    </section>
+    <footer>Developed and maintained by Champak Roy · <a href="https://learnwithchampak.live" target="_blank" rel="noopener">Learn With Champak</a></footer>
+  </main>
+  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
