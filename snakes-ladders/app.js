@@ -10,7 +10,7 @@ function makeBoard(){board.innerHTML='';for(const n of displayOrder()){const c=d
 function render(s){state=s;currentRoom=s.code;$('#roomLabel').textContent=s.code;lobby.classList.add('hidden');game.classList.remove('hidden');
  board.querySelectorAll('.tokens').forEach(x=>x.innerHTML='');
  s.players.forEach((p,i)=>{if(p.pos>0){const el=board.querySelector('[data-n="'+p.pos+'"] .tokens');if(el){const t=document.createElement('span');t.className='token p'+i;t.textContent=i+1;t.title=p.name;el.appendChild(t)}}});
- playersEl.innerHTML='';s.players.forEach((p,i)=>{const d=document.createElement('div');d.className='prow'+(i===s.turnIndex&&!s.winner?' active':'');d.innerHTML='<span><span class="token p'+i+'" style="display:inline-grid">'+(i+1)+'</span> '+p.name+(p.id===s.youId?' (you)':'')+'</span><span>'+p.pos+' · ⭐'+p.reserve+'</span>';playersEl.appendChild(d)});
+ playersEl.innerHTML='';s.players.forEach((p,i)=>{const d=document.createElement('div');d.className='prow'+(i===s.turnIndex&&!s.winner?' active':'');d.innerHTML='<span class="player-name"><span class="token p'+i+'" style="display:inline-grid">'+(i+1)+'</span><span>'+p.name+(p.id===s.youId?' (you)':'')+'</span></span><span>'+p.pos+' · ⭐'+p.reserve+'</span>';playersEl.appendChild(d)});
  const me=s.players.find(p=>p.id===s.youId);spendEl.innerHTML='';for(let i=0;i<=Math.min(6,me?.reserve??0);i++){const o=document.createElement('option');o.value=i;o.textContent=i+' point'+(i===1?'':'s');spendEl.appendChild(o)}
  const myTurn=!!me&&s.started&&!s.winner&&s.players[s.turnIndex]?.id===s.youId;$('#rollBtn').disabled=!myTurn;spendEl.disabled=!myTurn;$('#startBtn').style.display=s.hostId===s.youId&&!s.started?'':'none';
  if(s.winner) statusEl.textContent='🏆 '+s.winner.name+' wins!';
