@@ -6,7 +6,7 @@
 <title>Snakes & Ladders | Programmer's Picnic</title>
 <meta name="description" content="Online Snakes & Ladders for 2 to 10 players with a strategic 6-point reserve rule.">
 <meta property="og:title" content="Snakes & Ladders | Programmer's Picnic">
-<meta property="og:description" content="Play online with 2–10 players. Every player gets 6 bonus points that must all be used before reaching 100.">
+<meta property="og:description" content="Play online with 2–10 players. Every player gets 6 reserve points that must all be used before reaching 100.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://programmer-s-picnic.github.io/games/snakes-ladders/">
 <link rel="stylesheet" href="style.css">
@@ -14,47 +14,37 @@
 <script src="config.js"></script>
 </head>
 <body>
-<main>
-<section id="lobby" class="card">
-<h1>🐍 Snakes & Ladders 🪜</h1>
-<p class="lead">2–10 players · each player gets 6 reserve points. Spend them whenever you like, but all 6 must be used before you can reach 100.</p>
-<label>Your name<input id="name" maxlength="24" placeholder="Player name"></label>
-<div class="actions">
-<button id="createBtn">Create room</button>
-</div>
-<div class="joinrow">
-<input id="roomCode" maxlength="5" placeholder="ROOM CODE">
-<button id="joinBtn">Join room</button>
-</div>
-<p id="connectionNote" class="note">Connecting to game server…</p>
+<div class="bg-orb orb1"></div><div class="bg-orb orb2"></div><div class="bg-orb orb3"></div>
+<main class="shell">
+<section id="lobby" class="card lobby-card">
+  <div class="title-wrap">
+    <div class="eyebrow">Programmer's Picnic Multiplayer</div>
+    <h1>🐍 Snakes & Ladders 🪜</h1>
+    <p class="lead">Play with <strong>2–10 players</strong>. Everyone starts with <strong>6 reserve points</strong> that may be spent on any turn, but all six must be used before reaching 100.</p>
+  </div>
+  <label><span>Your name</span><input id="name" maxlength="24" placeholder="Player name"></label>
+  <div class="actions"><button id="createBtn" class="primary-btn">Create room</button></div>
+  <div class="joinrow"><input id="roomCode" maxlength="5" placeholder="ROOM CODE"><button id="joinBtn" class="secondary-btn">Join room</button></div>
+  <p id="connectionNote" class="note">Connecting to game server…</p>
 </section>
 
 <section id="game" class="hidden">
-<div class="topbar">
-<div><strong>Room:</strong> <span id="roomLabel"></span> <button id="copyBtn" class="small">Copy</button></div>
-<div class="topactions"><button id="startBtn">Start game</button><button id="leaveBtn" class="danger">Leave</button></div>
-</div>
-<div id="status" class="status"></div>
-<div class="layout">
-<div class="boardwrap"><div id="board" class="board" aria-label="Snakes and Ladders board"></div></div>
-<aside>
-<div class="panel">
-<h2>Players</h2>
-<div id="players"></div>
-</div>
-<div class="panel">
-<h2>Your turn</h2>
-<label>Reserve points to spend
-<select id="spend"></select>
-</label>
-<button id="rollBtn" class="roll">🎲 Roll dice</button>
-<div id="dice" class="dice">—</div>
-</div>
-<div class="panel rules">
-<strong>Rule:</strong> exact 100 is required. If you still have reserve points, a move that would land on 100 is blocked.
-</div>
-</aside>
-</div>
+  <div class="topbar glass">
+    <div class="room-box"><span class="room-label">Room</span><div class="room-code-wrap"><strong id="roomLabel" class="room-code"></strong><button id="copyBtn" class="small">Copy</button></div></div>
+    <div class="topactions"><button id="startBtn" class="primary-btn">Start game</button><button id="leaveBtn" class="danger">Leave</button></div>
+  </div>
+  <div id="status" class="status glass"></div>
+  <div class="layout">
+    <section class="board-panel glass">
+      <div class="panel-header"><div><div class="eyebrow">Live board</div><h2>Race to 100</h2></div><div class="legend"><span>🪜 Ladder</span><span>🐍 Snake</span><span>🏆 Finish</span></div></div>
+      <div class="boardwrap"><div id="board" class="board" aria-label="Snakes and Ladders board"></div></div>
+    </section>
+    <aside>
+      <div class="panel glass"><h2>Players</h2><div id="players"></div></div>
+      <div class="panel glass turn-panel"><h2>Your turn</h2><label><span>Reserve points to spend</span><select id="spend"></select></label><button id="rollBtn" class="roll">🎲 Roll dice</button><div id="dice" class="dice">—</div></div>
+      <div class="panel glass rules"><h2>House rule</h2><p>Exact 100 is required. A move landing on 100 is blocked while you still have reserve points remaining.</p></div>
+    </aside>
+  </div>
 </section>
 </main>
 <script src="app.js"></script>
