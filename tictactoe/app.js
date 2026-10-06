@@ -2,7 +2,7 @@ const $ = s => document.querySelector(s);
 const lobby = $('#lobby'), game = $('#game'), note = $('#connectionNote');
 const boardEl = $('#board'), statusEl = $('#status'), roomLabel = $('#roomLabel');
 const cells = Array.from({length:9},(_,i)=>{const b=document.createElement('button');b.className='cell';b.dataset.i=i;b.setAttribute('aria-label',`Cell ${i+1}`);boardEl.appendChild(b);return b;});
-const socket = io(window.TICTACTOE_API_URL,{path:window.TICTACTOE_SOCKET_PATH,transports:['websocket','polling']});
+const socket = io(window.TICTACTOE_API_URL,{path:window.TICTACTOE_SOCKET_PATH,transports:['polling'],upgrade:false,reconnection:true,reconnectionAttempts:Infinity,reconnectionDelay:1000});
 let me=null,currentRoom=null;
 function name(){return ($('#name').value.trim()||'Player').slice(0,24)}
 function showGame(on){lobby.classList.toggle('hidden',on);game.classList.toggle('hidden',!on)}
