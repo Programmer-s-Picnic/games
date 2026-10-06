@@ -45,8 +45,14 @@
     </section>
     <aside>
       <div class="panel glass"><h2>Players</h2><div id="players"></div></div>
-      <div class="panel glass turn-panel"><h2>Your turn</h2><label><span>Reserve points to spend</span><select id="spend"></select></label><button id="rollBtn" class="roll">🎲 Roll dice</button><div id="dice" class="dice">—</div></div>
-      <div class="panel glass rules"><h2>House rule</h2><p>Exact 100 is required. A move landing on 100 is blocked while you still have reserve points remaining.</p></div>
+      <div class="panel glass turn-panel">
+        <h2>Your turn</h2>
+        <div class="turn-step"><span class="step-no">1</span><button id="rollBtn" class="roll">🎲 Roll dice</button></div>
+        <div id="dice" class="dice">—</div>
+        <div class="turn-step reserve-step"><span class="step-no">2</span><label><span>Choose reserve points</span><select id="spend"></select></label></div>
+        <div class="turn-step"><span class="step-no">3</span><button id="moveBtn" class="move-btn">Move token</button></div>
+      </div>
+      <div class="panel glass rules"><h2>House rule</h2><p>Roll first, then choose reserve points, then move. Exact 100 is required. A move landing on 100 is blocked while reserve points remain.</p></div>
     </aside>
   </div>
 </section>
