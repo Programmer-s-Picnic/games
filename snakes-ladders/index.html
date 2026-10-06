@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Snakes & Ladders | Programmer's Picnic</title>
+<meta name="description" content="Online Snakes & Ladders for 2 to 10 players with a strategic 6-point reserve rule.">
+<meta property="og:title" content="Snakes & Ladders | Programmer's Picnic">
+<meta property="og:description" content="Play online with 2–10 players. Every player gets 6 bonus points that must all be used before reaching 100.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://programmer-s-picnic.github.io/games/snakes-ladders/">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+<script src="config.js"></script>
+</head>
+<body>
+<main>
+<section id="lobby" class="card">
+<h1>🐍 Snakes & Ladders 🪜</h1>
+<p class="lead">2–10 players · each player gets 6 reserve points. Spend them whenever you like, but all 6 must be used before you can reach 100.</p>
+<label>Your name<input id="name" maxlength="24" placeholder="Player name"></label>
+<div class="actions">
+<button id="createBtn">Create room</button>
+</div>
+<div class="joinrow">
+<input id="roomCode" maxlength="5" placeholder="ROOM CODE">
+<button id="joinBtn">Join room</button>
+</div>
+<p id="connectionNote" class="note">Connecting to game server…</p>
+</section>
+
+<section id="game" class="hidden">
+<div class="topbar">
+<div><strong>Room:</strong> <span id="roomLabel"></span> <button id="copyBtn" class="small">Copy</button></div>
+<div class="topactions"><button id="startBtn">Start game</button><button id="leaveBtn" class="danger">Leave</button></div>
+</div>
+<div id="status" class="status"></div>
+<div class="layout">
+<div class="boardwrap"><div id="board" class="board" aria-label="Snakes and Ladders board"></div></div>
+<aside>
+<div class="panel">
+<h2>Players</h2>
+<div id="players"></div>
+</div>
+<div class="panel">
+<h2>Your turn</h2>
+<label>Reserve points to spend
+<select id="spend"></select>
+</label>
+<button id="rollBtn" class="roll">🎲 Roll dice</button>
+<div id="dice" class="dice">—</div>
+</div>
+<div class="panel rules">
+<strong>Rule:</strong> exact 100 is required. If you still have reserve points, a move that would land on 100 is blocked.
+</div>
+</aside>
+</div>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
