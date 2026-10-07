@@ -70,3 +70,65 @@ function initGoogle(){
 }
 window.googleCredential=googleCredential;
 document.addEventListener('DOMContentLoaded',()=>{loadTicker();setTimeout(initGoogle,400)});
+
+
+function currentUser(){
+ try{return JSON.parse(localStorage.getItem('mmi_google_user')||'null')}catch(e){return null}
+}
+function renderUserBadge(){
+ const el=document.querySelector('#userBadge'); if(!el)return;
+ const u=currentUser();
+ if(!u){
+  el.innerHTML='<span class="user-dot"></span><span><b>Guest</b><small>Not signed in</small></span>';
+  el.classList.add('guest'); return;
+ }
+ const pic=u.picture?'<img src="'+u.picture+'" alt="">':'<span class="user-avatar">'+(u.name||u.email||'U').slice(0,1).toUpperCase()+'</span>';
+ el.innerHTML=pic+'<span><b>'+escapeHtml(u.name||'Google User')+'</b><small>'+escapeHtml(u.email||'Signed in')+'</small></span>';
+}
+function logoutUser(){
+ localStorage.removeItem('mmi_google_user');
+ try{if(window.google&&google.accounts&&google.accounts.id)google.accounts.id.disableAutoSelect()}catch(e){}
+ location.href='login.html';
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+
+const HIST_RANGES={
+ '1D':{range:'1d',interval:'5m'},'5D':{range:'5d',interval:'30m'},'1M':{range:'1mo',interval:'1d'},
+ '3M':{range:'3mo',interval:'1d'},'6M':{range:'6mo',interval:'1d'},'1Y':{range:'1y',interval:'1d'}
+};
+async function loadHistory(){
+ const box=document.querySelector('#historyPanel'); if(!box)return;
+ const sel=document.querySelector('#historyStock'), rsel=document.querySelector('#historyRange');
+ const sym=sel?.value||STOCKS[0][0], label=sel?.selectedOptions?.[0]?.textContent||sym, key=rsel?.value||'1M';
+ const cfg=HIST_RANGES[key]||HIST_RANGES['1M'];
+ box.innerHTML='<div class="history-loading">Loading '+escapeHtml(label)+' history…</div>';
+ try{
+  const url='https://query1.finance.yahoo.com/v8/finance/chart/'+encodeURIComponent(sym)+'?range='+cfg.range+'&interval='+cfg.interval;
+  const res=await fetch(url,{cache:'no-store'}); if(!res.ok)throw 0;
+  const j=await res.json(), rr=j?.chart?.result?.[0]; if(!rr)throw 0;
+  const ts=rr.timestamp||[], closes=rr.indicators?.quote?.[0]?.close||[];
+  const pts=ts.map((t,i)=>[t*1000,closes[i]]).filter(x=>Number.isFinite(x[1]));
+  if(pts.length<2)throw 0;
+  const vals=pts.map(x=>x[1]), min=Math.min(...vals), max=Math.max(...vals), pad=(max-min||1)*.08;
+  const lo=min-pad, hi=max+pad, W=760,H=220;
+  const d=pts.map((p,i)=>{const x=(i/(pts.length-1))*W;const y=H-((p[1]-lo)/(hi-lo))*H;return (i?'L':'M')+x.toFixed(1)+','+y.toFixed(1)}).join(' ');
+  const first=pts[0][1],last=pts[pts.length-1][1],chg=(last-first)/first*100;
+  const lastAt=pts[pts.length-1][0];
+  box.innerHTML='<div class="history-summary"><div><b>'+escapeHtml(label)+'</b><span>'+key+' history</span></div><div class="right"><strong>'+money(last)+'</strong><span class="'+(chg>=0?'hist-up':'hist-down')+'">'+(chg>=0?'+':'')+chg.toFixed(2)+'%</span></div></div>'+
+   '<svg class="history-chart" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" aria-label="Historical price chart"><path d="'+d+'" fill="none" stroke="currentColor" stroke-width="3" vector-effect="non-scaling-stroke"/></svg>'+
+   '<div class="history-axis"><span>'+istDateTime(pts[0][0])+'</span><span>Low '+money(min)+' • High '+money(max)+'</span><span>'+istDateTime(lastAt)+'</span></div>'+
+   '<div class="data-note">Historical data from Yahoo Finance. Last point: '+istDateTime(lastAt)+'.</div>';
+ }catch(e){
+  box.innerHTML='<div class="notice">Historical Yahoo Finance data could not be loaded in this browser right now.</div>';
+ }
+}
+function initHistory(){
+ const sel=document.querySelector('#historyStock'), rsel=document.querySelector('#historyRange'); if(!sel||!rsel)return;
+ sel.innerHTML=STOCKS.map(([s,n])=>'<option value="'+s+'">'+n+'</option>').join('');
+ sel.value='INDHOTEL.NS'; rsel.value='1M';
+ sel.addEventListener('change',loadHistory); rsel.addEventListener('change',loadHistory); loadHistory();
+}
+
+document.addEventListener('DOMContentLoaded',()=>{renderUserBadge();initHistory()});
+window.logoutUser=logoutUser;
+window.loadHistory=loadHistory;
