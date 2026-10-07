@@ -29,3 +29,11 @@ cells.forEach(c=>c.onclick=()=>socket.emit('move',{code:currentRoom,index:Number
 $('#restartBtn').onclick=()=>socket.emit('restart',{code:currentRoom});
 $('#leaveBtn').onclick=()=>{socket.emit('leaveRoom',{code:currentRoom});currentRoom=null;showGame(false)};
 $('#copyBtn').onclick=async()=>{if(currentRoom){await navigator.clipboard.writeText(currentRoom);$('#copyBtn').textContent='Copied';setTimeout(()=>$('#copyBtn').textContent='Copy code',1200)}};
+
+$('#whatsappBtn').onclick=()=>{
+  if(!currentRoom)return;
+  const gameUrl='https://games.learnwithchampak.live/tictactoe/';
+  const text=`Play Tic-Tac-Toe with me on Learn With Champak! Room code: ${currentRoom}\n${gameUrl}`;
+  const url='https://wa.me/?text='+encodeURIComponent(text);
+  window.open(url,'_blank','noopener,noreferrer');
+};
