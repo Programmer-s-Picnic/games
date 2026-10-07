@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Code Clash Lobby | Learn With Champak</title>
+  <meta name="description" content="Register or sign in to the Code Clash programming game lobby and see who is online.">
+  <meta name="theme-color" content="#0ea5e9">
+  <meta property="og:title" content="Code Clash Lobby">
+  <meta property="og:description" content="Sign in and join the Learn With Champak programming game lobby.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://games.learnwithchampak.live/code-clash/">
+  <meta property="og:image" content="https://games.learnwithchampak.live/og.svg">
+  <link rel="canonical" href="https://games.learnwithchampak.live/code-clash/">
+  <link rel="icon" href="../og.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <header class="brand">
+    <a href="https://www.learnwithchampak.live/" target="_blank" rel="noopener">Learn With Champak</a>
+    <span>Code Clash</span>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">PROGRAMMING GAME LOBBY</p>
+      <h1>Code Clash</h1>
+      <p>Register or sign in. Everyone who is currently online will appear in the lobby.</p>
+    </section>
+
+    <section id="authView" class="layout">
+      <div class="card auth-card">
+        <div class="tabs" role="tablist" aria-label="Account">
+          <button id="loginTab" class="tab active" type="button">Login</button>
+          <button id="registerTab" class="tab" type="button">Register</button>
+        </div>
+
+        <form id="loginForm" class="form">
+          <label>Email
+            <input id="loginEmail" type="email" autocomplete="email" required>
+          </label>
+          <label>Password
+            <input id="loginPassword" type="password" autocomplete="current-password" minlength="8" required>
+          </label>
+          <button class="primary" type="submit">Login</button>
+        </form>
+
+        <form id="registerForm" class="form hidden">
+          <label>Display name
+            <input id="registerName" type="text" autocomplete="name" minlength="2" maxlength="40" required>
+          </label>
+          <label>Email
+            <input id="registerEmail" type="email" autocomplete="email" required>
+          </label>
+          <label>Password
+            <input id="registerPassword" type="password" autocomplete="new-password" minlength="8" maxlength="72" required>
+          </label>
+          <button class="primary" type="submit">Create account</button>
+        </form>
+
+        <div class="divider"><span>or</span></div>
+        <div id="googleButton" class="google-wrap"></div>
+        <p id="googleHint" class="small hidden">Google sign-in needs the site's OAuth origin to be authorised.</p>
+        <p id="authMessage" class="message" aria-live="polite"></p>
+      </div>
+
+      <aside class="card preview">
+        <div class="preview-icon">&lt;/&gt;</div>
+        <h2>Next: live quizzes</h2>
+        <p>This account lobby will be used for Code → Output and Output → Code multiplayer games.</p>
+      </aside>
+    </section>
+
+    <section id="lobbyView" class="card lobby hidden">
+      <div class="lobby-head">
+        <div>
+          <p class="eyebrow">YOU ARE SIGNED IN</p>
+          <h2 id="welcome">Welcome</h2>
+        </div>
+        <button id="logoutBtn" class="secondary" type="button">Logout</button>
+      </div>
+
+      <div class="online-title">
+        <div>
+          <h3>Players online</h3>
+          <p>Updates automatically as people enter or leave.</p>
+        </div>
+        <span id="onlineCount" class="count">0</span>
+      </div>
+      <div id="onlineList" class="players" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>Developed and maintained by <a href="https://www.learnwithchampak.live/" target="_blank" rel="noopener">Learn With Champak</a></footer>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/socket.io-client@4.8.4/dist/socket.io.min.js" crossorigin="anonymous"></script>
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
