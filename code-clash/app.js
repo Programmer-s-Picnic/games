@@ -90,7 +90,7 @@
 
   function connectPresence() {
     if (socket) socket.disconnect();
-    socket = io(cfg.apiBase, {
+    socket = io(new URL(cfg.apiBase).origin, {
       path: "/games/code-clash/socket.io",
       auth: { token: token() },
       transports: ["polling", "websocket"]
