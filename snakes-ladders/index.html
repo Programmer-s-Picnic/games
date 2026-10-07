@@ -3,16 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Snakes & Ladders | Programmer's Picnic</title>
+<title>Snakes & Ladders | Learn With Champak</title>
 <meta name="description" content="Online Snakes & Ladders for 2 to 10 players with a strategic 6-point reserve rule.">
 <link rel="canonical" href="https://games.learnwithchampak.live/snakes-ladders/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Programmer's Picnic Games">
-<meta property="og:title" content="Snakes & Ladders | Programmer's Picnic">
+<meta property="og:site_name" content="Learn With Champak Games">
+<meta property="og:title" content="Snakes & Ladders | Learn With Champak">
 <meta property="og:description" content="Play online with 2–10 players. Every player gets 6 reserve points that must all be used before reaching 100.">
 <meta property="og:url" content="https://games.learnwithchampak.live/snakes-ladders/">
 <meta property="og:image" content="https://games.learnwithchampak.live/snakes-ladders/og.svg">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="Champak Roy">
+<meta name="theme-color" content="#0f7cc2">
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="shortcut icon" type="image/png" href="./favicon.png">
+<link rel="apple-touch-icon" href="./favicon.png">
+<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8321261883090494"></script>
 <link rel="stylesheet" href="style.css">
 <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
 <script src="config.js"></script>
@@ -20,9 +27,22 @@
 <body>
 <div class="bg-orb orb1"></div><div class="bg-orb orb2"></div><div class="bg-orb orb3"></div>
 <main class="shell">
+<header class="brand-bar glass">
+  <a class="brand-home" href="https://learnwithchampak.live/" target="_blank" rel="noopener">
+    <img class="brand-logo" src="./favicon.png" alt="Learn With Champak">
+    <span><strong>Learn With Champak</strong><small>Programmer's Picnic · Multiplayer Games</small></span>
+  </a>
+  <a class="brand-visit" href="https://learnwithchampak.live/" target="_blank" rel="noopener">Visit Learn With Champak ↗</a>
+</header>
+
+<section class="ad-card glass" aria-label="Advertisement">
+  <div class="ad-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8321261883090494" data-ad-slot="7782388330" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</section>
+
 <section id="lobby" class="card lobby-card">
   <div class="title-wrap">
-    <div class="eyebrow">Programmer's Picnic Multiplayer</div>
+    <div class="eyebrow">Learn With Champak Multiplayer Games</div>
     <h1>🐍 Snakes & Ladders 🪜</h1>
     <p class="lead">Play with <strong>2–10 players</strong>. Everyone starts with <strong>6 reserve points</strong> that may be spent on any turn, but all six must be used before reaching 100.</p>
   </div>
@@ -34,7 +54,7 @@
 
 <section id="game" class="hidden">
   <div class="topbar glass">
-    <div class="room-box"><span class="room-label">Room</span><div class="room-code-wrap"><strong id="roomLabel" class="room-code"></strong><button id="copyBtn" class="small">Copy</button></div></div>
+    <div class="room-box"><span class="room-label">Room</span><div class="room-code-wrap"><strong id="roomLabel" class="room-code"></strong><button id="copyBtn" class="small">Copy</button><button id="shareWhatsappBtn" class="whatsapp-btn" type="button">WhatsApp</button></div></div>
     <div class="topactions"><button id="startBtn" class="primary-btn">Start game</button><button id="leaveBtn" class="danger">Leave</button></div>
   </div>
   <div id="status" class="status glass"></div>
@@ -56,7 +76,24 @@
     </aside>
   </div>
 </section>
+
+<section class="ad-card glass ad-card-bottom" aria-label="Advertisement">
+  <div class="ad-label">Advertisement</div>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8321261883090494" data-ad-slot="7782388330" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</section>
+
+<footer class="site-footer glass">
+  <div class="footer-brand"><img src="./favicon.png" alt=""><span><strong>Learn With Champak</strong><small>Developed and maintained by Champak Roy</small></span></div>
+  <a href="https://learnwithchampak.live/" target="_blank" rel="noopener">learnwithchampak.live ↗</a>
+</footer>
 </main>
 <script src="app.js"></script>
+<script>
+window.addEventListener('load',function(){
+  document.querySelectorAll('.adsbygoogle').forEach(function(){
+    try{(window.adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}
+  });
+});
+</script>
 </body>
 </html>
