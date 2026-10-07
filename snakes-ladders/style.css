@@ -16,3 +16,15 @@ button{border:0;cursor:pointer;font-weight:850;transition:transform .17s ease,bo
 .panel{padding:15px;border-radius:20px;margin-bottom:13px}.prow{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid rgba(114,161,191,.2)}.prow:last-child{border-bottom:0}.prow.active{font-weight:900;color:#0a659e}.player-name{display:flex;align-items:center;gap:7px;min-width:0}.roll{width:100%;font-size:1.08rem;padding:12px}.dice{text-align:center;margin-top:11px;padding:16px 9px;border-radius:15px;background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(233,248,255,.9));border:1px solid rgba(112,164,199,.23);font-size:1.25rem;font-weight:900;color:#0a659e;min-height:68px;display:grid;place-items:center}.rules{line-height:1.5;color:var(--muted)}.rules p{margin:9px 0 0}
 @media(max-width:900px){.layout{grid-template-columns:1fr}}@media(max-width:650px){body{padding:10px}.card{margin:12px auto;padding:20px}.title-wrap h1{font-size:1.8rem}.board{min-width:580px}.topbar{padding:12px}.status{padding:12px}.legend{max-width:100%}}
 .turn-step{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:center;margin-top:12px}.turn-step label{margin:0}.step-no{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#e3f4ff;color:#08639b;font-weight:900;border:1px solid #b9def3}.reserve-step{align-items:end}.move-btn{width:100%;background:linear-gradient(135deg,#16a34a,#4ecb71);color:#fff;box-shadow:0 10px 24px rgba(22,163,74,.2);padding:12px;font-size:1.05rem}.move-btn:disabled{opacity:.46;box-shadow:none}
+
+.brand-bar,.site-footer,.ad-card{border-radius:20px;padding:13px 16px;margin-bottom:14px}
+.brand-bar,.site-footer{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand-home,.footer-brand{display:flex;align-items:center;gap:11px;color:var(--text);text-decoration:none;min-width:0}
+.brand-logo,.footer-brand img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 5px 14px rgba(20,75,110,.18)}
+.brand-home span,.footer-brand span{display:grid;gap:2px}.brand-home strong,.footer-brand strong{color:#08639b;font-size:1.05rem}.brand-home small,.footer-brand small{color:var(--muted);font-size:.78rem}
+.brand-visit,.site-footer>a{color:#08639b;text-decoration:none;font-weight:850;background:rgba(255,255,255,.64);border:1px solid rgba(112,164,199,.25);padding:9px 12px;border-radius:12px}
+.ad-card{min-height:90px;overflow:hidden}.ad-card-bottom{margin-top:14px}.ad-label{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.whatsapp-btn{min-height:34px;padding:6px 11px;border-radius:10px;background:linear-gradient(135deg,#128c4a,#25d366);color:white;box-shadow:0 7px 16px rgba(37,211,102,.22);font-size:.86rem}
+.whatsapp-btn:hover{filter:brightness(1.03)}
+.site-footer{margin-top:14px;margin-bottom:4px}
+@media(max-width:650px){.brand-bar,.site-footer,.ad-card{padding:11px 12px}.brand-logo,.footer-brand img{width:44px;height:44px}.brand-visit,.site-footer>a{width:100%;text-align:center}}
