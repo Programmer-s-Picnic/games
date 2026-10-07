@@ -5,10 +5,17 @@ const snakes=new Map([[27,5],[40,3],[43,18],[54,31],[66,45],[76,58],[89,53],[99,
 let state=null,currentRoom=null,overlayFrame=0;
 const socket=io(window.SL_API_URL,{path:window.SL_SOCKET_PATH,transports:['polling'],upgrade:false,reconnection:true,reconnectionAttempts:Infinity,reconnectionDelay:1000});
 function name(){return ($('#name').value.trim()||'Player').slice(0,24)}
+function roomShareData(roomCode){
+ const url='https://games.learnwithchampak.live/snakes-ladders/?room='+encodeURIComponent(roomCode);
+ return {
+   title:'Learn With Champak Snakes & Ladders',
+   text:'Join my Learn With Champak Snakes & Ladders game! Room code: '+roomCode,
+   url
+ };
+}
 function whatsappShareLink(roomCode){
- const pageUrl='https://games.learnwithchampak.live/snakes-ladders/?room='+encodeURIComponent(roomCode);
- const text='Join my Learn With Champak Snakes & Ladders game!\n\nRoom code: '+roomCode+'\nPlay here: '+pageUrl;
- return 'https://wa.me/?text='+encodeURIComponent(text);
+ const data=roomShareData(roomCode);
+ return 'https://wa.me/?text='+encodeURIComponent(data.text+'\n'+data.url);
 }
 function displayOrder(){const a=[];for(let r=9;r>=0;r--){let row=[];for(let n=r*10+1;n<=r*10+10;n++)row.push(n);if(r%2)row.reverse();a.push(...row)}return a}
 function makeBoard(){board.innerHTML='';for(const n of displayOrder()){const c=document.createElement('div');c.className='cell'+(n===100?' finish':'');c.dataset.n=n;c.innerHTML='<span class="cell-number">'+n+'</span><span class="tokens"></span>';board.appendChild(c)}}
@@ -45,7 +52,19 @@ $('#rollBtn').onclick=()=>socket.emit('roll',{code:currentRoom});
 moveBtn.onclick=()=>socket.emit('move',{code:currentRoom,spend:Number(spendEl.value)||0});
 $('#leaveBtn').onclick=()=>{socket.emit('leaveRoom',{code:currentRoom});currentRoom=null;state=null;game.classList.add('hidden');lobby.classList.remove('hidden')};
 $('#copyBtn').onclick=async()=>{if(currentRoom&&navigator.clipboard){await navigator.clipboard.writeText(currentRoom);$('#copyBtn').textContent='Copied';setTimeout(()=>$('#copyBtn').textContent='Copy',1000)}};
-shareWhatsappBtn.onclick=()=>{if(currentRoom)window.open(whatsappShareLink(currentRoom),'_blank','noopener,noreferrer')};
+shareWhatsappBtn.onclick=async()=>{
+ if(!currentRoom)return;
+ const data=roomShareData(currentRoom);
+ if(navigator.share){
+   try{
+     await navigator.share(data);
+     return;
+   }catch(err){
+     if(err&&err.name==='AbortError')return;
+   }
+ }
+ window.location.href=whatsappShareLink(currentRoom);
+};
 window.addEventListener('resize',()=>{if(!game.classList.contains('hidden'))drawOverlay()});
 const sharedRoom=new URLSearchParams(location.search).get('room');
 if(sharedRoom)$('#roomCode').value=sharedRoom.toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,5);
