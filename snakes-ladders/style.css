@@ -117,3 +117,34 @@ button{border:0;cursor:pointer;font-weight:850;transition:transform .17s ease,bo
 @media(prefers-reduced-motion:reduce){
   .dice-cube,.token,.prow.active .token{animation:none!important;transition:none!important}
 }
+
+
+/* Dice now rolls physically across the board */
+.turn-panel .dice-scene{display:none}
+.dice-stage{min-height:64px;padding:10px 8px}
+.board-die{position:absolute;left:0;top:0;width:54px;height:54px;z-index:30;pointer-events:none;opacity:0;transform-origin:center;will-change:transform,opacity;filter:drop-shadow(0 10px 8px rgba(15,54,82,.22))}
+.board-die.visible{opacity:1}
+.board-die.settled{animation:boardDieSettle .34s cubic-bezier(.2,.9,.2,1)}
+.board-die-shadow{position:absolute;left:7px;right:7px;bottom:-8px;height:12px;border-radius:50%;background:rgba(12,53,80,.26);filter:blur(4px);transform:scaleX(.9)}
+.board-die-cube{position:absolute;inset:0;margin:auto}
+.board-die-cube.board-tumbling{animation:boardCubeTumble .29s linear infinite}
+.board-die.throwing .board-die-shadow{animation:boardDieShadow 1.18s ease-in-out both}
+@keyframes boardCubeTumble{
+  0%{transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg)}
+  50%{transform:rotateX(170deg) rotateY(225deg) rotateZ(95deg)}
+  100%{transform:rotateX(360deg) rotateY(450deg) rotateZ(190deg)}
+}
+@keyframes boardDieShadow{
+  0%,100%{opacity:.7;transform:scaleX(.9)}
+  25%,70%{opacity:.24;transform:scaleX(.52)}
+  50%{opacity:.38;transform:scaleX(.68)}
+}
+@keyframes boardDieSettle{
+  0%{margin-top:-10px}
+  55%{margin-top:3px}
+  78%{margin-top:-2px}
+  100%{margin-top:0}
+}
+@media(prefers-reduced-motion:reduce){
+  .board-die,.board-die-cube,.board-die-shadow{animation:none!important}
+}
