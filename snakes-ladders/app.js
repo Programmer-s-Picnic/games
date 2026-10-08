@@ -125,7 +125,22 @@ function roomShareData(roomCode){
 }
 function whatsappShareLink(roomCode){const data=roomShareData(roomCode);return'https://wa.me/?text='+encodeURIComponent(data.text+'\n'+data.url)}
 function displayOrder(){const a=[];for(let r=9;r>=0;r--){let row=[];for(let n=r*10+1;n<=r*10+10;n++)row.push(n);if(r%2)row.reverse();a.push(...row)}return a}
-function makeBoard(){board.innerHTML='';for(const n of displayOrder()){const c=document.createElement('div');c.className='cell'+(n===100?' finish':'');c.dataset.n=n;c.innerHTML='<span class="cell-number">'+n+'</span><span class="tokens"></span>';board.appendChild(c)}}
+function makeBoard(){
+ board.innerHTML='';
+ for(const n of displayOrder()){
+   const c=document.createElement('div');
+   c.className='cell'+(n===100?' finish':'');
+   c.dataset.n=n;
+   c.innerHTML='<span class="cell-number">'+n+'</span><span class="tokens"></span>';
+   board.appendChild(c);
+ }
+ const die=document.createElement('div');
+ die.id='boardDie';
+ die.className='board-die';
+ die.setAttribute('aria-hidden','true');
+ die.innerHTML='<span class="board-die-shadow"></span><div id="boardDieCube" class="dice-cube board-die-cube show-1"><div class="dice-face face-1">⚀</div><div class="dice-face face-6">⚅</div><div class="dice-face face-3">⚂</div><div class="dice-face face-4">⚃</div><div class="dice-face face-2">⚁</div><div class="dice-face face-5">⚄</div></div>';
+ board.appendChild(die);
+}
 function centerOf(n){const cell=board.querySelector('[data-n="'+n+'"]');if(!cell)return null;const br=board.getBoundingClientRect(),cr=cell.getBoundingClientRect();return{x:cr.left-br.left+cr.width/2,y:cr.top-br.top+cr.height/2,w:cr.width,h:cr.height}}
 function svgEl(tag,attrs={}){const e=document.createElementNS('http://www.w3.org/2000/svg',tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,String(v)));return e}
 function drawLadder(svg,from,to){const a=centerOf(from),b=centerOf(to);if(!a||!b)return;const dx=b.x-a.x,dy=b.y-a.y,len=Math.hypot(dx,dy)||1,nx=-dy/len,ny=dx/len,gap=Math.max(6,Math.min(10,a.w*.13)),g=svgEl('g',{class:'ladder-svg'});const ax1=a.x+nx*gap,ay1=a.y+ny*gap,bx1=b.x+nx*gap,by1=b.y+ny*gap,ax2=a.x-nx*gap,ay2=a.y-ny*gap,bx2=b.x-nx*gap,by2=b.y-ny*gap;g.append(svgEl('line',{x1:ax1,y1:ay1,x2:bx1,y2:by1,class:'ladder-rail'}));g.append(svgEl('line',{x1:ax2,y1:ay2,x2:bx2,y2:by2,class:'ladder-rail'}));const rc=Math.max(4,Math.min(9,Math.round(len/55)));for(let i=1;i<rc;i++){const t=i/rc,cx=a.x+dx*t,cy=a.y+dy*t;g.append(svgEl('line',{x1:cx+nx*gap,y1:cy+ny*gap,x2:cx-nx*gap,y2:cy-ny*gap,class:'ladder-rung'}))}svg.append(g)}
@@ -160,27 +175,88 @@ function renderPlayers(s,activeId=null){
  });
 }
 function setDiceFace(value){
- if(!diceCube||!Number.isInteger(value))return;
- diceCube.className='dice-cube show-'+Math.max(1,Math.min(6,value));
+ if(diceCube&&Number.isInteger(value))diceCube.className='dice-cube show-'+Math.max(1,Math.min(6,value));
 }
-async function animateDice(value){
- if(!diceCube||!diceCaption){return}
- diceCaption.textContent='Rolling…';
- if(reduceMotion){setDiceFace(value);diceCaption.textContent='Rolled '+value;return}
- diceCube.className='dice-cube rolling';
- await sleep(780);
+function setBoardDiceFace(value){
+ const cube=$('#boardDieCube');
+ if(cube&&Number.isInteger(value))cube.className='dice-cube board-die-cube show-'+Math.max(1,Math.min(6,value));
+}
+function diceLandingSquare(value,turnIndex=0){
+ const spots=[8,16,23,37,47,57,68,78,87,94];
+ return spots[(value*3+turnIndex*5)%spots.length];
+}
+function boardDiePoint(value,turnIndex=0){
+ const square=diceLandingSquare(value,turnIndex);
+ const point=centerOf(square);
+ if(!point)return{x:board.offsetWidth*.55,y:board.offsetHeight*.45};
+ return{x:point.x,y:point.y};
+}
+function placeBoardDie(value,turnIndex=0){
+ const die=$('#boardDie');
+ if(!die)return;
+ const point=boardDiePoint(value,turnIndex);
+ const size=54;
+ die.style.transform='translate3d('+(point.x-size/2)+'px,'+(point.y-size/2)+'px,0)';
+ die.classList.add('visible','settled');
+ die.classList.remove('throwing');
+ setBoardDiceFace(value);
+}
+function hideBoardDie(){
+ const die=$('#boardDie');
+ if(die){die.classList.remove('visible','settled','throwing');die.getAnimations?.().forEach(a=>a.cancel())}
+}
+async function animateDice(value,turnIndex=0){
+ const die=$('#boardDie'),cube=$('#boardDieCube');
+ if(!die||!cube||!diceCaption)return;
+ diceCaption.textContent='Dice rolling on the board…';
  setDiceFace(value);
+ const end=boardDiePoint(value,turnIndex);
+ const size=54,ex=end.x-size/2,ey=end.y-size/2;
+ const sx=Math.max(8,board.offsetWidth*.05),sy=Math.max(8,board.offsetHeight-size-14);
+ const mx1=board.offsetWidth*.28,my1=board.offsetHeight*.63;
+ const mx2=board.offsetWidth*.52,my2=board.offsetHeight*.28;
+ const mx3=board.offsetWidth*.72,my3=board.offsetHeight*.48;
+ die.classList.add('visible','throwing');
+ die.classList.remove('settled');
+ setBoardDiceFace(1);
+ die.style.transform='translate3d('+sx+'px,'+sy+'px,0)';
+ if(reduceMotion||!die.animate){
+   placeBoardDie(value,turnIndex);
+   diceCaption.textContent='Rolled '+value;
+   return;
+ }
+ cube.className='dice-cube board-die-cube board-tumbling';
+ const anim=die.animate([
+   {transform:'translate3d('+sx+'px,'+sy+'px,0) translateY(0) scale(.84) rotate(-8deg)',offset:0},
+   {transform:'translate3d('+mx1+'px,'+my1+'px,0) translateY(-34px) scale(1.06) rotate(22deg)',offset:.24},
+   {transform:'translate3d('+mx2+'px,'+my2+'px,0) translateY(-18px) scale(.94) rotate(-18deg)',offset:.48},
+   {transform:'translate3d('+mx3+'px,'+my3+'px,0) translateY(-28px) scale(1.03) rotate(14deg)',offset:.7},
+   {transform:'translate3d('+ex+'px,'+(ey-10)+'px,0) translateY(-8px) scale(.98) rotate(-5deg)',offset:.9},
+   {transform:'translate3d('+ex+'px,'+ey+'px,0) translateY(0) scale(1) rotate(0deg)',offset:1}
+ ],{duration:1180,easing:'cubic-bezier(.18,.72,.22,1)',fill:'forwards'});
+ try{await anim.finished}catch(_){}
+ die.style.transform='translate3d('+ex+'px,'+ey+'px,0)';
+ anim.cancel();
+ die.classList.remove('throwing');
+ die.classList.add('settled');
+ setBoardDiceFace(value);
  diceCaption.textContent='Rolled '+value;
- await sleep(260);
+ await sleep(220);
 }
 function updateDiceStatic(s){
  if(!diceCaption)return;
  if(Number.isInteger(s.pendingRoll)){
-   setDiceFace(s.pendingRoll);diceCaption.textContent='Rolled '+s.pendingRoll;
+   setDiceFace(s.pendingRoll);
+   placeBoardDie(s.pendingRoll,s.turnIndex);
+   diceCaption.textContent='Rolled '+s.pendingRoll;
  }else if(s.lastMove){
-   setDiceFace(s.lastMove.die);diceCaption.textContent=s.lastAction||('Rolled '+s.lastMove.die);
+   const rollIndex=Math.max(0,s.players.findIndex(p=>p.id===s.lastMove.playerId));
+   setDiceFace(s.lastMove.die);
+   placeBoardDie(s.lastMove.die,rollIndex);
+   diceCaption.textContent=s.lastAction||('Rolled '+s.lastMove.die);
  }else{
-   diceCaption.textContent=s.started?'Roll the dice':'Waiting to start';
+   hideBoardDie();
+   diceCaption.textContent=s.started?'Roll the dice — it will tumble across the board':'Waiting to start';
  }
 }
 function renderControlsAndStatus(s,locked=false){
@@ -276,8 +352,12 @@ async function applyState(s){
  renderPlayers(s,activeId);
  renderControlsAndStatus(s,false);
  drawOverlay();
- if(newRoll)await animateDice(s.pendingRoll);
- else updateDiceStatic(s);
+ if(newRoll){
+   renderControlsAndStatus(s,true);
+   statusEl.textContent=s.players[s.turnIndex].name+' throws the dice…';
+   await animateDice(s.pendingRoll,s.turnIndex);
+   renderControlsAndStatus(s,false);
+ }else updateDiceStatic(s);
 }
 
 $('#loginForm').onsubmit=async e=>{
