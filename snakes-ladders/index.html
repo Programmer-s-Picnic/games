@@ -116,7 +116,19 @@
       <div class="panel glass turn-panel">
         <h2>Your turn</h2>
         <div class="turn-step"><span class="step-no">1</span><button id="rollBtn" class="roll">🎲 Roll dice</button></div>
-        <div id="dice" class="dice">—</div>
+        <div id="dice" class="dice dice-stage" aria-live="polite">
+          <div class="dice-scene" aria-hidden="true">
+            <div id="diceCube" class="dice-cube show-1">
+              <div class="dice-face face-1">⚀</div>
+              <div class="dice-face face-6">⚅</div>
+              <div class="dice-face face-3">⚂</div>
+              <div class="dice-face face-4">⚃</div>
+              <div class="dice-face face-2">⚁</div>
+              <div class="dice-face face-5">⚄</div>
+            </div>
+          </div>
+          <div id="diceCaption" class="dice-caption">Roll the dice</div>
+        </div>
         <div class="turn-step reserve-step"><span class="step-no">2</span><label><span>Choose reserve points</span><select id="spend"></select></label></div>
         <div class="turn-step"><span class="step-no">3</span><button id="moveBtn" class="move-btn">Move token</button></div>
       </div>
