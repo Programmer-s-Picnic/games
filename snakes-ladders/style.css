@@ -55,3 +55,65 @@ button{border:0;cursor:pointer;font-weight:850;transition:transform .17s ease,bo
 .code-join{margin-top:18px;padding-top:15px;border-top:1px solid rgba(102,157,194,.2)}.code-join>span{font-size:.82rem;color:var(--muted);font-weight:800}
 @media(max-width:760px){.auth-grid{grid-template-columns:1fr}.auth-card{padding:18px}.game-row,.game-main{align-items:stretch}.game-row{display:grid}.game-main{justify-content:space-between}.join-game-btn{width:100%}}
 @media(max-width:520px){.game-main{display:grid;gap:7px}.seat-count{padding-left:47px}.lobby-heading .create-game-btn{width:100%}}
+
+
+/* 3D dice and animated turn feedback */
+.cell{z-index:auto}
+.dice-stage{min-height:132px;padding:13px 10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;overflow:visible}
+.dice-scene{width:64px;height:64px;perspective:520px;display:grid;place-items:center}
+.dice-cube{position:relative;width:54px;height:54px;transform-style:preserve-3d;transition:transform .34s cubic-bezier(.2,.8,.25,1.18)}
+.dice-face{position:absolute;inset:0;display:grid;place-items:center;border-radius:12px;background:linear-gradient(145deg,#fff,#eaf7ff);border:2px solid rgba(64,139,184,.34);box-shadow:inset 0 2px 5px rgba(255,255,255,.9),inset 0 -4px 8px rgba(57,123,164,.12),0 4px 12px rgba(17,70,105,.12);color:#0a659e;font-size:2.42rem;line-height:1;backface-visibility:hidden}
+.face-1{transform:rotateY(0deg) translateZ(27px)}
+.face-6{transform:rotateY(180deg) translateZ(27px)}
+.face-3{transform:rotateY(90deg) translateZ(27px)}
+.face-4{transform:rotateY(-90deg) translateZ(27px)}
+.face-2{transform:rotateX(90deg) translateZ(27px)}
+.face-5{transform:rotateX(-90deg) translateZ(27px)}
+.dice-cube.show-1{transform:rotateX(0deg) rotateY(0deg)}
+.dice-cube.show-2{transform:rotateX(-90deg) rotateY(0deg)}
+.dice-cube.show-3{transform:rotateX(0deg) rotateY(-90deg)}
+.dice-cube.show-4{transform:rotateX(0deg) rotateY(90deg)}
+.dice-cube.show-5{transform:rotateX(90deg) rotateY(0deg)}
+.dice-cube.show-6{transform:rotateX(0deg) rotateY(180deg)}
+.dice-cube.rolling{animation:diceTumble .78s cubic-bezier(.2,.7,.25,1) both}
+.dice-caption{font-size:.84rem;font-weight:900;color:#0a659e;min-height:1.2em;text-align:center}
+@keyframes diceTumble{
+  0%{transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(.92)}
+  18%{transform:rotateX(130deg) rotateY(85deg) rotateZ(35deg) scale(1.12)}
+  42%{transform:rotateX(310deg) rotateY(225deg) rotateZ(110deg) scale(.96)}
+  68%{transform:rotateX(510deg) rotateY(405deg) rotateZ(180deg) scale(1.08)}
+  100%{transform:rotateX(720deg) rotateY(630deg) rotateZ(270deg) scale(1)}
+}
+.token.active-token{animation:activeTokenPulse 1s ease-in-out infinite;outline:3px solid rgba(255,215,54,.72);outline-offset:2px;z-index:9}
+.prow.active{background:linear-gradient(90deg,rgba(255,224,92,.17),rgba(255,255,255,0));border-radius:12px;padding-left:7px;padding-right:7px}
+.prow.active .token{animation:activeTokenPulse 1s ease-in-out infinite;outline:2px solid rgba(255,204,0,.62);outline-offset:2px}
+@keyframes activeTokenPulse{
+  0%,100%{transform:translateY(0) scale(1);filter:brightness(1)}
+  50%{transform:translateY(-2px) scale(1.16);filter:brightness(1.16);box-shadow:0 0 0 6px rgba(255,210,40,.12),0 6px 12px rgba(7,38,62,.28)}
+}
+.token.token-step{animation:tokenStepHop .18s ease both;z-index:10}
+@keyframes tokenStepHop{
+  0%{transform:translateY(0) scale(1)}
+  48%{transform:translateY(-13px) scale(1.16)}
+  100%{transform:translateY(0) scale(1)}
+}
+.token.token-jump{animation:tokenJump .45s cubic-bezier(.2,.8,.3,1) both;z-index:11}
+@keyframes tokenJump{
+  0%{transform:translateY(0) scale(1)}
+  35%{transform:translateY(-18px) scale(1.25) rotate(-8deg)}
+  70%{transform:translateY(-7px) scale(1.12) rotate(8deg)}
+  100%{transform:translateY(0) scale(1)}
+}
+.token.token-blocked{animation:tokenBlocked .42s ease both}
+@keyframes tokenBlocked{
+  0%,100%{transform:translateX(0)}
+  20%{transform:translateX(-7px)}
+  40%{transform:translateX(7px)}
+  60%{transform:translateX(-5px)}
+  80%{transform:translateX(5px)}
+}
+.cell.step-cell{box-shadow:inset 0 0 0 3px rgba(255,205,52,.82),inset 0 1px 0 rgba(255,255,255,.9),0 4px 14px rgba(255,190,20,.24)}
+.cell.jump-cell{box-shadow:inset 0 0 0 3px rgba(45,181,119,.78),0 4px 16px rgba(33,160,110,.24)}
+@media(prefers-reduced-motion:reduce){
+  .dice-cube,.token,.prow.active .token{animation:none!important;transition:none!important}
+}
