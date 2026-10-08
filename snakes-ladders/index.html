@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Snakes & Ladders | Learn With Champak</title>
-<meta name="description" content="Online Snakes & Ladders for 2 to 10 players with a strategic 6-point reserve rule.">
+<meta name="description" content="Sign in and play online Snakes & Ladders for 2 to 10 players with a strategic 6-point reserve rule.">
 <link rel="canonical" href="https://games.learnwithchampak.live/snakes-ladders/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Learn With Champak Games">
 <meta property="og:title" content="Snakes & Ladders | Learn With Champak">
-<meta property="og:description" content="Play online with 2–10 players. Every player gets 6 reserve points that must all be used before reaching 100.">
+<meta property="og:description" content="Register or sign in, create a game, and let other players join from the live games list.">
 <meta property="og:url" content="https://games.learnwithchampak.live/snakes-ladders/">
 <meta property="og:image" content="https://games.learnwithchampak.live/snakes-ladders/og.svg">
 <meta name="twitter:card" content="summary_large_image">
@@ -27,6 +27,7 @@
 <body>
 <div class="bg-orb orb1"></div><div class="bg-orb orb2"></div><div class="bg-orb orb3"></div>
 <main class="shell">
+
 <header class="brand-bar glass">
   <a class="brand-home" href="https://learnwithchampak.live/" target="_blank" rel="noopener">
     <img class="brand-logo" src="./favicon.png" alt="Learn With Champak">
@@ -38,26 +39,70 @@
   </div>
 </header>
 
+<div id="userBar" class="user-bar glass hidden">
+  <div class="signed-user"><img id="userAvatar" alt="" hidden><span id="userInitial" class="user-initial">U</span><div><small>Signed in as</small><strong id="userName">Player</strong></div></div>
+  <button id="logoutBtn" class="small danger-outline" type="button">Sign out</button>
+</div>
+
 <section class="ad-card glass" aria-label="Advertisement">
   <div class="ad-label">Advertisement</div>
   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8321261883090494" data-ad-slot="7782388330" data-ad-format="auto" data-full-width-responsive="true"></ins>
 </section>
 
-<section id="lobby" class="card lobby-card">
-  <div class="title-wrap">
-    <div class="eyebrow">Learn With Champak Multiplayer Games</div>
+<section id="auth" class="auth-card glass">
+  <div class="auth-intro">
+    <div class="eyebrow">Learn With Champak Multiplayer</div>
     <h1>🐍 Snakes & Ladders 🪜</h1>
-    <p class="lead">Play with <strong>2–10 players</strong>. Everyone starts with <strong>6 reserve points</strong> that may be spent on any turn, but all six must be used before reaching 100.</p>
+    <p>Sign in before playing. Registered players can create games or join any open game from the live lobby.</p>
   </div>
-  <label><span>Your name</span><input id="name" maxlength="24" placeholder="Player name"></label>
-  <div class="actions"><button id="createBtn" class="primary-btn">Create room</button></div>
-  <div class="joinrow"><input id="roomCode" maxlength="5" placeholder="ROOM CODE"><button id="joinBtn" class="secondary-btn">Join room</button></div>
+  <div class="auth-grid">
+    <form id="loginForm" class="auth-panel">
+      <h2>Sign in</h2>
+      <label><span>Email</span><input id="loginEmail" type="email" autocomplete="email" required></label>
+      <label><span>Password</span><input id="loginPassword" type="password" autocomplete="current-password" required></label>
+      <button class="primary-btn auth-submit" type="submit">Sign in</button>
+    </form>
+    <form id="registerForm" class="auth-panel">
+      <h2>Register</h2>
+      <label><span>Your name</span><input id="registerName" maxlength="40" autocomplete="name" required></label>
+      <label><span>Email</span><input id="registerEmail" type="email" autocomplete="email" required></label>
+      <label><span>Password</span><input id="registerPassword" type="password" minlength="6" autocomplete="new-password" required></label>
+      <button class="secondary-btn auth-submit" type="submit">Create account</button>
+    </form>
+  </div>
+  <div class="auth-divider"><span>or</span></div>
+  <div class="google-wrap">
+    <div id="googleButton"></div>
+    <p class="google-note">Google sign-in creates your game account automatically.</p>
+  </div>
+  <p id="authNote" class="note"></p>
+</section>
+
+<section id="lobby" class="card lobby-card games-lobby hidden">
+  <div class="lobby-heading">
+    <div>
+      <div class="eyebrow">Live multiplayer lobby</div>
+      <h1>Choose a game</h1>
+      <p class="lead">Create a new game or join one of the waiting games below. Open games update automatically.</p>
+    </div>
+    <button id="createBtn" class="primary-btn create-game-btn" type="button">＋ Create game</button>
+  </div>
+
+  <div class="games-section">
+    <div class="games-title"><h2>Waiting games</h2><span id="gamesCount" class="games-count">0 open</span></div>
+    <div id="gamesList" class="games-list"><div class="empty-games">Connecting to the game lobby…</div></div>
+  </div>
+
+  <div class="code-join">
+    <span>Have a room code?</span>
+    <div class="joinrow"><input id="roomCode" maxlength="5" placeholder="ROOM CODE" autocomplete="off"><button id="joinBtn" class="secondary-btn" type="button">Join</button></div>
+  </div>
   <p id="connectionNote" class="note">Connecting to game server…</p>
 </section>
 
 <section id="game" class="hidden">
   <div class="topbar glass">
-    <div class="room-box"><span class="room-label">Room</span><div class="room-code-wrap"><strong id="roomLabel" class="room-code"></strong><button id="copyBtn" class="small">Copy</button><button id="shareWhatsappBtn" class="whatsapp-btn" type="button">WhatsApp</button></div></div>
+    <div class="room-box"><span class="room-label">Room</span><div class="room-code-wrap"><strong id="roomLabel" class="room-code"></strong><button id="copyBtn" class="small">Copy</button><button id="shareWhatsappBtn" class="whatsapp-btn" type="button">Share</button></div></div>
     <div class="topactions"><button id="startBtn" class="primary-btn">Start game</button><button id="leaveBtn" class="danger">Leave</button></div>
   </div>
   <div id="status" class="status glass"></div>
@@ -93,6 +138,7 @@
   </div>
 </footer>
 </main>
+
 <script src="app.js"></script>
 <script>
 window.addEventListener('load',function(){
