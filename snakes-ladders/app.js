@@ -1,10 +1,11 @@
 const $=s=>document.querySelector(s);
-const auth=$('#auth'),lobby=$('#lobby'),game=$('#game'),userBar=$('#userBar'),note=$('#connectionNote'),authNote=$('#authNote'),board=$('#board'),statusEl=$('#status'),playersEl=$('#players'),spendEl=$('#spend'),diceEl=$('#dice'),moveBtn=$('#moveBtn'),shareBtn=$('#shareWhatsappBtn'),gamesList=$('#gamesList'),gamesCount=$('#gamesCount');
+const auth=$('#auth'),lobby=$('#lobby'),game=$('#game'),userBar=$('#userBar'),note=$('#connectionNote'),authNote=$('#authNote'),board=$('#board'),statusEl=$('#status'),playersEl=$('#players'),spendEl=$('#spend'),diceEl=$('#dice'),diceCube=$('#diceCube'),diceCaption=$('#diceCaption'),moveBtn=$('#moveBtn'),shareBtn=$('#shareWhatsappBtn'),gamesList=$('#gamesList'),gamesCount=$('#gamesCount');
 const API=(window.SL_API_URL||'')+(window.SL_API_BASE||'/games/snakes-ladders');
 const TOKEN_KEY='lwc_snakes_auth_token';
 const ladders=new Map([[4,25],[13,46],[33,49],[42,63],[50,69],[62,81],[74,92]]);
 const snakes=new Map([[27,5],[40,3],[43,18],[54,31],[66,45],[76,58],[89,53],[99,41]]);
-let socket=null,state=null,currentRoom=null,currentUser=null,overlayFrame=0,googlePromise=null;
+let socket=null,state=null,currentRoom=null,currentUser=null,overlayFrame=0,googlePromise=null,renderQueue=Promise.resolve();
+const reduceMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches||false;
 let authToken=localStorage.getItem(TOKEN_KEY)||'';
 let pendingRoom=(new URLSearchParams(location.search).get('room')||'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,5);
 
@@ -127,23 +128,152 @@ function drawLadder(svg,from,to){const a=centerOf(from),b=centerOf(to);if(!a||!b
 function drawSnake(svg,from,to,index){const a=centerOf(from),b=centerOf(to);if(!a||!b)return;const dx=b.x-a.x,dy=b.y-a.y,len=Math.hypot(dx,dy)||1,nx=-dy/len,ny=dx/len,wave=Math.max(18,Math.min(34,len*.12))*(index%2?1:-1),c1={x:a.x+dx*.32+nx*wave,y:a.y+dy*.32+ny*wave},c2={x:a.x+dx*.68-nx*wave,y:a.y+dy*.68-ny*wave},g=svgEl('g',{class:'snake-svg'});g.append(svgEl('path',{d:`M ${a.x} ${a.y} C ${c1.x} ${c1.y}, ${c2.x} ${c2.y}, ${b.x} ${b.y}`,class:'snake-body snake-'+(index%4)}));const hr=Math.max(8,Math.min(12,a.w*.16));g.append(svgEl('circle',{cx:a.x,cy:a.y,r:hr,class:'snake-head snake-'+(index%4)}));const ux=dx/len,uy=dy/len,ex=-uy,ey=ux;g.append(svgEl('circle',{cx:a.x+ux*3.5+ex*3.8,cy:a.y+uy*3.5+ey*3.8,r:1.8,class:'snake-eye'}));g.append(svgEl('circle',{cx:a.x+ux*3.5-ex*3.8,cy:a.y+uy*3.5-ey*3.8,r:1.8,class:'snake-eye'}));svg.append(g)}
 function drawOverlay(){cancelAnimationFrame(overlayFrame);overlayFrame=requestAnimationFrame(()=>{const old=board.querySelector('.game-overlay');if(old)old.remove();if(!board.offsetWidth||!board.offsetHeight)return;const svg=svgEl('svg',{class:'game-overlay',viewBox:`0 0 ${board.offsetWidth} ${board.offsetHeight}`,preserveAspectRatio:'none','aria-hidden':'true'});ladders.forEach((to,from)=>drawLadder(svg,from,to));let i=0;snakes.forEach((to,from)=>drawSnake(svg,from,to,i++));board.appendChild(svg)})}
 
-function render(s){
- state=s;currentRoom=s.code;$('#roomLabel').textContent=s.code;lobby.classList.add('hidden');auth.classList.add('hidden');game.classList.remove('hidden');updateUserBar();
- const myId=socket?.id;
+function sleep(ms){return new Promise(resolve=>setTimeout(resolve,ms))}
+function tokenElement(p,i,active=false){
+ const t=document.createElement('span');
+ t.className='token p'+i+(active?' active-token':'');
+ t.textContent=i+1;t.title=p.name;t.dataset.playerId=p.id;
+ return t;
+}
+function renderTokens(s,overrides=null,activeId=null){
  board.querySelectorAll('.tokens').forEach(x=>x.innerHTML='');
- s.players.forEach((p,i)=>{if(p.pos>0){const el=board.querySelector('[data-n="'+p.pos+'"] .tokens');if(el){const t=document.createElement('span');t.className='token p'+i;t.textContent=i+1;t.title=p.name;el.appendChild(t)}}});
+ s.players.forEach((p,i)=>{
+   const pos=overrides&&Object.prototype.hasOwnProperty.call(overrides,p.id)?overrides[p.id]:p.pos;
+   if(pos>0){
+     const el=board.querySelector('[data-n="'+pos+'"] .tokens');
+     if(el)el.appendChild(tokenElement(p,i,p.id===activeId));
+   }
+ });
+}
+function renderPlayers(s,activeId=null){
+ const myId=socket?.id;
  playersEl.innerHTML='';
- s.players.forEach((p,i)=>{const d=document.createElement('div');d.className='prow'+(i===s.turnIndex&&!s.winner?' active':'');d.innerHTML='<span class="player-name"><span class="token p'+i+'" style="display:inline-grid">'+(i+1)+'</span><span>'+escapeHtml(p.name)+(p.id===myId?' (you)':'')+'</span></span><span>'+p.pos+' · ⭐'+p.reserve+'</span>';playersEl.appendChild(d)});
- const me=s.players.find(p=>p.id===myId),myTurn=!!me&&s.started&&!s.winner&&s.players[s.turnIndex]?.id===myId,hasRoll=myTurn&&Number.isInteger(s.pendingRoll);
- spendEl.innerHTML='';for(let i=0;i<=Math.min(6,me?.reserve??0);i++){const o=document.createElement('option');o.value=i;o.textContent=i+' point'+(i===1?'':'s');spendEl.appendChild(o)}
- $('#rollBtn').disabled=!myTurn||hasRoll;spendEl.disabled=!hasRoll;moveBtn.disabled=!hasRoll;
- const isHost=s.hostId===myId;$('#startBtn').style.display=isHost&&!s.started?'':'none';$('#startBtn').disabled=s.players.length<2;$('#startBtn').title=s.players.length<2?'At least 2 players are required':'Start the game';
+ s.players.forEach((p,i)=>{
+   const d=document.createElement('div');
+   d.className='prow'+(p.id===activeId&&!s.winner?' active':'');
+   d.innerHTML='<span class="player-name"><span class="token p'+i+'" style="display:inline-grid">'+(i+1)+'</span><span>'+escapeHtml(p.name)+(p.id===myId?' (you)':'')+'</span></span><span>'+p.pos+' · ⭐'+p.reserve+'</span>';
+   playersEl.appendChild(d);
+ });
+}
+function setDiceFace(value){
+ if(!diceCube||!Number.isInteger(value))return;
+ diceCube.className='dice-cube show-'+Math.max(1,Math.min(6,value));
+}
+async function animateDice(value){
+ if(!diceCube||!diceCaption){return}
+ diceCaption.textContent='Rolling…';
+ if(reduceMotion){setDiceFace(value);diceCaption.textContent='Rolled '+value;return}
+ diceCube.className='dice-cube rolling';
+ await sleep(780);
+ setDiceFace(value);
+ diceCaption.textContent='Rolled '+value;
+ await sleep(260);
+}
+function updateDiceStatic(s){
+ if(!diceCaption)return;
+ if(Number.isInteger(s.pendingRoll)){
+   setDiceFace(s.pendingRoll);diceCaption.textContent='Rolled '+s.pendingRoll;
+ }else if(s.lastMove){
+   setDiceFace(s.lastMove.die);diceCaption.textContent=s.lastAction||('Rolled '+s.lastMove.die);
+ }else{
+   diceCaption.textContent=s.started?'Roll the dice':'Waiting to start';
+ }
+}
+function renderControlsAndStatus(s,locked=false){
+ const myId=socket?.id;
+ const me=s.players.find(p=>p.id===myId);
+ const myTurn=!!me&&s.started&&!s.winner&&s.players[s.turnIndex]?.id===myId;
+ const hasRoll=myTurn&&Number.isInteger(s.pendingRoll);
+ spendEl.innerHTML='';
+ for(let i=0;i<=Math.min(6,me?.reserve??0);i++){const o=document.createElement('option');o.value=i;o.textContent=i+' point'+(i===1?'':'s');spendEl.appendChild(o)}
+ $('#rollBtn').disabled=locked||!myTurn||hasRoll;
+ spendEl.disabled=locked||!hasRoll;
+ moveBtn.disabled=locked||!hasRoll;
+ const isHost=s.hostId===myId;
+ $('#startBtn').style.display=isHost&&!s.started?'':'none';
+ $('#startBtn').disabled=locked||s.players.length<2;
+ $('#startBtn').title=s.players.length<2?'At least 2 players are required':'Start the game';
  if(s.winner)statusEl.textContent='🏆 '+s.winner.name+' wins!';
  else if(!s.started)statusEl.textContent=(isHost?'You created this game. ':'')+'Waiting for players — '+s.players.length+' joined. Minimum 2.';
- else if(myTurn&&!hasRoll)statusEl.textContent='Your turn — roll the dice first.';
+ else if(myTurn&&!hasRoll)statusEl.textContent='Your turn — your token is highlighted. Roll the dice.';
  else if(myTurn&&hasRoll)statusEl.textContent='You rolled '+s.pendingRoll+'. Choose reserve points, then press Move.';
  else statusEl.textContent=s.players[s.turnIndex].name+"'s turn.";
- diceEl.textContent=hasRoll?'🎲 '+s.pendingRoll:(s.lastAction||'—');drawOverlay();
+}
+function prepareGameView(s){
+ currentRoom=s.code;$('#roomLabel').textContent=s.code;
+ lobby.classList.add('hidden');auth.classList.add('hidden');game.classList.remove('hidden');updateUserBar();drawOverlay();
+}
+function clearStepHighlights(){board.querySelectorAll('.step-cell,.jump-cell').forEach(c=>c.classList.remove('step-cell','jump-cell'))}
+async function animateMove(s,move){
+ const pIndex=s.players.findIndex(p=>p.id===move.playerId);
+ if(pIndex<0)return;
+ const p=s.players[pIndex];
+ const overrides={[p.id]:move.from};
+ renderTokens(s,overrides,null);
+ renderPlayers(s,p.id);
+ renderControlsAndStatus(s,true);
+ statusEl.textContent=p.name+' is moving '+move.steps+' square'+(move.steps===1?'':'s')+'…';
+
+ if(move.overshoot||move.blocked){
+   const token=board.querySelector('.token[data-player-id="'+p.id+'"]');
+   if(token){token.classList.add('token-blocked');await sleep(reduceMotion?0:430)}
+   statusEl.textContent=move.overshoot?'Move blocked — exact 100 is required.':'Move blocked — reserve points must be used before reaching 100.';
+   await sleep(reduceMotion?0:220);
+   clearStepHighlights();
+   return;
+ }
+
+ let token=board.querySelector('.token[data-player-id="'+p.id+'"]');
+ const first=Math.max(1,move.from+1);
+ for(let pos=first;pos<=move.landing;pos++){
+   const cell=board.querySelector('[data-n="'+pos+'"]');
+   const holder=cell?.querySelector('.tokens');
+   if(!holder)continue;
+   clearStepHighlights();cell.classList.add('step-cell');
+   if(!token){token=tokenElement(p,pIndex,false)}
+   holder.appendChild(token);
+   token.classList.remove('token-step');void token.offsetWidth;token.classList.add('token-step');
+   await sleep(reduceMotion?0:175);
+ }
+ if(move.final!==move.landing){
+   const finalCell=board.querySelector('[data-n="'+move.final+'"]');
+   const finalHolder=finalCell?.querySelector('.tokens');
+   if(finalCell&&finalHolder&&token){
+     clearStepHighlights();finalCell.classList.add('jump-cell');
+     statusEl.textContent=move.jumpType==='ladder'?p.name+' climbs the ladder!':p.name+' slides down the snake!';
+     token.classList.remove('token-step');token.classList.add('token-jump');
+     await sleep(reduceMotion?0:230);
+     finalHolder.appendChild(token);
+     token.classList.remove('token-jump');void token.offsetWidth;token.classList.add('token-jump');
+     await sleep(reduceMotion?0:420);
+   }
+ }
+ clearStepHighlights();
+}
+async function applyState(s){
+ const prev=state;
+ const newMove=!!s.lastMove&&s.lastMove.seq!==(prev?.lastMove?.seq??null);
+ const newRoll=Number.isInteger(s.pendingRoll)&&(!Number.isInteger(prev?.pendingRoll)||prev?.turnIndex!==s.turnIndex);
+ state=s;prepareGameView(s);
+
+ if(newMove){
+   await animateMove(s,s.lastMove);
+   const activeId=s.started&&!s.winner?s.players[s.turnIndex]?.id:null;
+   renderTokens(s,null,activeId);
+   renderPlayers(s,activeId);
+   renderControlsAndStatus(s,false);
+   updateDiceStatic(s);
+   drawOverlay();
+   return;
+ }
+
+ const activeId=s.started&&!s.winner?s.players[s.turnIndex]?.id:null;
+ renderTokens(s,null,activeId);
+ renderPlayers(s,activeId);
+ renderControlsAndStatus(s,false);
+ drawOverlay();
+ if(newRoll)await animateDice(s.pendingRoll);
+ else updateDiceStatic(s);
 }
 
 $('#loginForm').onsubmit=async e=>{
