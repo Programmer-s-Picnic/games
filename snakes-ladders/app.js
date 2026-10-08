@@ -103,6 +103,10 @@ function connectSocket(){
  socket.on('roomError',m=>{alert(m);showLobby()});
 }
 
+function render(s){
+ renderQueue=renderQueue.then(()=>applyState(s)).catch(err=>console.error('Render animation error',err));
+}
+
 function renderGames(games=[]){
  gamesCount.textContent=games.length+' open';
  gamesList.innerHTML='';
