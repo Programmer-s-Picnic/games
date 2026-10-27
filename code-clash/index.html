@@ -56,7 +56,7 @@
           <p>All Google-signed-in players who are online when the countdown reaches zero are entered automatically.</p>
           <div class="chips"><span>Mixed MCQ</span><span>10 Questions</span><span>30 sec/question</span><span>100-question bank</span><span>6 seats/room</span></div>
           <div class="online-summary"><strong id="onlineCount">0</strong><span>players waiting for next clash</span></div>
-          <div id="onlineUsers" class="online-users"></div>
+          <div id="onlineUsers" class="online-users"></div><div id="matchHandoff" class="card hidden"><h3>Your Code Clash has started</h3><p>The waiting lobby has already moved on to the next clash.</p><a id="enterMatchLink" class="primary big" target="_blank" rel="noopener">Enter Live Match</a></div>
           <h3 class="setting-title">All logged-in users</h3>
           <div class="online-summary"><strong id="loggedInCount">0</strong><span>logged in now</span></div>
           <div id="loggedInUsers" class="online-users"></div>
@@ -66,7 +66,7 @@
           <h3>Live clash rules</h3>
           <p><strong>700</strong> points for a correct answer plus up to <strong>300</strong> speed points.</p>
           <p>Questions and answer options are shuffled by the server for every match. All competitors in the same room receive the same question and option order.</p>
-          <p>No button is needed to join: stay signed in and online until the scheduled start.</p>
+          <p>Stay signed in and online until the scheduled start.</p><button id="armTransferBtn" class="primary" type="button">Enable automatic match transfer</button><p id="transferStatus" class="small">Tap once so your browser can open the live match automatically at changeover.</p>
         </aside>
       </div>
 
