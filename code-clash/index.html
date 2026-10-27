@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://games.learnwithchampak.live/og.svg">
   <link rel="canonical" href="https://games.learnwithchampak.live/code-clash/">
   <link rel="icon" href="../og.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./style.css?v=20261027-1652">
+  <link rel="stylesheet" href="./style.css?v=20261027-1715">
 </head>
 <body>
   <header class="brand">
@@ -52,11 +52,8 @@
         <section class="card game-card">
           <p class="eyebrow">GAME 01 • BETA</p>
           <h2>Python Output Blitz</h2>
-          <p>Five fast rounds covering Python fundamentals. Beat the simulated candidates and get a hiring-style skill report.</p>
-          <div class="chips">
-            <span>5 Questions</span><span>20 sec each</span><span>5 Simulated Candidates</span>
-          </div>
-          <button id="playBtn" class="primary big" type="button">Play Now</button>
+          <p>Ten fast MCQ rounds. Choose Code → Output, Output → Code, or Mixed mode, then beat the simulated candidates.</p>
+          <div class="mode-picker"><button class="mode active" data-mode="mixed" type="button">Mixed</button><button class="mode" data-mode="code-output" type="button">Code → Output</button><button class="mode" data-mode="output-code" type="button">Output → Code</button></div><div class="chips"><span>10 Questions</span><span>20 sec each</span><span>5 Simulated Candidates</span></div><button id="playBtn" class="primary big" type="button">Play Mixed Challenge</button>
         </section>
         <aside class="card rules-card">
           <h3>How scoring works</h3>
@@ -67,7 +64,7 @@
 
       <section id="gamePanel" class="hidden">
         <div class="game-top card">
-          <span id="roundLabel">Question 1/5</span>
+          <span id="roundLabel">Question 1/10</span>
           <span id="timer" class="timer">20</span>
           <span>Score <strong id="score">0</strong></span>
           <span>Rank <strong id="rank">1/6</strong></span>
@@ -76,15 +73,10 @@
         <div class="battle-grid">
           <section class="card challenge">
             <div class="challenge-head">
-              <div><p id="topic" class="eyebrow">PYTHON</p><h2>What is the output?</h2></div>
+              <div><p id="topic" class="eyebrow">PYTHON</p><h2 id="questionPrompt">Choose the correct answer</h2></div>
               <span id="difficulty" class="difficulty">Easy</span>
             </div>
-            <pre id="codeBlock"><code></code></pre>
-            <form id="answerForm">
-              <label for="answerInput">Your answer</label>
-              <textarea id="answerInput" rows="3" spellcheck="false" autocomplete="off" placeholder="Type the exact output..." required></textarea>
-              <button id="submitBtn" class="primary" type="submit">Submit Answer</button>
-            </form>
+            <pre id="codeBlock"><code></code></pre><div id="outputBox" class="output-box hidden"></div><div id="choices" class="mcq-grid" role="radiogroup" aria-label="Answer choices"></div><button id="submitBtn" class="primary" type="button" disabled>Submit Answer</button>
             <div id="feedback" class="feedback hidden" aria-live="polite"></div>
             <button id="nextBtn" class="secondary hidden" type="button">Next Question</button>
           </section>
@@ -119,7 +111,7 @@
 
   <footer>Developed and maintained by <a href="https://www.learnwithchampak.live/" target="_blank" rel="noopener">Learn With Champak</a></footer>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <script src="./config.js?v=20261027-1652"></script>
-  <script src="./app.js?v=20261027-1652"></script>
+  <script src="./config.js?v=20261027-1715"></script>
+  <script src="./app.js?v=20261027-1715"></script>
 </body>
 </html>
