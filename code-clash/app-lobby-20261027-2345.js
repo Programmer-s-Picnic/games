@@ -57,7 +57,7 @@
   $("googleFallbackBtn").addEventListener("click",()=>{if(window.google?.accounts?.id){setMessage("Opening Google Sign-In...");google.accounts.id.prompt()}else setMessage("Google Sign-In library has not loaded. Refresh the page.","error")});
   $("submitBtn").addEventListener("click",submitAnswer);
   $("logoutBtn").addEventListener("click",async()=>{try{if(token())await api("/api/logout",{method:"POST"})}catch(_){ }openAuth()});
-  $("soundBtn").textContent="Clock Sound: On";$("soundBtn").disabled=true;document.addEventListener("pointerdown",ensureAudio,{once:true});document.addEventListener("keydown",ensureAudio,{once:true});
+  $("soundBtn").textContent="Clock Sound: On";$("soundBtn").disabled=true;document.addEventListener("pointerdown",ensureAudio,{once:true});document.addEventListener("keydown",ensureAudio,{once:true});$("armTransferBtn").addEventListener("click",()=>{ensureAudio();try{matchWindow=window.open("about:blank","CodeClashLiveMatch");if(matchWindow){$("transferStatus").textContent="Automatic transfer enabled for the next clash.";$("armTransferBtn").textContent="Automatic transfer enabled";$("armTransferBtn").disabled=true}else{$("transferStatus").textContent="Popup blocked. Allow popups for this site, or use Enter Live Match when the clash starts."}}catch(_){$("transferStatus").textContent="Could not reserve the match window. Use Enter Live Match when the clash starts."}});
   $("backLobbyBtn").addEventListener("click",()=>{openLobby();socket?.emit("request-lobby")});
   $("playAgainBtn").addEventListener("click",()=>{openLobby();socket?.emit("request-lobby")});
 
