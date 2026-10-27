@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Code Clash Lobby | Learn With Champak</title>
-  <meta name="description" content="Register or sign in to the Code Clash programming game lobby and see who is online.">
-  <meta name="theme-color" content="#0ea5e9">
-  <meta property="og:title" content="Code Clash Lobby">
-  <meta property="og:description" content="Sign in and join the Learn With Champak programming game lobby.">
+  <title>Python Output Blitz | Code Clash</title>
+  <meta name="description" content="Play Python Output Blitz on Code Clash by Learn With Champak. Sign in with Google and compete against simulated candidates.">
+  <meta name="theme-color" content="#0b1020">
+  <meta property="og:title" content="Python Output Blitz | Code Clash">
+  <meta property="og:description" content="Read Python code, predict the output, beat simulated candidates, and see your skill report.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://games.learnwithchampak.live/code-clash/">
   <meta property="og:image" content="https://games.learnwithchampak.live/og.svg">
@@ -18,83 +18,107 @@
 <body>
   <header class="brand">
     <a href="https://www.learnwithchampak.live/" target="_blank" rel="noopener">Learn With Champak</a>
-    <span>Code Clash</span>
+    <span>Code Clash • Python Output Blitz</span>
   </header>
 
   <main class="shell">
-    <section class="hero">
-      <p class="eyebrow">PROGRAMMING GAME LOBBY</p>
-      <h1>Code Clash</h1>
-      <p>Register or sign in. Everyone who is currently online will appear in the lobby.</p>
-    </section>
-
-    <section id="authView" class="layout">
+    <section id="authView" class="auth-stage">
+      <div class="hero">
+        <p class="eyebrow">CODE CLASH PLAYGROUND</p>
+        <h1>Python Output Blitz</h1>
+        <p>Read real Python code, predict the output, and race against simulated candidates.</p>
+      </div>
       <div class="card auth-card">
-        <div class="tabs" role="tablist" aria-label="Account">
-          <button id="loginTab" class="tab active" type="button">Login</button>
-          <button id="registerTab" class="tab" type="button">Register</button>
-        </div>
-
-        <form id="loginForm" class="form">
-          <label>Email
-            <input id="loginEmail" type="email" autocomplete="email" required>
-          </label>
-          <label>Password
-            <input id="loginPassword" type="password" autocomplete="current-password" minlength="8" required>
-          </label>
-          <button class="primary" type="submit">Login</button>
-        </form>
-
-        <form id="registerForm" class="form hidden">
-          <label>Display name
-            <input id="registerName" type="text" autocomplete="name" minlength="2" maxlength="40" required>
-          </label>
-          <label>Email
-            <input id="registerEmail" type="email" autocomplete="email" required>
-          </label>
-          <label>Password
-            <input id="registerPassword" type="password" autocomplete="new-password" minlength="8" maxlength="72" required>
-          </label>
-          <button class="primary" type="submit">Create account</button>
-        </form>
-
-        <div class="divider"><span>or</span></div>
+        <div class="arena-badge">&lt;/&gt;</div>
+        <h2>Enter the arena</h2>
+        <p>Google Sign-In is required to play.</p>
         <div id="googleButton" class="google-wrap"></div>
         <p id="googleHint" class="small hidden">Google sign-in needs the site's OAuth origin to be authorised.</p>
         <p id="authMessage" class="message" aria-live="polite"></p>
       </div>
-
-      <aside class="card preview">
-        <div class="preview-icon">&lt;/&gt;</div>
-        <h2>Next: live quizzes</h2>
-        <p>This account lobby will be used for Code → Output and Output → Code multiplayer games.</p>
-      </aside>
     </section>
 
-    <section id="lobbyView" class="card lobby hidden">
-      <div class="lobby-head">
-        <div>
-          <p class="eyebrow">YOU ARE SIGNED IN</p>
-          <h2 id="welcome">Welcome</h2>
+    <section id="lobbyView" class="hidden">
+      <div class="player-bar card">
+        <div class="userbox">
+          <img id="userPhoto" class="user-photo hidden" alt="">
+          <div id="userInitial" class="user-photo initials">P</div>
+          <div><small>SIGNED IN</small><strong id="welcome">Player</strong></div>
         </div>
         <button id="logoutBtn" class="secondary" type="button">Logout</button>
       </div>
 
-      <div class="online-title">
-        <div>
-          <h3>Players online</h3>
-          <p>Updates automatically as people enter or leave.</p>
-        </div>
-        <span id="onlineCount" class="count">0</span>
+      <div id="lobbyPanel" class="playground-grid">
+        <section class="card game-card">
+          <p class="eyebrow">GAME 01 • BETA</p>
+          <h2>Python Output Blitz</h2>
+          <p>Five fast rounds covering Python fundamentals. Beat the simulated candidates and get a hiring-style skill report.</p>
+          <div class="chips">
+            <span>5 Questions</span><span>20 sec each</span><span>5 Simulated Candidates</span>
+          </div>
+          <button id="playBtn" class="primary big" type="button">Play Now</button>
+        </section>
+        <aside class="card rules-card">
+          <h3>How scoring works</h3>
+          <p><strong>700</strong> points for a correct answer plus up to <strong>300</strong> speed points.</p>
+          <p>Wrong or timed-out answers score 0. Simulated candidates never enter the real-player leaderboard.</p>
+        </aside>
       </div>
-      <div id="onlineList" class="players" aria-live="polite"></div>
+
+      <section id="gamePanel" class="hidden">
+        <div class="game-top card">
+          <span id="roundLabel">Question 1/5</span>
+          <span id="timer" class="timer">20</span>
+          <span>Score <strong id="score">0</strong></span>
+          <span>Rank <strong id="rank">1/6</strong></span>
+        </div>
+
+        <div class="battle-grid">
+          <section class="card challenge">
+            <div class="challenge-head">
+              <div><p id="topic" class="eyebrow">PYTHON</p><h2>What is the output?</h2></div>
+              <span id="difficulty" class="difficulty">Easy</span>
+            </div>
+            <pre id="codeBlock"><code></code></pre>
+            <form id="answerForm">
+              <label for="answerInput">Your answer</label>
+              <textarea id="answerInput" rows="3" spellcheck="false" autocomplete="off" placeholder="Type the exact output..." required></textarea>
+              <button id="submitBtn" class="primary" type="submit">Submit Answer</button>
+            </form>
+            <div id="feedback" class="feedback hidden" aria-live="polite"></div>
+            <button id="nextBtn" class="secondary hidden" type="button">Next Question</button>
+          </section>
+
+          <aside class="card leaderboard">
+            <h3>Live leaderboard</h3>
+            <div id="leaderboardList"></div>
+          </aside>
+        </div>
+
+        <div id="opponents" class="opponents"></div>
+      </section>
+
+      <section id="resultPanel" class="card results hidden">
+        <p class="eyebrow">MATCH COMPLETE</p>
+        <h2 id="resultTitle">Python Output Blitz</h2>
+        <div class="result-hero">
+          <div><span>Final score</span><strong id="finalScore">0</strong></div>
+          <div><span>Rank</span><strong id="finalRank">1/6</strong></div>
+          <div><span>Accuracy</span><strong id="finalAccuracy">0%</strong></div>
+        </div>
+        <h3>Skill breakdown</h3>
+        <div id="skillBars" class="skill-bars"></div>
+        <p id="assessment" class="assessment"></p>
+        <div class="result-actions">
+          <button id="playAgainBtn" class="primary" type="button">Play Again</button>
+          <button id="backLobbyBtn" class="secondary" type="button">Back to Lobby</button>
+        </div>
+      </section>
     </section>
   </main>
 
   <footer>Developed and maintained by <a href="https://www.learnwithchampak.live/" target="_blank" rel="noopener">Learn With Champak</a></footer>
-
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/socket.io-client@4.8.4/dist/socket.io.min.js" crossorigin="anonymous"></script>
   <script src="./config.js"></script>
   <script src="./app.js"></script>
 </body>
