@@ -1,7 +1,7 @@
 (() => {
-  const cfg=window.CODE_CLASH_CONFIG,$=id=>document.getElementById(id);
+  const cfg=window.CODE_CLASH_CONFIG,$=id=>document.getElementById(id);\n  const TOTAL_SEATS=6;
   let currentUser=null,questions=[],qIndex=0,score=0,correctCount=0,timerId=null,secondsLeft=30,roundStartedAt=0,locked=false,skillStats={},selectedIndex=null,selectedMode="mixed",timingMode="question",soundOn=true,audioCtx=null,lastTickSecond=30,testSecondsLeft=300,questionStartedAt=0,lastMyRank=1,lastStandings=[];
-  const bots=[{name:"Priya",skill:.78,speed:[5,11]},{name:"Aarav",skill:.66,speed:[8,15]},{name:"Neha",skill:.61,speed:[4,10]},{name:"Rahul",skill:.72,speed:[6,13]},{name:"Meera",skill:.84,speed:[5,10]}].map((b,i)=>({...b,id:"bot"+i,score:0,done:false}));
+  const botPool=[{name:"Priya",skill:.78,speed:[5,11]},{name:"Aarav",skill:.66,speed:[8,15]},{name:"Neha",skill:.61,speed:[4,10]},{name:"Rahul",skill:.72,speed:[6,13]},{name:"Meera",skill:.84,speed:[5,10]}].map((b,i)=>({...b,id:"bot"+i,score:0,done:false}));\n  let bots=[...botPool];\n  function fillBotsForRealPlayers(realPlayers){const realCount=Math.max(1,Math.min(TOTAL_SEATS,Array.isArray(realPlayers)?realPlayers.length:1));bots=botPool.slice(0,Math.max(0,TOTAL_SEATS-realCount)).map(b=>({...b,score:0,done:false}));}
   const bank=[
     {type:"code-output",topic:"Operators",difficulty:"Easy",prompt:"What is the output?",code:"x = 7\ny = 3\nprint(x // y, x % y)",choices:["2 1","2 3","2.33 1","1 2"],correct:0,explain:"// is floor division and % gives the remainder.",skill:"Fundamentals"},
     {type:"code-output",topic:"Conditions",difficulty:"Easy",prompt:"What is the output?",code:"x = 8\nif x % 3 == 0:\n    print('A')\nelif x % 2 == 0:\n    print('B')\nelse:\n    print('C')",choices:["A","B","C","A B"],correct:1,explain:"8 is not divisible by 3, but it is divisible by 2.",skill:"Logic"},
@@ -43,7 +43,7 @@
   function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
   function shuffledQuestion(q){const pairs=q.choices.map((choice,i)=>({choice,correct:i===q.correct}));const mixed=shuffle(pairs);return {...q,choices:mixed.map(x=>x.choice),correct:mixed.findIndex(x=>x.correct)}}
   function chooseQuestions(){let chosen;if(selectedMode==="mixed"){const co=shuffle(bank.filter(q=>q.type==="code-output")).slice(0,5),oc=shuffle(bank.filter(q=>q.type==="output-code")).slice(0,5);chosen=shuffle([...co,...oc])}else chosen=shuffle(bank.filter(q=>q.type===selectedMode)).slice(0,10);return chosen.map(shuffledQuestion)}
-  function startGame(){ensureAudio();sfx("start");questions=chooseQuestions();qIndex=0;score=0;correctCount=0;skillStats={};lastMyRank=1;lastStandings=[];testSecondsLeft=300;secondsLeft=timingMode==="test"?testSecondsLeft:30;bots.forEach(b=>{b.score=0;b.done=false});$("lobbyPanel").classList.add("hidden");$("resultPanel").classList.add("hidden");$("gamePanel").classList.remove("hidden");renderOpponents();loadQuestion()}
+  function startGame(){ensureAudio();sfx("start");fillBotsForRealPlayers([currentUser]);questions=chooseQuestions();qIndex=0;score=0;correctCount=0;skillStats={};lastMyRank=1;lastStandings=[];testSecondsLeft=300;secondsLeft=timingMode==="test"?testSecondsLeft:30;bots.forEach(b=>{b.score=0;b.done=false});$("lobbyPanel").classList.add("hidden");$("resultPanel").classList.add("hidden");$("gamePanel").classList.remove("hidden");renderOpponents();loadQuestion()}
   function loadQuestion(){
     clearInterval(timerId);locked=false;selectedIndex=null;questionStartedAt=performance.now();bots.forEach(b=>b.done=false);
     if(timingMode==="question")secondsLeft=30;else if(timingMode==="test")secondsLeft=testSecondsLeft;
