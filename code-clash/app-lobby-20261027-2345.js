@@ -2,7 +2,7 @@
   const cfg=window.CODE_CLASH_CONFIG;
   const $=id=>document.getElementById(id);
   const API=cfg.apiBase;
-  let currentUser=null,socket=null,lobby=null,currentMatch=null,currentQuestion=null;
+  let currentUser=null,socket=null,lobby=null,currentMatch=null,currentQuestion=null,matchWindow=null;
   let selectedIndex=null,questionStartedAt=0,questionTimer=null,lobbyTimer=null;
   let score=0,correctCount=0,skillStats={},lastMyRank=1,lastStandings=[];
   let soundOn=true,audioCtx=null,lastLobbyTick=-1,lastQuestionTick=-1;
