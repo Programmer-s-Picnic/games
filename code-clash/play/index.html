@@ -1,25 +1,48 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Python Output Blitz | Code Clash</title><link rel="icon" href="https://www.learnwithchampak.live/favicon.ico"><style>
-:root{font-family:system-ui,sans-serif;color:#edf4ff;background:#090e20}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#27245a,#090e20 65%);min-height:100vh}header,main{max-width:1120px;margin:auto;padding:18px}header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}h1{margin:0;font-size:1.5rem}small,.muted{color:#b3bed8}.pill{background:#202b49;border:1px solid #42577c;border-radius:20px;padding:8px 12px}.grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(220px,1fr);gap:18px}.card{background:#141d37;border:1px solid #344466;border-radius:20px;padding:22px;margin-bottom:18px;box-shadow:0 15px 40px #0003}button{border:0;border-radius:12px;background:#6a69ff;color:white;font:inherit;font-weight:700;padding:13px 20px;cursor:pointer;min-height:44px}button:disabled{opacity:.5;cursor:default}.choice{display:block;width:100%;text-align:left;background:#263352;border:1px solid #536383;margin:9px 0;white-space:pre-wrap}.choice.selected{border-color:#9fa9ff;background:#35377b}pre{overflow:auto;background:#080f20;padding:22px;border-radius:14px;line-height:1.65;font-size:1.05rem;border:1px solid #394866}h2{margin-top:0}.row{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.bar{height:9px;border-radius:8px;background:#2b3959;overflow:hidden}.bar>div{height:100%;background:#8a85ff;transition:width .2s}.player{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #303d5c}.good{color:#77edac}.bad{color:#ff9da6}.hidden{display:none!important}#notice{min-height:24px}a{color:#a7b6ff} @media(max-width:700px){.grid{grid-template-columns:1fr}header,main{padding:12px}.card{padding:16px}pre{font-size:.9rem}}</style></head><body>
-<header><div><small>LEARN WITH CHAMPAK · CODE CLASH</small><h1>⚡ Python Output Blitz</h1></div><div class="row"><span id="identity" class="pill">Checking Google sign-in…</span><a href="../">Lobby</a></div></header>
-<main><section id="gate" class="card"><h2>Sign in to enter the arena</h2><p>This game requires your existing Code Clash Google session. Sign in through the lobby first.</p><a href="../">Go to Google Sign-In</a></section>
-<section id="start" class="card hidden"><h2>Ready to clash?</h2><p>Five Python questions · 20 seconds each · five simulated opponents · up to 5,000 points.</p><p class="muted">Prototype: no database yet; scores are not saved across visits. Opponents are simulated, not real applicants.</p><button id="begin">Play Now</button></section>
-<section id="arena" class="hidden"><div class="row card"><span id="round">Question 1 / 5</span><strong id="clock">20s</strong><span id="score">0 pts</span></div><div class="grid"><section><div class="card"><div class="row"><h2 id="topic">Python</h2><span class="pill">Predict the output</span></div><div class="bar"><div id="progress" style="width:100%"></div></div><pre><code id="code"></code></pre><div id="answers"></div><p id="notice" aria-live="polite"></p><button id="submit" disabled>Submit Answer</button><button id="next" class="hidden">Next Round</button></div><div id="feedback" class="card hidden"></div></section><aside class="card"><h2>Leaderboard</h2><p class="muted">All opponents are simulated.</p><div id="board"></div></aside></div></section>
-<section id="finish" class="card hidden"><h2>🏆 Clash complete</h2><div id="summary"></div><div id="review"></div><button id="again">Play Again</button></section></main>
-<script src="../config.js"></script><script>
-(()=>{'use strict';const $=id=>document.getElementById(id);const cfg=window.CODE_CLASH_CONFIG;
-const questions=[
-{topic:'Operators',code:'x = 7\ny = 3\nprint(x // y, x % y)',choices:['2 1','2.33 1','2 3','1 2'],correct:0,why:'// is floor division; % returns the remainder.'},
-{topic:'Conditions',code:'x = 5\nif x > 3:\n    print("A")\nelif x > 1:\n    print("B")\nelse:\n    print("C")',choices:['A B','B','A','C'],correct:2,why:'Only the first matching branch runs.'},
-{topic:'Loops',code:'total = 0\nfor i in range(1, 5, 2):\n    total += i\nprint(total)',choices:['10','4','6','3'],correct:1,why:'range(1,5,2) produces 1 and 3, so the sum is 4.'},
-{topic:'Strings',code:'word = "python"\nprint(word[1:5:2])',choices:['yh','yo','pto','yh n'],correct:0,why:'Indexes 1 and 3 contain y and h.'},
-{topic:'Lists',code:'a = [1, 2, 3]\nb = a\nb.append(4)\nprint(len(a))',choices:['3','4','5','Error'],correct:1,why:'a and b refer to the same list, which now has four elements.'}
-];const bots=[{name:'Priya',skill:.84,speed:6},{name:'Aarav',skill:.64,speed:11},{name:'Meera',skill:.78,speed:8},{name:'Kabir',skill:.91,speed:7},{name:'Neha',skill:.55,speed:5}];let state=null,timer=null;function show(id){for(const s of ['gate','start','arena','finish'])$(s).classList.toggle('hidden',s!==id)}function auth(){const token=localStorage.getItem('codeClashToken');if(!token){show('gate');return}fetch(cfg.apiBase+'/api/me',{headers:{Authorization:'Bearer '+token}}).then(async r=>{if(!r.ok)throw Error('Session expired');const data=await r.json();if(!data.user||data.user.provider!=='google')throw Error('Google sign-in required');$('identity').textContent=data.user.name||'Google player';show('start')}).catch(()=>{$('identity').textContent='Google sign-in required';show('gate')})}
-function leaderboard(){const rows=[{name:'You',score:state.score},...state.bots].sort((a,b)=>b.score-a.score);$('board').replaceChildren();rows.forEach((p,i)=>{const el=document.createElement('div');el.className='player';el.textContent=(i+1)+'. '+p.name+' — '+p.score.toLocaleString();$('board').append(el)})}
-function begin(){clearInterval(timer);state={i:0,score:0,correct:0,records:[],bots:bots.map(b=>({...b,score:0}))};show('arena');render()}
-function render(){clearInterval(timer);const q=questions[state.i];state.choice=null;state.locked=false;state.remaining=20;state.started=performance.now();$('round').textContent='Question '+(state.i+1)+' / '+questions.length;$('topic').textContent=q.topic;$('code').textContent=q.code;$('feedback').classList.add('hidden');$('next').classList.add('hidden');$('submit').classList.remove('hidden');$('submit').disabled=true;$('notice').textContent='Select the exact output.';$('answers').replaceChildren();q.choices.forEach((answer,i)=>{const b=document.createElement('button');b.className='choice';b.textContent=String.fromCharCode(65+i)+'. '+answer;b.addEventListener('click',()=>{if(state.locked)return;state.choice=i;[...$('answers').children].forEach((e,j)=>e.classList.toggle('selected',j===i));$('submit').disabled=false});$('answers').append(b)});leaderboard();tick();timer=setInterval(tick,100)}
-function tick(){if(state.locked)return;state.remaining=Math.max(0,20-(performance.now()-state.started)/1000);$('clock').textContent=Math.ceil(state.remaining)+'s';$('progress').style.width=(state.remaining/20*100)+'%';if(state.remaining<=0)closeRound()}
-function closeRound(){if(state.locked)return;state.locked=true;clearInterval(timer);const q=questions[state.i],ok=state.choice===q.correct,elapsed=Math.min(20,(performance.now()-state.started)/1000),points=ok?700+Math.floor(300*(20-elapsed)/20):0;state.score+=points;if(ok)state.correct++;state.records.push({topic:q.topic,ok,points});state.bots.forEach(b=>{const hit=Math.random()<b.skill;const time=Math.min(20,Math.max(2,b.speed+(Math.random()-.5)*9));b.score+=hit?700+Math.floor(300*(20-time)/20):0});$('score').textContent=state.score.toLocaleString()+' pts';$('submit').classList.add('hidden');$('next').classList.remove('hidden');$('next').textContent=state.i===questions.length-1?'View Results':'Next Round';$('notice').textContent=ok?'Correct! +'+points+' points':state.choice===null?'Time expired.':'Not quite. Try the next round!';$('feedback').classList.remove('hidden');$('feedback').replaceChildren();const title=document.createElement('h2');title.textContent='Correct output: '+q.choices[q.correct];const detail=document.createElement('p');detail.textContent=q.why;$('feedback').append(title,detail);leaderboard()}
-function next(){if(++state.i>=questions.length){finish()}else render()}
-function finish(){clearInterval(timer);show('finish');const all=[{name:'You',score:state.score},...state.bots].sort((a,b)=>b.score-a.score);const rank=all.findIndex(p=>p.name==='You')+1;$('summary').textContent='Score: '+state.score.toLocaleString()+'/5,000 · Rank: '+rank+'/6 · Accuracy: '+Math.round(100*state.correct/questions.length)+'%';$('review').replaceChildren();state.records.forEach(r=>{const p=document.createElement('p');p.textContent=r.topic+': '+(r.ok?'Correct':'Incorrect')+' · '+r.points+' points';$('review').append(p)})}
-$('begin').addEventListener('click',begin);$('submit').addEventListener('click',closeRound);$('next').addEventListener('click',next);$('again').addEventListener('click',begin);auth()})();
-</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Live Code Clash Match | Learn With Champak</title>
+  <meta name="theme-color" content="#0b1020">
+  <link rel="icon" href="../../og.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css?v=20261027-2315">
+</head>
+<body>
+<header class="brand"><a href="https://www.learnwithchampak.live/" target="_blank" rel="noopener">Learn With Champak</a><span>Live Code Clash Match</span></header>
+<main class="shell">
+<section id="matchStatus" class="card"><p class="eyebrow">LIVE MATCH</p><h1>Connecting to your arena…</h1><p id="statusText">Checking your scheduled match.</p></section>
+<section id="gamePanel" class="hidden">
+  <div id="hype" class="hype" aria-live="polite"></div>
+  <div class="game-top card">
+    <span id="roundLabel">Question</span>
+    <span class="timer-wrap"><canvas id="timerCanvas" width="88" height="88"></canvas><span id="timer" class="timer-number">30</span><small id="timerModeLabel" class="timer-mode-label">per question</small></span>
+    <span>Score <strong id="score">0</strong></span>
+    <span>Rank <strong id="rank">1/6</strong></span>
+  </div>
+  <div class="battle-grid">
+    <section class="card challenge">
+      <div class="challenge-head"><div><p id="topic" class="eyebrow">PYTHON</p><h2 id="questionPrompt">Choose the correct answer</h2></div><span id="difficulty" class="difficulty"></span></div>
+      <pre id="codeBlock"><code></code></pre>
+      <div id="outputBox" class="output-box hidden"></div>
+      <div id="choices" class="mcq-grid"></div>
+      <button id="submitBtn" class="primary" type="button" disabled>Submit Answer</button>
+      <div id="feedback" class="feedback hidden"></div>
+    </section>
+    <aside class="card leaderboard"><h3>Live leaderboard</h3><div id="leaderboardList"></div></aside>
+  </div>
+  <div id="opponents" class="opponents"></div>
+</section>
+<section id="resultPanel" class="card results hidden">
+  <p class="eyebrow">MATCH COMPLETE</p><h2>Live Code Clash Results</h2>
+  <div class="result-hero"><div><span>Final score</span><strong id="finalScore">0</strong></div><div><span>Rank</span><strong id="finalRank">1/6</strong></div><div><span>Accuracy</span><strong id="finalAccuracy">0%</strong></div></div>
+  <div id="skillBars" class="skill-bars"></div><p id="assessment" class="assessment"></p>
+  <a class="primary big" href="../">Return to waiting lobby</a>
+</section>
+</main>
+<footer>Developed and maintained by <a href="https://www.learnwithchampak.live/" target="_blank" rel="noopener">Learn With Champak</a></footer>
+<script src="https://cserver.learnwithchampak.live/games/code-clash/socket.io/socket.io.js"></script>
+<script src="../config.js?v=20261027-2315"></script>
+<script src="./match-20261027-2315.js"></script>
+</body>
+</html>
