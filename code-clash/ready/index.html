@@ -52,7 +52,7 @@
       u.searchParams.set("match",data.matchId);
       location.replace(u.toString());
     });
-    socket.on("connect_error",e=>{status.textContent="Connection problem: "+e.message;});
+    socket.on("connect_error",e=>{if(String(e.message||"").toLowerCase().includes("unauthorized")){status.textContent="Session expired. Returning to sign-in…";localStorage.removeItem("codeClashToken");setTimeout(()=>{location.href="../?reauth=1";},800);}else{status.textContent="Connection problem: "+e.message;}});
   }
 })();
 </script>
