@@ -28,9 +28,18 @@
   ];
 
   function token(){ return localStorage.getItem("codeClashToken") || ""; }
+  function savedUser(){ try{return JSON.parse(localStorage.getItem("codeClashUser")||"null");}catch(_){return null;} }
+  function decodeGoogleCredential(credential){
+    const parts=String(credential||"").split(".");
+    if(parts.length<2) throw new Error("Invalid Google credential");
+    const payload=parts[1].replace(/-/g,"+").replace(/_/g,"/");
+    const json=decodeURIComponent(atob(payload).split("").map(c=>"%"+("00"+c.charCodeAt(0).toString(16)).slice(-2)).join(""));
+    const p=JSON.parse(json);
+    return {name:p.name||p.given_name||"Google Player",email:p.email||"",picture:p.picture||"",provider:"google",sub:p.sub||""};
+  }
   function setMessage(text="", type=""){ const el=$("authMessage"); el.textContent=text; el.className="message"+(type?" "+type:""); }
 
-  async function api(path, options={}) {
+  async function api(path, options={}){
     const headers={"Content-Type":"application/json",...(options.headers||{})};
     const t=token(); if(t) headers.Authorization="Bearer "+t;
     const res=await fetch(cfg.apiBase+path,{...options,headers});
@@ -58,12 +67,14 @@
   function openAuth(){
     currentUser=null;
     localStorage.removeItem("codeClashToken");
+    localStorage.removeItem("codeClashUser");
     $("lobbyView").classList.add("hidden");
     $("authView").classList.remove("hidden");
   }
 
   function saveSession(data){
-    localStorage.setItem("codeClashToken",data.token);
+    if(data.token) localStorage.setItem("codeClashToken",data.token);
+    if(data.user) localStorage.setItem("codeClashUser",JSON.stringify(data.user));
     currentUser=data.user;
     openLobby();
   }
@@ -202,15 +213,15 @@
   $("playBtn").addEventListener("click",startGame);
   $("playAgainBtn").addEventListener("click",startGame);
   $("backLobbyBtn").addEventListener("click",openLobby);
-  $("logoutBtn").addEventListener("click",async()=>{try{await api("/api/logout",{method:"POST",body:"{}"});}catch(_){}openAuth();});
+  $("logoutBtn").addEventListener("click",()=>openAuth());
 
-  window.handleGoogleCredential=async(response)=>{
+  window.handleGoogleCredential=(response)=>{
     setMessage("Signing in with Google...");
     try{
-      const data=await api("/api/google",{method:"POST",body:JSON.stringify({credential:response.credential})});
+      const user=decodeGoogleCredential(response.credential);
+      saveSession({token:response.credential,user});
       setMessage("Signed in.","success");
-      saveSession(data);
-    }catch(error){setMessage(error.message,"error");}
+    }catch(error){setMessage(error.message||"Google sign-in failed","error");}
   };
 
   function initGoogle(){
@@ -224,8 +235,8 @@
   let attempts=0;
   const gt=setInterval(()=>{attempts++;if(initGoogle()||attempts>40)clearInterval(gt);},150);
 
-  (async function restore(){
-    if(!token())return;
-    try{const data=await api("/api/me");currentUser=data.user;openLobby();}catch(_){openAuth();}
+  (function restore(){
+    const user=savedUser();
+    if(user && token()){ currentUser=user; openLobby(); }
   })();
 })();
