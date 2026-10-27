@@ -1,242 +1,43 @@
 (() => {
-  const cfg = window.CODE_CLASH_CONFIG;
-  const $ = (id) => document.getElementById(id);
-  let currentUser = null;
-  let questions = [];
-  let qIndex = 0;
-  let score = 0;
-  let correctCount = 0;
-  let timerId = null;
-  let secondsLeft = 20;
-  let roundStartedAt = 0;
-  let locked = false;
-  let skillStats = {};
-  const bots = [
-    { name:"Priya", skill:0.78, speed:[5,11] },
-    { name:"Aarav", skill:0.66, speed:[8,15] },
-    { name:"Neha", skill:0.61, speed:[4,10] },
-    { name:"Rahul", skill:0.72, speed:[6,13] },
-    { name:"Meera", skill:0.84, speed:[5,10] }
-  ].map((b,i)=>({ ...b, id:"bot"+i, score:0, done:false }));
-
-  const bank = [
-    {topic:"Variables & Operators",difficulty:"Easy",code:"x = 7\ny = 3\nprint(x // y, x % y)",answer:"2 1",explain:"// is floor division and % gives the remainder.",skill:"Fundamentals"},
-    {topic:"Conditions",difficulty:"Easy",code:"x = 8\nif x % 3 == 0:\n    print('A')\nelif x % 2 == 0:\n    print('B')\nelse:\n    print('C')",answer:"B",explain:"8 is not divisible by 3, but it is divisible by 2.",skill:"Logic"},
-    {topic:"Loops",difficulty:"Medium",code:"total = 0\nfor i in range(1, 5):\n    total += i\nprint(total)",answer:"10",explain:"range(1, 5) produces 1, 2, 3, 4, whose sum is 10.",skill:"Loops"},
-    {topic:"Strings",difficulty:"Medium",code:"s = 'python'\nprint(s[1:5:2])",answer:"yh",explain:"The slice takes indexes 1 and 3: 'y' and 'h'.",skill:"Strings"},
-    {topic:"Lists",difficulty:"Medium",code:"a = [1, 2, 3]\nb = a\nb.append(4)\nprint(a)",answer:"[1, 2, 3, 4]",explain:"a and b refer to the same list, so appending through b changes a too.",skill:"Collections"}
+  const cfg=window.CODE_CLASH_CONFIG,$=id=>document.getElementById(id);
+  let currentUser=null,questions=[],qIndex=0,score=0,correctCount=0,timerId=null,secondsLeft=20,roundStartedAt=0,locked=false,skillStats={},selectedIndex=null,selectedMode="mixed";
+  const bots=[{name:"Priya",skill:.78,speed:[5,11]},{name:"Aarav",skill:.66,speed:[8,15]},{name:"Neha",skill:.61,speed:[4,10]},{name:"Rahul",skill:.72,speed:[6,13]},{name:"Meera",skill:.84,speed:[5,10]}].map((b,i)=>({...b,id:"bot"+i,score:0,done:false}));
+  const bank=[
+    {type:"code-output",topic:"Operators",difficulty:"Easy",prompt:"What is the output?",code:"x = 7\ny = 3\nprint(x // y, x % y)",choices:["2 1","2 3","2.33 1","1 2"],correct:0,explain:"// is floor division and % gives the remainder.",skill:"Fundamentals"},
+    {type:"code-output",topic:"Conditions",difficulty:"Easy",prompt:"What is the output?",code:"x = 8\nif x % 3 == 0:\n    print('A')\nelif x % 2 == 0:\n    print('B')\nelse:\n    print('C')",choices:["A","B","C","A B"],correct:1,explain:"8 is not divisible by 3, but it is divisible by 2.",skill:"Logic"},
+    {type:"code-output",topic:"Loops",difficulty:"Medium",prompt:"What is the output?",code:"total = 0\nfor i in range(1, 5):\n    total += i\nprint(total)",choices:["9","10","15","6"],correct:1,explain:"range(1,5) yields 1, 2, 3, 4; their sum is 10.",skill:"Loops"},
+    {type:"code-output",topic:"Strings",difficulty:"Medium",prompt:"What is the output?",code:"s = 'python'\nprint(s[1:5:2])",choices:["yh","yto","yth","yo"],correct:0,explain:"The slice takes indexes 1 and 3: y and h.",skill:"Strings"},
+    {type:"code-output",topic:"Lists",difficulty:"Medium",prompt:"What is the output?",code:"a = [1, 2, 3]\nb = a\nb.append(4)\nprint(len(a))",choices:["3","4","5","Error"],correct:1,explain:"a and b refer to the same list, now containing four items.",skill:"Collections"},
+    {type:"output-code",topic:"Variables",difficulty:"Easy",prompt:"Which code produces this output?",output:"12",choices:["x = 5\ny = 7\nprint(x + y)","x = 5\ny = 7\nprint(x * y)","x = 12\nprint(x - 1)","print(6 + 5)"],correct:0,explain:"5 + 7 evaluates to 12.",skill:"Fundamentals"},
+    {type:"output-code",topic:"Loops",difficulty:"Medium",prompt:"Which code produces this output?",output:"0\n1\n2",choices:["for i in range(3):\n    print(i)","for i in range(1, 3):\n    print(i)","for i in range(3):\n    print(i + 1)","print(0, 1, 2)"],correct:0,explain:"range(3) produces 0, 1 and 2 on separate print calls.",skill:"Loops"},
+    {type:"output-code",topic:"Strings",difficulty:"Medium",prompt:"Which code produces this output?",output:"PYTHON",choices:["print('python'.upper())","print('PYTHON'.lower())","print('python'.title())","print('Python'.swapcase())"],correct:0,explain:".upper() converts all letters to uppercase.",skill:"Strings"},
+    {type:"output-code",topic:"Lists",difficulty:"Medium",prompt:"Which code produces this output?",output:"[2, 4, 6]",choices:["print([x * 2 for x in [1, 2, 3]])","print([x + 2 for x in [1, 2, 3]])","print([2, 3, 4])","print(list(range(2, 6)))"],correct:0,explain:"Multiplying 1, 2 and 3 by 2 gives 2, 4 and 6.",skill:"Collections"},
+    {type:"output-code",topic:"Conditions",difficulty:"Easy",prompt:"Which code produces this output?",output:"Pass",choices:["score = 60\nif score >= 50:\n    print('Pass')","score = 40\nif score >= 50:\n    print('Pass')","score = 60\nif score < 50:\n    print('Pass')","print('pass')"],correct:0,explain:"60 satisfies score >= 50, so Pass is printed.",skill:"Logic"},
+    {type:"code-output",topic:"Tuples",difficulty:"Medium",prompt:"What is the output?",code:"t = (10, 20, 30)\nprint(t[-1])",choices:["10","20","30","-1"],correct:2,explain:"Index -1 selects the last tuple item.",skill:"Collections"},
+    {type:"output-code",topic:"Dictionaries",difficulty:"Medium",prompt:"Which code produces this output?",output:"3",choices:["d = {'a': 1, 'b': 2}\nprint(len(d) + 1)","d = {'a': 1, 'b': 2}\nprint(len(d))","print(len([1,2]))","print(4)"],correct:0,explain:"The dictionary has length 2, and 2 + 1 is 3.",skill:"Collections"}
   ];
-
-  function token(){ return localStorage.getItem("codeClashToken") || ""; }
-  function savedUser(){ try{return JSON.parse(localStorage.getItem("codeClashUser")||"null");}catch(_){return null;} }
-  function decodeGoogleCredential(credential){
-    const parts=String(credential||"").split(".");
-    if(parts.length<2) throw new Error("Invalid Google credential");
-    const payload=parts[1].replace(/-/g,"+").replace(/_/g,"/");
-    const json=decodeURIComponent(atob(payload).split("").map(c=>"%"+("00"+c.charCodeAt(0).toString(16)).slice(-2)).join(""));
-    const p=JSON.parse(json);
-    return {name:p.name||p.given_name||"Google Player",email:p.email||"",picture:p.picture||"",provider:"google",sub:p.sub||""};
-  }
-  function setMessage(text="", type=""){ const el=$("authMessage"); el.textContent=text; el.className="message"+(type?" "+type:""); }
-
-  async function api(path, options={}){
-    const headers={"Content-Type":"application/json",...(options.headers||{})};
-    const t=token(); if(t) headers.Authorization="Bearer "+t;
-    const res=await fetch(cfg.apiBase+path,{...options,headers});
-    const data=await res.json().catch(()=>({}));
-    if(!res.ok) throw new Error(data.error||"Request failed");
-    return data;
-  }
-
-  function showUser(){
-    $("welcome").textContent=currentUser?.name||"Player";
-    const img=$("userPhoto"), fallback=$("userInitial");
-    if(currentUser?.picture){img.src=currentUser.picture;img.classList.remove("hidden");fallback.classList.add("hidden");}
-    else{img.classList.add("hidden");fallback.classList.remove("hidden");fallback.textContent=(currentUser?.name||"P").trim().charAt(0).toUpperCase();}
-  }
-
-  function openLobby(){
-    $("authView").classList.add("hidden");
-    $("lobbyView").classList.remove("hidden");
-    $("gamePanel").classList.add("hidden");
-    $("resultPanel").classList.add("hidden");
-    $("lobbyPanel").classList.remove("hidden");
-    showUser();
-  }
-
-  function openAuth(){
-    currentUser=null;
-    localStorage.removeItem("codeClashToken");
-    localStorage.removeItem("codeClashUser");
-    $("lobbyView").classList.add("hidden");
-    $("authView").classList.remove("hidden");
-  }
-
-  function saveSession(data){
-    if(data.token) localStorage.setItem("codeClashToken",data.token);
-    if(data.user) localStorage.setItem("codeClashUser",JSON.stringify(data.user));
-    currentUser=data.user;
-    openLobby();
-  }
-
-  function normalise(v){
-    return String(v??"").trim().replace(/\r/g,"").replace(/[ \t]+$/gm,"").replace(/\n+$/,"");
-  }
-
-  function shuffle(arr){
-    const a=[...arr];
-    for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
-    return a;
-  }
-
-  function startGame(){
-    questions=shuffle(bank).slice(0,5);
-    qIndex=0; score=0; correctCount=0; skillStats={};
-    bots.forEach(b=>{b.score=0;b.done=false;});
-    $("lobbyPanel").classList.add("hidden");
-    $("resultPanel").classList.add("hidden");
-    $("gamePanel").classList.remove("hidden");
-    renderOpponents();
-    loadQuestion();
-  }
-
-  function loadQuestion(){
-    clearInterval(timerId);
-    locked=false;
-    secondsLeft=20;
-    roundStartedAt=performance.now();
-    bots.forEach(b=>b.done=false);
-    const q=questions[qIndex];
-    $("roundLabel").textContent=`Question ${qIndex+1}/${questions.length}`;
-    $("topic").textContent=q.topic.toUpperCase();
-    $("difficulty").textContent=q.difficulty;
-    $("codeBlock").textContent=q.code;
-    $("answerInput").value="";
-    $("answerInput").disabled=false;
-    $("submitBtn").disabled=false;
-    $("feedback").className="feedback hidden";
-    $("feedback").innerHTML="";
-    $("nextBtn").classList.add("hidden");
-    $("timer").textContent=secondsLeft;
-    renderScores();
-    renderOpponents();
-    simulateBots(q);
-    timerId=setInterval(()=>{
-      secondsLeft--;
-      $("timer").textContent=Math.max(0,secondsLeft);
-      if(secondsLeft<=0){clearInterval(timerId);finishRound(true);}
-    },1000);
-  }
-
-  function simulateBots(q){
-    bots.forEach(bot=>{
-      const delay=Math.floor((bot.speed[0]+Math.random()*(bot.speed[1]-bot.speed[0]))*1000);
-      setTimeout(()=>{
-        if(qIndex>=questions.length || locked) return;
-        const difficultyPenalty=q.difficulty==="Medium"?0.08:q.difficulty==="Hard"?0.16:0;
-        const correct=Math.random()<Math.max(.15,bot.skill-difficultyPenalty);
-        if(correct){
-          const sec=Math.max(1,Math.min(20,delay/1000));
-          bot.score+=700+Math.round(300*(1-sec/20));
-        }
-        bot.done=true;
-        renderScores();
-        renderOpponents();
-      },delay);
-    });
-  }
-
-  function finishRound(timedOut=false){
-    if(locked)return;
-    locked=true; clearInterval(timerId);
-    const q=questions[qIndex];
-    const elapsed=Math.min(20,(performance.now()-roundStartedAt)/1000);
-    const answer=normalise($("answerInput").value);
-    const isCorrect=!timedOut && normalise(answer)===normalise(q.answer);
-    let earned=0;
-    if(isCorrect){earned=700+Math.max(0,Math.round(300*(1-elapsed/20)));score+=earned;correctCount++;}
-    if(!skillStats[q.skill]) skillStats[q.skill]={correct:0,total:0};
-    skillStats[q.skill].total++;
-    if(isCorrect) skillStats[q.skill].correct++;
-    $("answerInput").disabled=true;
-    $("submitBtn").disabled=true;
-    const fb=$("feedback");
-    fb.className="feedback "+(isCorrect?"good":"bad");
-    fb.innerHTML=`<strong>${timedOut?"Time's up":isCorrect?"Correct! +"+earned:"Not quite"}</strong><div>Correct output: <code>${escapeHtml(q.answer)}</code></div><div>${escapeHtml(q.explain)}</div>`;
-    $("nextBtn").textContent=qIndex===questions.length-1?"See Final Results":"Next Question";
-    $("nextBtn").classList.remove("hidden");
-    bots.forEach(bot=>{if(!bot.done)bot.done=true;});
-    renderScores(); renderOpponents();
-  }
-
-  function getStandings(){
-    const all=[{id:"me",name:currentUser?.name||"You",score,me:true},...bots.map(b=>({id:b.id,name:b.name,score:b.score,me:false}))];
-    return all.sort((a,b)=>b.score-a.score||a.name.localeCompare(b.name));
-  }
-
-  function renderScores(){
-    const standings=getStandings();
-    const myRank=standings.findIndex(x=>x.me)+1;
-    $("score").textContent=score.toLocaleString();
-    $("rank").textContent=`${myRank}/${standings.length}`;
-    $("leaderboardList").innerHTML=standings.map((p,i)=>`<div class="leader-row ${p.me?"me":""}"><span class="rank-num">${i+1}</span><div><strong>${escapeHtml(p.me?"You":p.name)}</strong><small>${p.me?"Real player":"Simulated candidate"}</small></div><strong>${p.score.toLocaleString()}</strong></div>`).join("");
-  }
-
-  function renderOpponents(){
-    $("opponents").innerHTML=bots.map(b=>`<div class="opp ${b.done?"done":""}"><div class="face">${escapeHtml(b.name[0])}</div><strong>${escapeHtml(b.name)}</strong><small>Simulated</small></div>`).join("");
-  }
-
-  function showResults(){
-    $("gamePanel").classList.add("hidden");
-    $("resultPanel").classList.remove("hidden");
-    const standings=getStandings();
-    const rank=standings.findIndex(x=>x.me)+1;
-    const accuracy=Math.round(correctCount/questions.length*100);
-    $("finalScore").textContent=score.toLocaleString();
-    $("finalRank").textContent=`${rank}/${standings.length}`;
-    $("finalAccuracy").textContent=accuracy+"%";
-    const skills=Object.entries(skillStats);
-    $("skillBars").innerHTML=skills.map(([name,s])=>{
-      const pct=Math.round(s.correct/s.total*100);
-      return `<div class="skill-row"><span>${escapeHtml(name)}</span><div class="skill-track"><div class="skill-fill" style="width:${pct}%"></div></div><strong>${pct}%</strong></div>`;
-    }).join("");
-    let assessment="Keep practising Python code reading and focus on understanding each expression before answering.";
-    if(accuracy>=80)assessment="Strong Python code-reading performance for this prototype. Your accuracy and speed are competitive.";
-    else if(accuracy>=60)assessment="Good foundation. A little more practice with Python execution details should improve your consistency.";
-    $("assessment").textContent=assessment+" This result is currently stored only for this play session.";
-  }
-
-  function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
-
-  $("answerForm").addEventListener("submit",e=>{e.preventDefault();finishRound(false);});
-  $("nextBtn").addEventListener("click",()=>{if(qIndex===questions.length-1)showResults();else{qIndex++;loadQuestion();}});
-  $("playBtn").addEventListener("click",startGame);
-  $("playAgainBtn").addEventListener("click",startGame);
-  $("backLobbyBtn").addEventListener("click",openLobby);
-  $("logoutBtn").addEventListener("click",()=>openAuth());
-
-  window.handleGoogleCredential=(response)=>{
-    setMessage("Signing in with Google...");
-    try{
-      const user=decodeGoogleCredential(response.credential);
-      saveSession({token:response.credential,user});
-      setMessage("Signed in.","success");
-    }catch(error){setMessage(error.message||"Google sign-in failed","error");}
-  };
-
-  function initGoogle(){
-    if(!window.google?.accounts?.id)return false;
-    if(!cfg.googleClientId){$("googleHint").classList.remove("hidden");return true;}
-    google.accounts.id.initialize({client_id:cfg.googleClientId,callback:window.handleGoogleCredential,auto_select:false,cancel_on_tap_outside:true});
-    google.accounts.id.renderButton($("googleButton"),{theme:"outline",size:"large",shape:"pill",text:"continue_with",width:300});
-    return true;
-  }
-
-  let attempts=0;
-  const gt=setInterval(()=>{attempts++;if(initGoogle()||attempts>40)clearInterval(gt);},150);
-
-  (function restore(){
-    const user=savedUser();
-    if(user && token()){ currentUser=user; openLobby(); }
-  })();
+  function token(){return localStorage.getItem("codeClashToken")||""} function savedUser(){try{return JSON.parse(localStorage.getItem("codeClashUser")||"null")}catch(_){return null}}
+  function decodeGoogleCredential(c){const p=String(c||"").split(".");if(p.length<2)throw Error("Invalid Google credential");const payload=p[1].replace(/-/g,"+").replace(/_/g,"/");const json=decodeURIComponent(atob(payload).split("").map(x=>"%"+("00"+x.charCodeAt(0).toString(16)).slice(-2)).join(""));const d=JSON.parse(json);return{name:d.name||d.given_name||"Google Player",email:d.email||"",picture:d.picture||"",provider:"google",sub:d.sub||""}}
+  function setMessage(t="",type=""){const e=$("authMessage");e.textContent=t;e.className="message"+(type?" "+type:"")}
+  function showUser(){$("welcome").textContent=currentUser?.name||"Player";const i=$("userPhoto"),f=$("userInitial");if(currentUser?.picture){i.src=currentUser.picture;i.classList.remove("hidden");f.classList.add("hidden")}else{i.classList.add("hidden");f.classList.remove("hidden");f.textContent=(currentUser?.name||"P").charAt(0).toUpperCase()}}
+  function openLobby(){$("authView").classList.add("hidden");$("lobbyView").classList.remove("hidden");$("gamePanel").classList.add("hidden");$("resultPanel").classList.add("hidden");$("lobbyPanel").classList.remove("hidden");showUser()}
+  function openAuth(){currentUser=null;localStorage.removeItem("codeClashToken");localStorage.removeItem("codeClashUser");$("lobbyView").classList.add("hidden");$("authView").classList.remove("hidden")}
+  function saveSession(d){if(d.token)localStorage.setItem("codeClashToken",d.token);if(d.user)localStorage.setItem("codeClashUser",JSON.stringify(d.user));currentUser=d.user;openLobby()}
+  function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+  function chooseQuestions(){if(selectedMode==="mixed"){const co=shuffle(bank.filter(q=>q.type==="code-output")).slice(0,5),oc=shuffle(bank.filter(q=>q.type==="output-code")).slice(0,5);return shuffle([...co,...oc])}return shuffle(bank.filter(q=>q.type===selectedMode)).slice(0,10)}
+  function startGame(){questions=chooseQuestions();qIndex=0;score=0;correctCount=0;skillStats={};bots.forEach(b=>{b.score=0;b.done=false});$("lobbyPanel").classList.add("hidden");$("resultPanel").classList.add("hidden");$("gamePanel").classList.remove("hidden");renderOpponents();loadQuestion()}
+  function loadQuestion(){clearInterval(timerId);locked=false;selectedIndex=null;secondsLeft=20;roundStartedAt=performance.now();bots.forEach(b=>b.done=false);const q=questions[qIndex];$("roundLabel").textContent=`Question ${qIndex+1}/${questions.length}`;$("topic").textContent=(q.type==="code-output"?"CODE → OUTPUT • ":"OUTPUT → CODE • ")+q.topic.toUpperCase();$("questionPrompt").textContent=q.prompt;$("difficulty").textContent=q.difficulty;$("codeBlock").classList.toggle("hidden",q.type!=="code-output");$("outputBox").classList.toggle("hidden",q.type!=="output-code");$("codeBlock").textContent=q.code||"";$("outputBox").textContent=q.output||"";$("feedback").className="feedback hidden";$("feedback").innerHTML="";$("nextBtn").classList.add("hidden");$("submitBtn").disabled=true;$("timer").textContent=secondsLeft;renderChoices(q);renderScores();renderOpponents();simulateBots(q);timerId=setInterval(()=>{secondsLeft--;$("timer").textContent=Math.max(0,secondsLeft);if(secondsLeft<=0){clearInterval(timerId);finishRound(true)}},1000)}
+  function renderChoices(q){$("choices").innerHTML=q.choices.map((c,i)=>`<button class="mcq-option" type="button" data-index="${i}"><strong>${String.fromCharCode(65+i)}.</strong> <span>${escapeHtml(c).replace(/\n/g,"<br>")}</span></button>`).join("");$("choices").querySelectorAll(".mcq-option").forEach(b=>b.addEventListener("click",()=>{if(locked)return;selectedIndex=Number(b.dataset.index);$("choices").querySelectorAll(".mcq-option").forEach(x=>x.classList.toggle("selected",x===b));$("submitBtn").disabled=false}))}
+  function simulateBots(q){bots.forEach(bot=>{const delay=Math.floor((bot.speed[0]+Math.random()*(bot.speed[1]-bot.speed[0]))*1000);setTimeout(()=>{if(qIndex>=questions.length||locked)return;const penalty=q.difficulty==="Medium"?.08:q.difficulty==="Hard"?.16:0;if(Math.random()<Math.max(.15,bot.skill-penalty)){const sec=Math.min(20,delay/1000);bot.score+=700+Math.round(300*(1-sec/20))}bot.done=true;renderScores();renderOpponents()},delay)})}
+  function finishRound(timedOut=false){if(locked)return;locked=true;clearInterval(timerId);const q=questions[qIndex],elapsed=Math.min(20,(performance.now()-roundStartedAt)/1000),isCorrect=!timedOut&&selectedIndex===q.correct;let earned=0;if(isCorrect){earned=700+Math.max(0,Math.round(300*(1-elapsed/20)));score+=earned;correctCount++}if(!skillStats[q.skill])skillStats[q.skill]={correct:0,total:0};skillStats[q.skill].total++;if(isCorrect)skillStats[q.skill].correct++;$("submitBtn").disabled=true;$("choices").querySelectorAll(".mcq-option").forEach((b,i)=>{b.disabled=true;if(i===q.correct)b.classList.add("correct");else if(i===selectedIndex&&!isCorrect)b.classList.add("wrong")});const fb=$("feedback");fb.className="feedback "+(isCorrect?"good":"bad");fb.innerHTML=`<strong>${timedOut?"Time's up":isCorrect?"Correct! +"+earned:"Not quite"}</strong><div>${escapeHtml(q.explain)}</div>`;$("nextBtn").textContent=qIndex===questions.length-1?"See Final Results":"Next Question";$("nextBtn").classList.remove("hidden");bots.forEach(b=>{if(!b.done)b.done=true});renderScores();renderOpponents()}
+  function standings(){return[{id:"me",name:currentUser?.name||"You",score,me:true},...bots.map(b=>({id:b.id,name:b.name,score:b.score,me:false}))].sort((a,b)=>b.score-a.score||a.name.localeCompare(b.name))}
+  function renderScores(){const s=standings(),r=s.findIndex(x=>x.me)+1;$("score").textContent=score.toLocaleString();$("rank").textContent=`${r}/${s.length}`;$("leaderboardList").innerHTML=s.map((p,i)=>`<div class="leader-row ${p.me?"me":""}"><span class="rank-num">${i+1}</span><div><strong>${escapeHtml(p.me?"You":p.name)}</strong><small>${p.me?"Real player":"Simulated candidate"}</small></div><strong>${p.score.toLocaleString()}</strong></div>`).join("")}
+  function renderOpponents(){$("opponents").innerHTML=bots.map(b=>`<div class="opp ${b.done?"done":""}"><div class="face">${escapeHtml(b.name[0])}</div><strong>${escapeHtml(b.name)}</strong><small>Simulated</small></div>`).join("")}
+  function showResults(){$("gamePanel").classList.add("hidden");$("resultPanel").classList.remove("hidden");const s=standings(),rank=s.findIndex(x=>x.me)+1,accuracy=Math.round(correctCount/questions.length*100);$("finalScore").textContent=score.toLocaleString();$("finalRank").textContent=`${rank}/${s.length}`;$("finalAccuracy").textContent=accuracy+"%";$("skillBars").innerHTML=Object.entries(skillStats).map(([n,v])=>{const p=Math.round(v.correct/v.total*100);return `<div class="skill-row"><span>${escapeHtml(n)}</span><div class="skill-track"><div class="skill-fill" style="width:${p}%"></div></div><strong>${p}%</strong></div>`}).join("");let a="Keep practising Python code reading and reverse reasoning.";if(accuracy>=80)a="Strong performance across code-to-output and output-to-code reasoning.";else if(accuracy>=60)a="Good foundation. More mixed practice should improve consistency.";$("assessment").textContent=a+" This result is currently stored only for this play session."}
+  function escapeHtml(v){return String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+  document.querySelectorAll(".mode").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".mode").forEach(x=>x.classList.remove("active"));b.classList.add("active");selectedMode=b.dataset.mode;$("playBtn").textContent=selectedMode==="mixed"?"Play Mixed Challenge":selectedMode==="code-output"?"Play Code → Output":"Play Output → Code"}));
+  $("submitBtn").addEventListener("click",()=>finishRound(false));$("nextBtn").addEventListener("click",()=>{if(qIndex===questions.length-1)showResults();else{qIndex++;loadQuestion()}});$("playBtn").addEventListener("click",startGame);$("playAgainBtn").addEventListener("click",startGame);$("backLobbyBtn").addEventListener("click",openLobby);$("logoutBtn").addEventListener("click",openAuth);
+  window.handleGoogleCredential=response=>{setMessage("Signing in with Google...");try{const user=decodeGoogleCredential(response.credential);saveSession({token:response.credential,user});setMessage("Signed in.","success")}catch(e){setMessage(e.message||"Google sign-in failed","error")}};
+  function initGoogle(){if(!window.google?.accounts?.id)return false;if(!cfg.googleClientId){$("googleHint").classList.remove("hidden");return true}google.accounts.id.initialize({client_id:cfg.googleClientId,callback:window.handleGoogleCredential,auto_select:false,cancel_on_tap_outside:true});google.accounts.id.renderButton($("googleButton"),{theme:"outline",size:"large",shape:"pill",text:"continue_with",width:300});return true}
+  let attempts=0;const gt=setInterval(()=>{attempts++;if(initGoogle()||attempts>40)clearInterval(gt)},150);(function restore(){const u=savedUser();if(u&&token()){currentUser=u;openLobby()}})();
 })();
