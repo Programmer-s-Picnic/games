@@ -18,6 +18,8 @@
     <p class="small">Keep this window open. Your original lobby remains available for the next scheduled clash.</p>
   </section>
 </main>
+<script src="https://cserver.learnwithchampak.live/games/code-clash/socket.io/socket.io.js"></script>
+<script src="../config.js?v=20261027-1940"></script>
 <script>
 (() => {
   const qs=new URLSearchParams(location.search),ts=Number(qs.get("start")||0),label=qs.get("label")||"your next";
@@ -28,6 +30,30 @@
     document.getElementById("readyCountdown").textContent=`${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
   }
   tick();setInterval(tick,250);
+  const token=localStorage.getItem("codeClashToken")||"";
+  const apiBase=window.CODE_CLASH_CONFIG?.apiBase||"https://cserver.learnwithchampak.live/games/code-clash";
+  const status=document.createElement("p");
+  status.className="small";
+  status.textContent=token?"Connected to lobby…":"Please return to the lobby and sign in again.";
+  document.querySelector("section.card").appendChild(status);
+  if(token&&window.io){
+    const socket=io("https://cserver.learnwithchampak.live",{path:"/games/code-clash/socket.io",auth:{token},transports:["polling"],upgrade:false});
+    socket.on("connect",()=>{status.textContent="Joined. Waiting for the live match to start…";socket.emit("join-next-clash");});
+    socket.on("lobby-state",data=>{
+      if(data?.nextStartAt&&Date.now()<data.nextStartAt){
+        const newLabel=data.nextStartIst||label;
+        document.getElementById("readyTitle").textContent="Joined "+newLabel+" Clash";
+      }
+    });
+    socket.on("match-start",data=>{
+      if(!data?.matchId)return;
+      status.textContent="Match started. Entering arena…";
+      const u=new URL("../play/",location.href);
+      u.searchParams.set("match",data.matchId);
+      location.replace(u.toString());
+    });
+    socket.on("connect_error",e=>{status.textContent="Connection problem: "+e.message;});
+  }
 })();
 </script>
 </body>
