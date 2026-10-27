@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Code Clash Ready | Learn With Champak</title>
+  <meta name="theme-color" content="#0b1020">
+  <link rel="stylesheet" href="../style.css?v=20261027-2430">
+</head>
+<body>
+<header class="brand"><a href="https://www.learnwithchampak.live/" target="_blank" rel="noopener">Learn With Champak</a><span>Code Clash Ready</span></header>
+<main class="shell">
+  <section class="card" style="max-width:760px;margin:8vh auto;text-align:center">
+    <p class="eyebrow">YOU ARE READY</p>
+    <h1 id="readyTitle">Waiting for your Code Clash</h1>
+    <p>This window will automatically switch to your live match when the clash begins.</p>
+    <div id="readyCountdown" class="clash-countdown">--:--:--</div>
+    <p class="small">Keep this window open. Your original lobby remains available for the next scheduled clash.</p>
+  </section>
+</main>
+<script>
+(() => {
+  const qs=new URLSearchParams(location.search),ts=Number(qs.get("start")||0),label=qs.get("label")||"your next";
+  document.getElementById("readyTitle").textContent="Joined "+label+" Clash";
+  function tick(){
+    if(!ts)return;
+    const sec=Math.max(0,Math.ceil((ts-Date.now())/1000)),h=Math.floor(sec/3600),m=Math.floor((sec%3600)/60),s=sec%60;
+    document.getElementById("readyCountdown").textContent=`${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+  }
+  tick();setInterval(tick,250);
+})();
+</script>
+</body>
+</html>
