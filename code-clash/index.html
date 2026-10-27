@@ -13,7 +13,7 @@
   <meta property="og:image" content="https://games.learnwithchampak.live/og.svg">
   <link rel="canonical" href="https://games.learnwithchampak.live/code-clash/">
   <link rel="icon" href="../og.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./style.css?v=20261027-1905">
+  <link rel="stylesheet" href="./style.css?v=20261027-2015">
 </head>
 <body>
   <header class="brand">
@@ -50,15 +50,20 @@
 
       <div id="lobbyPanel" class="playground-grid">
         <section class="card game-card">
-          <p class="eyebrow">GAME 01 • BETA</p>
-          <h2>Python Output Blitz</h2>
-          <p>Ten fast MCQ rounds. Choose Code → Output, Output → Code, or Mixed mode, then beat the simulated candidates.</p>
-          <div class="mode-picker"><button class="mode active" data-mode="mixed" type="button">Mixed</button><button class="mode" data-mode="code-output" type="button">Code → Output</button><button class="mode" data-mode="output-code" type="button">Output → Code</button></div><h3 class="setting-title">Timing</h3><div class="timing-picker"><button class="timing active" data-timing="question" type="button">Per question · 30s</button><button class="timing" data-timing="test" type="button">Per test · 5:00</button><button class="timing" data-timing="untimed" type="button">Untimed</button></div><div class="chips"><span>10 Questions</span><span id="timingChip">30 sec each</span><span>Bots fill empty seats</span></div><button id="playBtn" class="primary big" type="button">Play Mixed Challenge</button>
+          <p class="eyebrow">NEXT LIVE CODE CLASH</p>
+          <h2 id="nextStartLabel">Every :00 and :30 IST</h2>
+          <div id="clashCountdown" class="clash-countdown">--:--:--</div>
+          <p>All Google-signed-in players who are online when the countdown reaches zero are entered automatically.</p>
+          <div class="chips"><span>Mixed MCQ</span><span>10 Questions</span><span>30 sec/question</span><span>100-question bank</span><span>6 seats/room</span></div>
+          <div class="online-summary"><strong id="onlineCount">0</strong><span>real players online</span></div>
+          <div id="onlineUsers" class="online-users"></div>
+          <p class="small">If fewer than 6 real players are available, simulated candidates fill the remaining seats. If more than 6 are online, balanced rooms are created.</p>
         </section>
         <aside class="card rules-card">
-          <h3>How scoring works</h3>
+          <h3>Live clash rules</h3>
           <p><strong>700</strong> points for a correct answer plus up to <strong>300</strong> speed points.</p>
-          <p>Wrong or timed-out answers score 0. Matches have 6 seats: real Google-signed-in players take seats first, and simulated candidates fill only the remaining seats.</p>
+          <p>Questions and answer options are shuffled by the server for every match. All competitors in the same room receive the same question and option order.</p>
+          <p>No button is needed to join: stay signed in and online until the scheduled start.</p>
         </aside>
       </div>
 
@@ -78,7 +83,7 @@
             </div>
             <pre id="codeBlock"><code></code></pre><div id="outputBox" class="output-box hidden"></div><div id="choices" class="mcq-grid" role="radiogroup" aria-label="Answer choices"></div><button id="submitBtn" class="primary" type="button" disabled>Submit Answer</button>
             <div id="feedback" class="feedback hidden" aria-live="polite"></div>
-            <button id="nextBtn" class="secondary hidden" type="button">Next Question</button>
+            <button id="nextBtn" class="secondary hidden" type="button" disabled>Waiting for next question…</button>
           </section>
 
           <aside class="card leaderboard">
@@ -111,7 +116,8 @@
 
   <footer>Developed and maintained by <a href="https://www.learnwithchampak.live/" target="_blank" rel="noopener">Learn With Champak</a></footer>
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <script src="./config.js?v=20261027-1905"></script>
-  <script src="./app.js?v=20261027-1905"></script>
+  <script src="https://cserver.learnwithchampak.live/games/code-clash/socket.io/socket.io.js"></script>
+  <script src="./config.js?v=20261027-2015"></script>
+  <script src="./app.js?v=20261027-2015"></script>
 </body>
 </html>
