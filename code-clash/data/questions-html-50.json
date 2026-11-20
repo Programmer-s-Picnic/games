@@ -1,0 +1,857 @@
+{
+  "version": 1,
+  "language": "html",
+  "count": 50,
+  "questions": [
+    {
+      "id": "HTML001",
+      "type": "code-output",
+      "topic": "Headings",
+      "difficulty": "Easy",
+      "prompt": "What will the browser display?",
+      "code": "<h1>Hello</h1>",
+      "choices": [
+        "A large level-1 heading: Hello",
+        "A normal paragraph: Hello",
+        "A clickable link: Hello",
+        "Nothing"
+      ],
+      "correct": 0,
+      "explain": "h1 creates a level-1 heading.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML002",
+      "type": "code-output",
+      "topic": "Paragraphs",
+      "difficulty": "Easy",
+      "prompt": "What will the browser display?",
+      "code": "<p>Welcome</p>",
+      "choices": [
+        "A paragraph containing Welcome",
+        "A heading containing Welcome",
+        "A button labeled Welcome",
+        "An image named Welcome"
+      ],
+      "correct": 0,
+      "explain": "p creates a paragraph.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML003",
+      "type": "code-output",
+      "topic": "Line Breaks",
+      "difficulty": "Easy",
+      "prompt": "What will the browser display?",
+      "code": "Hello<br>World",
+      "choices": [
+        "Hello and World on separate lines",
+        "Hello World on one line",
+        "Only Hello",
+        "Only World"
+      ],
+      "correct": 0,
+      "explain": "br inserts a line break.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML004",
+      "type": "code-output",
+      "topic": "Strong",
+      "difficulty": "Easy",
+      "prompt": "What will the browser display?",
+      "code": "<strong>Important</strong>",
+      "choices": [
+        "Important with strong importance, usually bold",
+        "Important as a heading",
+        "Important as a hyperlink",
+        "Nothing"
+      ],
+      "correct": 0,
+      "explain": "strong marks strong importance and is usually bold.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML005",
+      "type": "code-output",
+      "topic": "Emphasis",
+      "difficulty": "Easy",
+      "prompt": "What will the browser display?",
+      "code": "<em>Hello</em>",
+      "choices": [
+        "Hello with emphasis, usually italic",
+        "Hello in bold",
+        "Hello as code",
+        "Hello underlined by definition"
+      ],
+      "correct": 0,
+      "explain": "em marks emphasized text and is usually italic.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML006",
+      "type": "code-output",
+      "topic": "Links",
+      "difficulty": "Easy",
+      "prompt": "What does this create?",
+      "code": "<a href=\"https://example.com\">Visit</a>",
+      "choices": [
+        "A link labeled Visit",
+        "A button labeled Visit",
+        "A heading labeled Visit",
+        "An image labeled Visit"
+      ],
+      "correct": 0,
+      "explain": "a with href creates a hyperlink.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML007",
+      "type": "code-output",
+      "topic": "Images",
+      "difficulty": "Easy",
+      "prompt": "What does this create?",
+      "code": "<img src=\"cat.jpg\" alt=\"Cat\">",
+      "choices": [
+        "An image; Cat is fallback/alternative text",
+        "A hyperlink to cat.jpg",
+        "A heading called Cat",
+        "A text input containing Cat"
+      ],
+      "correct": 0,
+      "explain": "img embeds an image and alt provides alternative text.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML008",
+      "type": "code-output",
+      "topic": "Unordered Lists",
+      "difficulty": "Easy",
+      "prompt": "What will this produce?",
+      "code": "<ul><li>Tea</li><li>Coffee</li></ul>",
+      "choices": [
+        "A bulleted list with Tea and Coffee",
+        "A numbered list with Tea and Coffee",
+        "Two headings",
+        "A table with two rows"
+      ],
+      "correct": 0,
+      "explain": "ul creates an unordered list and li creates list items.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML009",
+      "type": "code-output",
+      "topic": "Ordered Lists",
+      "difficulty": "Easy",
+      "prompt": "What will this produce?",
+      "code": "<ol><li>A</li><li>B</li></ol>",
+      "choices": [
+        "A numbered list with A and B",
+        "A bulleted list with A and B",
+        "Two buttons",
+        "Two paragraphs only"
+      ],
+      "correct": 0,
+      "explain": "ol creates an ordered list.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML010",
+      "type": "code-output",
+      "topic": "Tables",
+      "difficulty": "Medium",
+      "prompt": "What structure is created?",
+      "code": "<table><tr><td>A</td><td>B</td></tr></table>",
+      "choices": [
+        "A table with one row and two cells",
+        "A list with two items",
+        "Two text inputs",
+        "A table with two rows and one cell"
+      ],
+      "correct": 0,
+      "explain": "tr creates one row and each td creates a cell.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML011",
+      "type": "code-output",
+      "topic": "Buttons",
+      "difficulty": "Easy",
+      "prompt": "What will the browser display?",
+      "code": "<button>Save</button>",
+      "choices": [
+        "A button labeled Save",
+        "A link labeled Save",
+        "A checkbox labeled Save",
+        "A heading labeled Save"
+      ],
+      "correct": 0,
+      "explain": "button creates a clickable button.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML012",
+      "type": "code-output",
+      "topic": "Inputs",
+      "difficulty": "Easy",
+      "prompt": "What control is created?",
+      "code": "<input type=\"text\" value=\"Champak\">",
+      "choices": [
+        "A text input initially containing Champak",
+        "A button labeled Champak",
+        "A checkbox named Champak",
+        "A paragraph containing Champak"
+      ],
+      "correct": 0,
+      "explain": "input type=text creates a text field; value sets its initial content.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML013",
+      "type": "code-output",
+      "topic": "Checkboxes",
+      "difficulty": "Easy",
+      "prompt": "What control is created?",
+      "code": "<input type=\"checkbox\" checked>",
+      "choices": [
+        "A checked checkbox",
+        "An unchecked radio button",
+        "A text box",
+        "A submit button"
+      ],
+      "correct": 0,
+      "explain": "type=checkbox creates a checkbox and checked selects it initially.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML014",
+      "type": "code-output",
+      "topic": "Radio Buttons",
+      "difficulty": "Easy",
+      "prompt": "What control is created?",
+      "code": "<input type=\"radio\" name=\"x\">",
+      "choices": [
+        "A radio button",
+        "A checkbox",
+        "A text input",
+        "A range slider"
+      ],
+      "correct": 0,
+      "explain": "type=radio creates a radio button.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML015",
+      "type": "code-output",
+      "topic": "Select",
+      "difficulty": "Medium",
+      "prompt": "What interface is created?",
+      "code": "<select><option>Red</option><option>Blue</option></select>",
+      "choices": [
+        "A drop-down with Red and Blue",
+        "Two radio buttons",
+        "Two checkboxes",
+        "A table with Red and Blue"
+      ],
+      "correct": 0,
+      "explain": "select with option elements creates a drop-down list.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML016",
+      "type": "code-output",
+      "topic": "Textareas",
+      "difficulty": "Easy",
+      "prompt": "What is displayed?",
+      "code": "<textarea>Hello</textarea>",
+      "choices": [
+        "A multi-line text area containing Hello",
+        "A single-line text input",
+        "A paragraph containing Hello",
+        "A heading containing Hello"
+      ],
+      "correct": 0,
+      "explain": "textarea creates a multi-line text control.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML017",
+      "type": "code-output",
+      "topic": "Details",
+      "difficulty": "Medium",
+      "prompt": "What does this create?",
+      "code": "<details><summary>More</summary><p>Hidden text</p></details>",
+      "choices": [
+        "A disclosure widget labeled More",
+        "A permanent heading and paragraph only",
+        "A select menu",
+        "A dialog box that opens automatically"
+      ],
+      "correct": 0,
+      "explain": "details/summary creates an expandable disclosure widget.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML018",
+      "type": "code-output",
+      "topic": "Progress",
+      "difficulty": "Medium",
+      "prompt": "What does this represent?",
+      "code": "<progress value=\"40\" max=\"100\"></progress>",
+      "choices": [
+        "Progress at 40%",
+        "Progress at 100%",
+        "A range input set to 40",
+        "A number input"
+      ],
+      "correct": 0,
+      "explain": "progress shows 40 out of 100, i.e. 40%.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML019",
+      "type": "code-output",
+      "topic": "Entities",
+      "difficulty": "Medium",
+      "prompt": "What text is displayed?",
+      "code": "Tom &amp; Jerry",
+      "choices": [
+        "Tom & Jerry",
+        "Tom &amp; Jerry",
+        "Tom Jerry",
+        "Tom + Jerry"
+      ],
+      "correct": 0,
+      "explain": "&amp; represents an ampersand character.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML020",
+      "type": "code-output",
+      "topic": "Superscript",
+      "difficulty": "Easy",
+      "prompt": "What is displayed?",
+      "code": "x<sup>2</sup>",
+      "choices": [
+        "x with 2 as superscript",
+        "x with 2 as subscript",
+        "x2 in bold",
+        "Only 2"
+      ],
+      "correct": 0,
+      "explain": "sup displays text as superscript.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML021",
+      "type": "code-output",
+      "topic": "Subscript",
+      "difficulty": "Easy",
+      "prompt": "What is displayed?",
+      "code": "H<sub>2</sub>O",
+      "choices": [
+        "H₂O with 2 as subscript",
+        "H²O with 2 as superscript",
+        "H2O as a heading",
+        "Only H and O"
+      ],
+      "correct": 0,
+      "explain": "sub displays text as subscript.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML022",
+      "type": "code-output",
+      "topic": "Horizontal Rule",
+      "difficulty": "Easy",
+      "prompt": "What does the hr element create?",
+      "code": "<p>A</p><hr><p>B</p>",
+      "choices": [
+        "A thematic horizontal break between A and B",
+        "A line break only inside A",
+        "A table border",
+        "A vertical line"
+      ],
+      "correct": 0,
+      "explain": "hr represents a thematic break, commonly shown as a horizontal rule.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML023",
+      "type": "code-output",
+      "topic": "Preformatted Text",
+      "difficulty": "Medium",
+      "prompt": "How is spacing handled?",
+      "code": "<pre>A   B</pre>",
+      "choices": [
+        "The multiple spaces are preserved",
+        "All spaces are removed",
+        "It becomes a heading",
+        "It becomes a list"
+      ],
+      "correct": 0,
+      "explain": "pre preserves whitespace and line breaks.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML024",
+      "type": "code-output",
+      "topic": "Labels",
+      "difficulty": "Medium",
+      "prompt": "What is the purpose of this label?",
+      "code": "<label for=\"email\">Email</label><input id=\"email\">",
+      "choices": [
+        "It associates the text Email with the input",
+        "It submits the form",
+        "It hides the input",
+        "It makes the input read-only"
+      ],
+      "correct": 0,
+      "explain": "for matches the input id, associating the label with that control.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML025",
+      "type": "code-output",
+      "topic": "Semantic HTML",
+      "difficulty": "Medium",
+      "prompt": "What does this element represent?",
+      "code": "<nav><a href='/'>Home</a></nav>",
+      "choices": [
+        "A navigation section containing a Home link",
+        "A page footer",
+        "A form",
+        "A table row"
+      ],
+      "correct": 0,
+      "explain": "nav represents a section of navigation links.",
+      "skill": "Semantic HTML"
+    },
+    {
+      "id": "HTML026",
+      "type": "output-code",
+      "topic": "Headings",
+      "difficulty": "Easy",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "A level-2 heading displaying About",
+      "choices": [
+        "<h2>About</h2>",
+        "<p>About</p>",
+        "<h1>About</h1>",
+        "<strong>About</strong>"
+      ],
+      "correct": 0,
+      "explain": "h2 creates a level-2 heading.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML027",
+      "type": "output-code",
+      "topic": "Paragraphs",
+      "difficulty": "Easy",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "A paragraph displaying Hello World",
+      "choices": [
+        "<p>Hello World</p>",
+        "<h3>Hello World</h3>",
+        "<button>Hello World</button>",
+        "<a>Hello World</a>"
+      ],
+      "correct": 0,
+      "explain": "p creates a paragraph.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML028",
+      "type": "output-code",
+      "topic": "Links",
+      "difficulty": "Easy",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "A clickable link labeled Google that points to https://google.com",
+      "choices": [
+        "<a href=\"https://google.com\">Google</a>",
+        "<link href=\"https://google.com\">Google</link>",
+        "<button href=\"https://google.com\">Google</button>",
+        "<p href=\"https://google.com\">Google</p>"
+      ],
+      "correct": 0,
+      "explain": "a with href creates the requested hyperlink.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML029",
+      "type": "output-code",
+      "topic": "Images",
+      "difficulty": "Easy",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "An image loaded from logo.png with alternative text Logo",
+      "choices": [
+        "<img src=\"logo.png\" alt=\"Logo\">",
+        "<image href=\"logo.png\">Logo</image>",
+        "<a src=\"logo.png\">Logo</a>",
+        "<img href=\"logo.png\">"
+      ],
+      "correct": 0,
+      "explain": "img uses src for the image URL and alt for alternative text.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML030",
+      "type": "output-code",
+      "topic": "Unordered Lists",
+      "difficulty": "Easy",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "A bulleted list containing One and Two",
+      "choices": [
+        "<ul><li>One</li><li>Two</li></ul>",
+        "<ol><li>One</li><li>Two</li></ol>",
+        "<p>One</p><p>Two</p>",
+        "<table><tr><td>One</td><td>Two</td></tr></table>"
+      ],
+      "correct": 0,
+      "explain": "ul creates a bulleted list.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML031",
+      "type": "output-code",
+      "topic": "Ordered Lists",
+      "difficulty": "Easy",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "A numbered list containing One and Two",
+      "choices": [
+        "<ol><li>One</li><li>Two</li></ol>",
+        "<ul><li>One</li><li>Two</li></ul>",
+        "<list><item>One</item><item>Two</item></list>",
+        "<p>1 One 2 Two</p>"
+      ],
+      "correct": 0,
+      "explain": "ol creates a numbered/ordered list.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML032",
+      "type": "output-code",
+      "topic": "Tables",
+      "difficulty": "Medium",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "A table row with cells Name and Age",
+      "choices": [
+        "<table><tr><td>Name</td><td>Age</td></tr></table>",
+        "<table><td><tr>Name</tr><tr>Age</tr></td></table>",
+        "<ul><li>Name</li><li>Age</li></ul>",
+        "<p>Name Age</p>"
+      ],
+      "correct": 0,
+      "explain": "tr is the row and td elements are its cells.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML033",
+      "type": "output-code",
+      "topic": "Buttons",
+      "difficulty": "Easy",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "A button labeled Submit",
+      "choices": [
+        "<button>Submit</button>",
+        "<input type='text' value='Submit'>",
+        "<a>Submit</a>",
+        "<label>Submit</label>"
+      ],
+      "correct": 0,
+      "explain": "button creates a push button.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML034",
+      "type": "output-code",
+      "topic": "Inputs",
+      "difficulty": "Easy",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "A password input",
+      "choices": [
+        "<input type=\"password\">",
+        "<input type=\"text\">",
+        "<input type=\"email\">",
+        "<textarea type=\"password\"></textarea>"
+      ],
+      "correct": 0,
+      "explain": "type=password creates a password field.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML035",
+      "type": "output-code",
+      "topic": "Checkboxes",
+      "difficulty": "Easy",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "An initially checked checkbox",
+      "choices": [
+        "<input type=\"checkbox\" checked>",
+        "<input type=\"radio\" checked>",
+        "<input type=\"checkbox\">",
+        "<input type=\"text\" checked>"
+      ],
+      "correct": 0,
+      "explain": "checkbox plus checked gives the requested state.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML036",
+      "type": "output-code",
+      "topic": "Radio Buttons",
+      "difficulty": "Easy",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "A radio button named size",
+      "choices": [
+        "<input type=\"radio\" name=\"size\">",
+        "<input type=\"checkbox\" name=\"size\">",
+        "<input type=\"text\" name=\"size\">",
+        "<radio name=\"size\"></radio>"
+      ],
+      "correct": 0,
+      "explain": "type=radio creates the radio control.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML037",
+      "type": "output-code",
+      "topic": "Select",
+      "difficulty": "Medium",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "A drop-down containing India and Japan",
+      "choices": [
+        "<select><option>India</option><option>Japan</option></select>",
+        "<ul><li>India</li><li>Japan</li></ul>",
+        "<input value='India Japan'>",
+        "<datalist>India Japan</datalist>"
+      ],
+      "correct": 0,
+      "explain": "select with option elements creates the drop-down.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML038",
+      "type": "output-code",
+      "topic": "Textarea",
+      "difficulty": "Easy",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "A multi-line text box initially containing Notes",
+      "choices": [
+        "<textarea>Notes</textarea>",
+        "<input type='text'>Notes",
+        "<p>Notes</p>",
+        "<pre>Notes</pre>"
+      ],
+      "correct": 0,
+      "explain": "textarea is the multi-line text control.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML039",
+      "type": "output-code",
+      "topic": "Line Breaks",
+      "difficulty": "Easy",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "Hello on one line and World on the next",
+      "choices": [
+        "Hello<br>World",
+        "Hello<hr>World",
+        "<p>Hello World</p>",
+        "<span>Hello World</span>"
+      ],
+      "correct": 0,
+      "explain": "br inserts a line break.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML040",
+      "type": "output-code",
+      "topic": "Strong",
+      "difficulty": "Easy",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "The word Warning with strong importance",
+      "choices": [
+        "<strong>Warning</strong>",
+        "<em>Warning</em>",
+        "<small>Warning</small>",
+        "<code>Warning</code>"
+      ],
+      "correct": 0,
+      "explain": "strong marks strong importance.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML041",
+      "type": "output-code",
+      "topic": "Emphasis",
+      "difficulty": "Easy",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "The word Note emphasized",
+      "choices": [
+        "<em>Note</em>",
+        "<strong>Note</strong>",
+        "<mark>Note</mark>",
+        "<sup>Note</sup>"
+      ],
+      "correct": 0,
+      "explain": "em represents stress emphasis.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML042",
+      "type": "output-code",
+      "topic": "Entities",
+      "difficulty": "Medium",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "5 < 10",
+      "choices": [
+        "5 &lt; 10",
+        "5 &gt; 10",
+        "5 &amp; 10",
+        "5 &quot; 10"
+      ],
+      "correct": 0,
+      "explain": "&lt; represents the less-than character.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML043",
+      "type": "output-code",
+      "topic": "Superscript",
+      "difficulty": "Easy",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "E = mc² with 2 as superscript",
+      "choices": [
+        "E = mc<sup>2</sup>",
+        "E = mc<sub>2</sub>",
+        "<sup>E = mc2</sup>",
+        "E = <strong>mc2</strong>"
+      ],
+      "correct": 0,
+      "explain": "sup creates superscript text.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML044",
+      "type": "output-code",
+      "topic": "Subscript",
+      "difficulty": "Easy",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "CO₂ with 2 as subscript",
+      "choices": [
+        "CO<sub>2</sub>",
+        "CO<sup>2</sup>",
+        "<sub>CO2</sub>",
+        "CO<strong>2</strong>"
+      ],
+      "correct": 0,
+      "explain": "sub creates subscript text.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML045",
+      "type": "output-code",
+      "topic": "Details",
+      "difficulty": "Medium",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "An expandable section labeled Details",
+      "choices": [
+        "<details><summary>Details</summary><p>More</p></details>",
+        "<select><option>Details</option></select>",
+        "<dialog>Details</dialog>",
+        "<section open>Details</section>"
+      ],
+      "correct": 0,
+      "explain": "details and summary create a disclosure widget.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML046",
+      "type": "output-code",
+      "topic": "Progress",
+      "difficulty": "Medium",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "A progress indicator at 75 out of 100",
+      "choices": [
+        "<progress value=\"75\" max=\"100\"></progress>",
+        "<meter value=\"75\"></meter>",
+        "<input type=\"range\" value=\"75\">",
+        "<progress value=\"100\" max=\"75\"></progress>"
+      ],
+      "correct": 0,
+      "explain": "progress with value 75 and max 100 represents 75%.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML047",
+      "type": "output-code",
+      "topic": "Semantic HTML",
+      "difficulty": "Medium",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "A page footer containing Copyright",
+      "choices": [
+        "<footer>Copyright</footer>",
+        "<header>Copyright</header>",
+        "<nav>Copyright</nav>",
+        "<main>Copyright</main>"
+      ],
+      "correct": 0,
+      "explain": "footer represents footer content.",
+      "skill": "Semantic HTML"
+    },
+    {
+      "id": "HTML048",
+      "type": "output-code",
+      "topic": "Semantic HTML",
+      "difficulty": "Medium",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "The primary content area containing Article",
+      "choices": [
+        "<main>Article</main>",
+        "<aside>Article</aside>",
+        "<nav>Article</nav>",
+        "<footer>Article</footer>"
+      ],
+      "correct": 0,
+      "explain": "main represents the dominant content of the document body.",
+      "skill": "Semantic HTML"
+    },
+    {
+      "id": "HTML049",
+      "type": "output-code",
+      "topic": "Forms",
+      "difficulty": "Medium",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "A form that submits using POST",
+      "choices": [
+        "<form method=\"post\"></form>",
+        "<form method=\"get\"></form>",
+        "<form type=\"post\"></form>",
+        "<post></post>"
+      ],
+      "correct": 0,
+      "explain": "The form method attribute selects the HTTP method.",
+      "skill": "HTML Basics"
+    },
+    {
+      "id": "HTML050",
+      "type": "output-code",
+      "topic": "Labels",
+      "difficulty": "Medium",
+      "prompt": "Which HTML code produces this output/structure?",
+      "output": "A label associated with an input whose id is user",
+      "choices": [
+        "<label for=\"user\">User</label><input id=\"user\">",
+        "<label id=\"user\">User</label><input for=\"user\">",
+        "<label name=\"user\">User</label><input name=\"user\">",
+        "<label>User</label><input id=\"other\">"
+      ],
+      "correct": 0,
+      "explain": "The label for value must match the control id.",
+      "skill": "HTML Basics"
+    }
+  ]
+}
