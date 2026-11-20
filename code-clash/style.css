@@ -16,3 +16,8 @@
 .online-user-meta strong{display:block}
 .online-user-meta small{display:block;color:#86efac}
 .online-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e}
+
+.arena-settings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}
+.arena-settings label{display:grid;gap:7px;color:#aeb9d8;font-weight:700}
+.arena-settings select{width:100%;padding:12px 14px;border:1px solid #33436f;border-radius:12px;background:#121a30;color:#eef2ff;font:inherit}
+@media(max-width:640px){.arena-settings{grid-template-columns:1fr}}
