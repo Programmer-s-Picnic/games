@@ -22,8 +22,8 @@
 <script src="../config.js?v=20261027-1940"></script>
 <script>
 (() => {
-  const qs=new URLSearchParams(location.search),ts=Number(qs.get("start")||0),label=qs.get("label")||"your next";
-  document.getElementById("readyTitle").textContent="Joined "+label+" Clash";
+  const qs=new URLSearchParams(location.search),ts=Number(qs.get("start")||0),label=qs.get("label")||"your next",language=qs.get("language")==="html"?"html":"python",mode=["mixed","code-output","output-code"].includes(qs.get("mode"))?qs.get("mode"):"mixed";
+  const langLabel=language==="html"?"HTML":"Python",modeLabel=mode==="code-output"?"Code → Output":mode==="output-code"?"Output → Code":"Mixed";document.getElementById("readyTitle").textContent="Joined "+label+" "+langLabel+" Clash";
   function tick(){
     if(!ts)return;
     const sec=Math.max(0,Math.ceil((ts-Date.now())/1000)),h=Math.floor(sec/3600),m=Math.floor((sec%3600)/60),s=sec%60;
@@ -38,11 +38,11 @@
   document.querySelector("section.card").appendChild(status);
   if(token&&window.io){
     const socket=io("https://cserver.learnwithchampak.live",{path:"/games/code-clash/socket.io",auth:{token},transports:["polling"],upgrade:false});
-    socket.on("connect",()=>{status.textContent="Joined. Waiting for the live match to start…";socket.emit("join-next-clash");});
+    socket.on("connect",()=>{status.textContent="Joined "+langLabel+" • "+modeLabel+". Waiting for the live match to start…";socket.emit("join-next-clash",{language,mode});});
     socket.on("lobby-state",data=>{
       if(data?.nextStartAt&&Date.now()<data.nextStartAt){
         const newLabel=data.nextStartIst||label;
-        document.getElementById("readyTitle").textContent="Joined "+newLabel+" Clash";
+        document.getElementById("readyTitle").textContent="Joined "+newLabel+" "+langLabel+" Clash";
       }
     });
     socket.on("match-start",data=>{
