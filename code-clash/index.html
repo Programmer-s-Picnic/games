@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Python Output Blitz | Code Clash</title>
+  <title>Code Clash | Python & HTML</title>
   <meta name="description" content="Play Python Output Blitz on Code Clash by Learn With Champak. Sign in with Google and compete against simulated candidates.">
   <meta name="theme-color" content="#0b1020">
   <meta property="og:title" content="Python Output Blitz | Code Clash">
@@ -18,15 +18,15 @@
 <body>
   <header class="brand">
     <a href="https://www.learnwithchampak.live/" target="_blank" rel="noopener">Learn With Champak</a>
-    <span>Code Clash • Python Output Blitz</span>
+    <span>Code Clash • Python & HTML</span>
   </header>
 
   <main class="shell">
     <section id="authView" class="auth-stage">
       <div class="hero">
         <p class="eyebrow">CODE CLASH PLAYGROUND</p>
-        <h1>Python Output Blitz</h1>
-        <p>Read real Python code, predict the output, and race against simulated candidates.</p>
+        <h1>Python & HTML Code Clash</h1>
+        <p>Join scheduled Python or HTML code-reading clashes with real players and simulated candidates.</p>
       </div>
       <div class="card auth-card">
         <div class="arena-badge">&lt;/&gt;</div>
@@ -53,8 +53,23 @@
           <p class="eyebrow">NEXT LIVE CODE CLASH</p>
           <h2 id="nextStartLabel">Every :00 and :30 IST</h2>
           <div id="clashCountdown" class="clash-countdown">--:--:--</div>
-          <p>All Google-signed-in players who are online when the countdown reaches zero are entered automatically.</p>
-          <div class="chips"><span>Mixed MCQ</span><span>10 Questions</span><span>30 sec/question</span><span>100-question bank</span><span>6 seats/room</span></div>
+          <p>Choose an arena, join the scheduled clash, and keep the Ready window open until the countdown reaches zero.</p>
+          <div class="arena-settings">
+  <label>Language
+    <select id="arenaLanguage">
+      <option value="python">Python</option>
+      <option value="html">HTML</option>
+    </select>
+  </label>
+  <label>Quiz format
+    <select id="arenaMode">
+      <option value="mixed">Mixed</option>
+      <option value="code-output">Code → Output</option>
+      <option value="output-code">Output → Code</option>
+    </select>
+  </label>
+</div>
+<div class="chips"><span>10 Questions</span><span>30 sec/question</span><span>Python: 100</span><span>HTML: 50</span><span>6 seats/room</span></div>
           <div class="online-summary"><strong id="onlineCount">0</strong><span>players waiting for next clash</span></div>
           <div id="onlineUsers" class="online-users"></div><div id="matchHandoff" class="card hidden"><h3>Your Code Clash has started</h3><p>The waiting lobby has already moved on to the next clash.</p><a id="enterMatchLink" class="primary big" target="_blank" rel="noopener">Enter Live Match</a></div>
           <h3 class="setting-title">All logged-in users</h3>
