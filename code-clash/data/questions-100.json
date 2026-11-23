@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "count": 200,
+  "version": 4,
+  "count": 270,
   "questions": [
     {
       "id": "PY001",
@@ -3401,6 +3401,1196 @@
       "correct": 0,
       "explain": "The first program produces {'A': 2, 'B': 1}.",
       "skill": "Pandas"
+    },
+    {
+      "id": "PY201",
+      "type": "code-output",
+      "topic": "Sets",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "a={1,2,2,3}\nprint(len(a))",
+      "choices": [
+        "3",
+        "4",
+        "2",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Sets lesson behavior.",
+      "skill": "Sets"
+    },
+    {
+      "id": "PY202",
+      "type": "output-code",
+      "topic": "Sets",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "3",
+      "choices": [
+        "a={1,2,2,3}\nprint(len(a))",
+        "print(\"4\")",
+        "print(\"2\")",
+        "print(\"0\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 3.",
+      "skill": "Sets"
+    },
+    {
+      "id": "PY203",
+      "type": "code-output",
+      "topic": "Sets",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "a={1,2,3}\nprint(2 in a)",
+      "choices": [
+        "True",
+        "False",
+        "1",
+        "None"
+      ],
+      "correct": 0,
+      "explain": "This follows the Sets lesson behavior.",
+      "skill": "Sets"
+    },
+    {
+      "id": "PY204",
+      "type": "output-code",
+      "topic": "Sets",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "True",
+      "choices": [
+        "a={1,2,3}\nprint(2 in a)",
+        "print(\"False\")",
+        "print(\"1\")",
+        "print(\"None\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces True.",
+      "skill": "Sets"
+    },
+    {
+      "id": "PY205",
+      "type": "code-output",
+      "topic": "Sets",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "a={1,2}; b={2,3}\nprint(sorted(a | b))",
+      "choices": [
+        "[1, 2, 3]",
+        "Error",
+        "None",
+        "[1, 2, 3] "
+      ],
+      "correct": 0,
+      "explain": "This follows the Sets lesson behavior.",
+      "skill": "Sets"
+    },
+    {
+      "id": "PY206",
+      "type": "output-code",
+      "topic": "Sets",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "[1, 2, 3]",
+      "choices": [
+        "a={1,2}; b={2,3}\nprint(sorted(a | b))",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"[1, 2, 3] \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces [1, 2, 3].",
+      "skill": "Sets"
+    },
+    {
+      "id": "PY207",
+      "type": "code-output",
+      "topic": "Sets",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "a={1,2,3}; b={2,3,4}\nprint(sorted(a & b))",
+      "choices": [
+        "[2, 3]",
+        "Error",
+        "None",
+        "[2, 3] "
+      ],
+      "correct": 0,
+      "explain": "This follows the Sets lesson behavior.",
+      "skill": "Sets"
+    },
+    {
+      "id": "PY208",
+      "type": "output-code",
+      "topic": "Sets",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "[2, 3]",
+      "choices": [
+        "a={1,2,3}; b={2,3,4}\nprint(sorted(a & b))",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"[2, 3] \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces [2, 3].",
+      "skill": "Sets"
+    },
+    {
+      "id": "PY209",
+      "type": "code-output",
+      "topic": "Sets",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "a=frozenset([1,2,2])\nprint(len(a))",
+      "choices": [
+        "2",
+        "3",
+        "1",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Sets lesson behavior.",
+      "skill": "Sets"
+    },
+    {
+      "id": "PY210",
+      "type": "output-code",
+      "topic": "Sets",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "2",
+      "choices": [
+        "a=frozenset([1,2,2])\nprint(len(a))",
+        "print(\"3\")",
+        "print(\"1\")",
+        "print(\"0\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 2.",
+      "skill": "Sets"
+    },
+    {
+      "id": "PY211",
+      "type": "code-output",
+      "topic": "Try & Except",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "try:\n    print(10//2)\nexcept ZeroDivisionError:\n    print(\"Error\")",
+      "choices": [
+        "5",
+        "6",
+        "4",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Try & Except lesson behavior.",
+      "skill": "Try & Except"
+    },
+    {
+      "id": "PY212",
+      "type": "output-code",
+      "topic": "Try & Except",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "5",
+      "choices": [
+        "try:\n    print(10//2)\nexcept ZeroDivisionError:\n    print(\"Error\")",
+        "print(\"6\")",
+        "print(\"4\")",
+        "print(\"0\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 5.",
+      "skill": "Try & Except"
+    },
+    {
+      "id": "PY213",
+      "type": "code-output",
+      "topic": "Try & Except",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "try:\n    print(1/0)\nexcept ZeroDivisionError:\n    print(\"Zero\")",
+      "choices": [
+        "Zero",
+        "Error",
+        "None",
+        "Zero "
+      ],
+      "correct": 0,
+      "explain": "This follows the Try & Except lesson behavior.",
+      "skill": "Try & Except"
+    },
+    {
+      "id": "PY214",
+      "type": "output-code",
+      "topic": "Try & Except",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "Zero",
+      "choices": [
+        "try:\n    print(1/0)\nexcept ZeroDivisionError:\n    print(\"Zero\")",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"Zero \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces Zero.",
+      "skill": "Try & Except"
+    },
+    {
+      "id": "PY215",
+      "type": "code-output",
+      "topic": "Try & Except",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "try:\n    int(\"x\")\nexcept ValueError:\n    print(\"Bad\")",
+      "choices": [
+        "Bad",
+        "Error",
+        "None",
+        "Bad "
+      ],
+      "correct": 0,
+      "explain": "This follows the Try & Except lesson behavior.",
+      "skill": "Try & Except"
+    },
+    {
+      "id": "PY216",
+      "type": "output-code",
+      "topic": "Try & Except",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "Bad",
+      "choices": [
+        "try:\n    int(\"x\")\nexcept ValueError:\n    print(\"Bad\")",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"Bad \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces Bad.",
+      "skill": "Try & Except"
+    },
+    {
+      "id": "PY217",
+      "type": "code-output",
+      "topic": "Try & Except",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "try:\n    print(\"A\")\nfinally:\n    print(\"B\")",
+      "choices": [
+        "A\nB",
+        "Error",
+        "None",
+        "A\nB "
+      ],
+      "correct": 0,
+      "explain": "This follows the Try & Except lesson behavior.",
+      "skill": "Try & Except"
+    },
+    {
+      "id": "PY218",
+      "type": "output-code",
+      "topic": "Try & Except",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "A\nB",
+      "choices": [
+        "try:\n    print(\"A\")\nfinally:\n    print(\"B\")",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"A\\nB \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces A\nB.",
+      "skill": "Try & Except"
+    },
+    {
+      "id": "PY219",
+      "type": "code-output",
+      "topic": "Try & Except",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "try:\n    x=5\nexcept Exception:\n    x=0\nelse:\n    print(x)",
+      "choices": [
+        "5",
+        "6",
+        "4",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Try & Except lesson behavior.",
+      "skill": "Try & Except"
+    },
+    {
+      "id": "PY220",
+      "type": "output-code",
+      "topic": "Try & Except",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "5",
+      "choices": [
+        "try:\n    x=5\nexcept Exception:\n    x=0\nelse:\n    print(x)",
+        "print(\"6\")",
+        "print(\"4\")",
+        "print(\"0\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 5.",
+      "skill": "Try & Except"
+    },
+    {
+      "id": "PY221",
+      "type": "code-output",
+      "topic": "Sorting",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "a=[3,1,2]\na.sort()\nprint(a)",
+      "choices": [
+        "[1, 2, 3]",
+        "Error",
+        "None",
+        "[1, 2, 3] "
+      ],
+      "correct": 0,
+      "explain": "This follows the Sorting lesson behavior.",
+      "skill": "Sorting"
+    },
+    {
+      "id": "PY222",
+      "type": "output-code",
+      "topic": "Sorting",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "[1, 2, 3]",
+      "choices": [
+        "a=[3,1,2]\na.sort()\nprint(a)",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"[1, 2, 3] \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces [1, 2, 3].",
+      "skill": "Sorting"
+    },
+    {
+      "id": "PY223",
+      "type": "code-output",
+      "topic": "Sorting",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "a=[3,1,2]\nprint(sorted(a, reverse=True))",
+      "choices": [
+        "[3, 2, 1]",
+        "Error",
+        "None",
+        "[3, 2, 1] "
+      ],
+      "correct": 0,
+      "explain": "This follows the Sorting lesson behavior.",
+      "skill": "Sorting"
+    },
+    {
+      "id": "PY224",
+      "type": "output-code",
+      "topic": "Sorting",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "[3, 2, 1]",
+      "choices": [
+        "a=[3,1,2]\nprint(sorted(a, reverse=True))",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"[3, 2, 1] \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces [3, 2, 1].",
+      "skill": "Sorting"
+    },
+    {
+      "id": "PY225",
+      "type": "code-output",
+      "topic": "Sorting",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "a=[\"bbb\",\"a\",\"cc\"]\nprint(sorted(a,key=len))",
+      "choices": [
+        "['a', 'cc', 'bbb']",
+        "Error",
+        "None",
+        "['a', 'cc', 'bbb'] "
+      ],
+      "correct": 0,
+      "explain": "This follows the Sorting lesson behavior.",
+      "skill": "Sorting"
+    },
+    {
+      "id": "PY226",
+      "type": "output-code",
+      "topic": "Sorting",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "['a', 'cc', 'bbb']",
+      "choices": [
+        "a=[\"bbb\",\"a\",\"cc\"]\nprint(sorted(a,key=len))",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"['a', 'cc', 'bbb'] \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces ['a', 'cc', 'bbb'].",
+      "skill": "Sorting"
+    },
+    {
+      "id": "PY227",
+      "type": "code-output",
+      "topic": "Sorting",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "a=[3,1,2]\nb=sorted(a)\nprint(a)",
+      "choices": [
+        "[3, 1, 2]",
+        "Error",
+        "None",
+        "[3, 1, 2] "
+      ],
+      "correct": 0,
+      "explain": "This follows the Sorting lesson behavior.",
+      "skill": "Sorting"
+    },
+    {
+      "id": "PY228",
+      "type": "output-code",
+      "topic": "Sorting",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "[3, 1, 2]",
+      "choices": [
+        "a=[3,1,2]\nb=sorted(a)\nprint(a)",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"[3, 1, 2] \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces [3, 1, 2].",
+      "skill": "Sorting"
+    },
+    {
+      "id": "PY229",
+      "type": "code-output",
+      "topic": "Sorting",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "a=[(\"A\",2),(\"B\",1)]\nprint(sorted(a,key=lambda x:x[1]))",
+      "choices": [
+        "[('B', 1), ('A', 2)]",
+        "Error",
+        "None",
+        "[('B', 1), ('A', 2)] "
+      ],
+      "correct": 0,
+      "explain": "This follows the Sorting lesson behavior.",
+      "skill": "Sorting"
+    },
+    {
+      "id": "PY230",
+      "type": "output-code",
+      "topic": "Sorting",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "[('B', 1), ('A', 2)]",
+      "choices": [
+        "a=[(\"A\",2),(\"B\",1)]\nprint(sorted(a,key=lambda x:x[1]))",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"[('B', 1), ('A', 2)] \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces [('B', 1), ('A', 2)].",
+      "skill": "Sorting"
+    },
+    {
+      "id": "PY231",
+      "type": "code-output",
+      "topic": "OOP",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "class A:\n    def __init__(self,x): self.x=x\na=A(5)\nprint(a.x)",
+      "choices": [
+        "5",
+        "6",
+        "4",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the OOP lesson behavior.",
+      "skill": "OOP"
+    },
+    {
+      "id": "PY232",
+      "type": "output-code",
+      "topic": "OOP",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "5",
+      "choices": [
+        "class A:\n    def __init__(self,x): self.x=x\na=A(5)\nprint(a.x)",
+        "print(\"6\")",
+        "print(\"4\")",
+        "print(\"0\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 5.",
+      "skill": "OOP"
+    },
+    {
+      "id": "PY233",
+      "type": "code-output",
+      "topic": "OOP",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "class A:\n    def f(self): return 7\nprint(A().f())",
+      "choices": [
+        "7",
+        "8",
+        "6",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the OOP lesson behavior.",
+      "skill": "OOP"
+    },
+    {
+      "id": "PY234",
+      "type": "output-code",
+      "topic": "OOP",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "7",
+      "choices": [
+        "class A:\n    def f(self): return 7\nprint(A().f())",
+        "print(\"8\")",
+        "print(\"6\")",
+        "print(\"0\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 7.",
+      "skill": "OOP"
+    },
+    {
+      "id": "PY235",
+      "type": "code-output",
+      "topic": "OOP",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "class A:\n    def __str__(self): return \"Hello\"\nprint(A())",
+      "choices": [
+        "Hello",
+        "Error",
+        "None",
+        "Hello "
+      ],
+      "correct": 0,
+      "explain": "This follows the OOP lesson behavior.",
+      "skill": "OOP"
+    },
+    {
+      "id": "PY236",
+      "type": "output-code",
+      "topic": "OOP",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "Hello",
+      "choices": [
+        "class A:\n    def __str__(self): return \"Hello\"\nprint(A())",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"Hello \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces Hello.",
+      "skill": "OOP"
+    },
+    {
+      "id": "PY237",
+      "type": "code-output",
+      "topic": "OOP",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "class A:\n    x=3\nprint(A.x)",
+      "choices": [
+        "3",
+        "4",
+        "2",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the OOP lesson behavior.",
+      "skill": "OOP"
+    },
+    {
+      "id": "PY238",
+      "type": "output-code",
+      "topic": "OOP",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "3",
+      "choices": [
+        "class A:\n    x=3\nprint(A.x)",
+        "print(\"4\")",
+        "print(\"2\")",
+        "print(\"0\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 3.",
+      "skill": "OOP"
+    },
+    {
+      "id": "PY239",
+      "type": "code-output",
+      "topic": "OOP",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "class A:\n    def __len__(self): return 4\nprint(len(A()))",
+      "choices": [
+        "4",
+        "5",
+        "3",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the OOP lesson behavior.",
+      "skill": "OOP"
+    },
+    {
+      "id": "PY240",
+      "type": "output-code",
+      "topic": "OOP",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "4",
+      "choices": [
+        "class A:\n    def __len__(self): return 4\nprint(len(A()))",
+        "print(\"5\")",
+        "print(\"3\")",
+        "print(\"0\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 4.",
+      "skill": "OOP"
+    },
+    {
+      "id": "PY241",
+      "type": "code-output",
+      "topic": "Pandas CSV I/O",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\nfrom io import StringIO\ns=StringIO(\"A\\n1\\n2\\n\")\ndf=pd.read_csv(s)\nprint(df[\"A\"].sum())",
+      "choices": [
+        "3",
+        "4",
+        "2",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas CSV I/O lesson behavior.",
+      "skill": "Pandas CSV I/O"
+    },
+    {
+      "id": "PY242",
+      "type": "output-code",
+      "topic": "Pandas CSV I/O",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "3",
+      "choices": [
+        "import pandas as pd\nfrom io import StringIO\ns=StringIO(\"A\\n1\\n2\\n\")\ndf=pd.read_csv(s)\nprint(df[\"A\"].sum())",
+        "print(\"4\")",
+        "print(\"2\")",
+        "print(\"0\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 3.",
+      "skill": "Pandas CSV I/O"
+    },
+    {
+      "id": "PY243",
+      "type": "code-output",
+      "topic": "Pandas CSV I/O",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\nfrom io import StringIO\ns=StringIO(\"A,B\\n1,2\\n3,4\\n\")\ndf=pd.read_csv(s)\nprint(df.shape)",
+      "choices": [
+        "(2, 2)",
+        "Error",
+        "None",
+        "(2, 2) "
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas CSV I/O lesson behavior.",
+      "skill": "Pandas CSV I/O"
+    },
+    {
+      "id": "PY244",
+      "type": "output-code",
+      "topic": "Pandas CSV I/O",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "(2, 2)",
+      "choices": [
+        "import pandas as pd\nfrom io import StringIO\ns=StringIO(\"A,B\\n1,2\\n3,4\\n\")\ndf=pd.read_csv(s)\nprint(df.shape)",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"(2, 2) \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces (2, 2).",
+      "skill": "Pandas CSV I/O"
+    },
+    {
+      "id": "PY245",
+      "type": "code-output",
+      "topic": "Pandas CSV I/O",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\nfrom io import StringIO\ns=StringIO(\"A\\n1\\n2\\n\")\ndf=pd.read_csv(s)\nprint(df.columns.tolist())",
+      "choices": [
+        "['A']",
+        "Error",
+        "None",
+        "['A'] "
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas CSV I/O lesson behavior.",
+      "skill": "Pandas CSV I/O"
+    },
+    {
+      "id": "PY246",
+      "type": "output-code",
+      "topic": "Pandas CSV I/O",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "['A']",
+      "choices": [
+        "import pandas as pd\nfrom io import StringIO\ns=StringIO(\"A\\n1\\n2\\n\")\ndf=pd.read_csv(s)\nprint(df.columns.tolist())",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"['A'] \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces ['A'].",
+      "skill": "Pandas CSV I/O"
+    },
+    {
+      "id": "PY247",
+      "type": "code-output",
+      "topic": "Pandas CSV I/O",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf=pd.DataFrame({\"A\":[1,2]})\nprint(\"A\" in df.to_csv(index=False))",
+      "choices": [
+        "True",
+        "False",
+        "1",
+        "None"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas CSV I/O lesson behavior.",
+      "skill": "Pandas CSV I/O"
+    },
+    {
+      "id": "PY248",
+      "type": "output-code",
+      "topic": "Pandas CSV I/O",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "True",
+      "choices": [
+        "import pandas as pd\ndf=pd.DataFrame({\"A\":[1,2]})\nprint(\"A\" in df.to_csv(index=False))",
+        "print(\"False\")",
+        "print(\"1\")",
+        "print(\"None\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces True.",
+      "skill": "Pandas CSV I/O"
+    },
+    {
+      "id": "PY249",
+      "type": "code-output",
+      "topic": "Pandas CSV I/O",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf=pd.DataFrame({\"A\":[1,2]})\nprint(df.to_csv(index=False).splitlines()[1])",
+      "choices": [
+        "1",
+        "2",
+        "0",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas CSV I/O lesson behavior.",
+      "skill": "Pandas CSV I/O"
+    },
+    {
+      "id": "PY250",
+      "type": "output-code",
+      "topic": "Pandas CSV I/O",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "1",
+      "choices": [
+        "import pandas as pd\ndf=pd.DataFrame({\"A\":[1,2]})\nprint(df.to_csv(index=False).splitlines()[1])",
+        "print(\"2\")",
+        "print(\"0\")",
+        "print(\"0\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 1.",
+      "skill": "Pandas CSV I/O"
+    },
+    {
+      "id": "PY251",
+      "type": "code-output",
+      "topic": "Pandas Merge & Reshape",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\na=pd.DataFrame({\"id\":[1,2]}); b=pd.DataFrame({\"id\":[2,3]})\nprint(pd.merge(a,b,on=\"id\").shape[0])",
+      "choices": [
+        "1",
+        "2",
+        "0",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Merge & Reshape lesson behavior.",
+      "skill": "Pandas Merge & Reshape"
+    },
+    {
+      "id": "PY252",
+      "type": "output-code",
+      "topic": "Pandas Merge & Reshape",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "1",
+      "choices": [
+        "import pandas as pd\na=pd.DataFrame({\"id\":[1,2]}); b=pd.DataFrame({\"id\":[2,3]})\nprint(pd.merge(a,b,on=\"id\").shape[0])",
+        "print(\"2\")",
+        "print(\"0\")",
+        "print(\"0\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 1.",
+      "skill": "Pandas Merge & Reshape"
+    },
+    {
+      "id": "PY253",
+      "type": "code-output",
+      "topic": "Pandas Merge & Reshape",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\na=pd.DataFrame({\"A\":[1]}); b=pd.DataFrame({\"A\":[2]})\nprint(pd.concat([a,b])[\"A\"].tolist())",
+      "choices": [
+        "[1, 2]",
+        "Error",
+        "None",
+        "[1, 2] "
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Merge & Reshape lesson behavior.",
+      "skill": "Pandas Merge & Reshape"
+    },
+    {
+      "id": "PY254",
+      "type": "output-code",
+      "topic": "Pandas Merge & Reshape",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "[1, 2]",
+      "choices": [
+        "import pandas as pd\na=pd.DataFrame({\"A\":[1]}); b=pd.DataFrame({\"A\":[2]})\nprint(pd.concat([a,b])[\"A\"].tolist())",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"[1, 2] \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces [1, 2].",
+      "skill": "Pandas Merge & Reshape"
+    },
+    {
+      "id": "PY255",
+      "type": "code-output",
+      "topic": "Pandas Merge & Reshape",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf=pd.DataFrame({\"id\":[1,2],\"x\":[10,20]})\nprint(df.melt(id_vars=\"id\").shape)",
+      "choices": [
+        "(2, 3)",
+        "Error",
+        "None",
+        "(2, 3) "
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Merge & Reshape lesson behavior.",
+      "skill": "Pandas Merge & Reshape"
+    },
+    {
+      "id": "PY256",
+      "type": "output-code",
+      "topic": "Pandas Merge & Reshape",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "(2, 3)",
+      "choices": [
+        "import pandas as pd\ndf=pd.DataFrame({\"id\":[1,2],\"x\":[10,20]})\nprint(df.melt(id_vars=\"id\").shape)",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"(2, 3) \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces (2, 3).",
+      "skill": "Pandas Merge & Reshape"
+    },
+    {
+      "id": "PY257",
+      "type": "code-output",
+      "topic": "Pandas Merge & Reshape",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf=pd.DataFrame({\"G\":[\"A\",\"A\"],\"K\":[\"x\",\"y\"],\"V\":[1,2]})\nprint(df.pivot(index=\"G\",columns=\"K\",values=\"V\").shape)",
+      "choices": [
+        "(1, 2)",
+        "Error",
+        "None",
+        "(1, 2) "
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Merge & Reshape lesson behavior.",
+      "skill": "Pandas Merge & Reshape"
+    },
+    {
+      "id": "PY258",
+      "type": "output-code",
+      "topic": "Pandas Merge & Reshape",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "(1, 2)",
+      "choices": [
+        "import pandas as pd\ndf=pd.DataFrame({\"G\":[\"A\",\"A\"],\"K\":[\"x\",\"y\"],\"V\":[1,2]})\nprint(df.pivot(index=\"G\",columns=\"K\",values=\"V\").shape)",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"(1, 2) \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces (1, 2).",
+      "skill": "Pandas Merge & Reshape"
+    },
+    {
+      "id": "PY259",
+      "type": "code-output",
+      "topic": "Pandas Merge & Reshape",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\na=pd.DataFrame({\"id\":[1,2]}); b=pd.DataFrame({\"id\":[2,3]})\nprint(pd.merge(a,b,on=\"id\",how=\"outer\").shape[0])",
+      "choices": [
+        "3",
+        "4",
+        "2",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Merge & Reshape lesson behavior.",
+      "skill": "Pandas Merge & Reshape"
+    },
+    {
+      "id": "PY260",
+      "type": "output-code",
+      "topic": "Pandas Merge & Reshape",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "3",
+      "choices": [
+        "import pandas as pd\na=pd.DataFrame({\"id\":[1,2]}); b=pd.DataFrame({\"id\":[2,3]})\nprint(pd.merge(a,b,on=\"id\",how=\"outer\").shape[0])",
+        "print(\"4\")",
+        "print(\"2\")",
+        "print(\"0\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 3.",
+      "skill": "Pandas Merge & Reshape"
+    },
+    {
+      "id": "PY261",
+      "type": "code-output",
+      "topic": "Pandas Time Series",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ns=pd.to_datetime([\"2026-01-01\",\"2026-01-02\"])\nprint(s[0].year)",
+      "choices": [
+        "2026",
+        "2027",
+        "2025",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Time Series lesson behavior.",
+      "skill": "Pandas Time Series"
+    },
+    {
+      "id": "PY262",
+      "type": "output-code",
+      "topic": "Pandas Time Series",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "2026",
+      "choices": [
+        "import pandas as pd\ns=pd.to_datetime([\"2026-01-01\",\"2026-01-02\"])\nprint(s[0].year)",
+        "print(\"2027\")",
+        "print(\"2025\")",
+        "print(\"0\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 2026.",
+      "skill": "Pandas Time Series"
+    },
+    {
+      "id": "PY263",
+      "type": "code-output",
+      "topic": "Pandas Time Series",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ns=pd.Series([1,2,3])\nprint(s.rolling(2).mean().iloc[-1])",
+      "choices": [
+        "2.5",
+        "3.5",
+        "1.5",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Time Series lesson behavior.",
+      "skill": "Pandas Time Series"
+    },
+    {
+      "id": "PY264",
+      "type": "output-code",
+      "topic": "Pandas Time Series",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "2.5",
+      "choices": [
+        "import pandas as pd\ns=pd.Series([1,2,3])\nprint(s.rolling(2).mean().iloc[-1])",
+        "print(\"3.5\")",
+        "print(\"1.5\")",
+        "print(\"0\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 2.5.",
+      "skill": "Pandas Time Series"
+    },
+    {
+      "id": "PY265",
+      "type": "code-output",
+      "topic": "Pandas Time Series",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ns=pd.Series([10,20,30])\nprint(s.shift(1).isna().sum())",
+      "choices": [
+        "1",
+        "2",
+        "0",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Time Series lesson behavior.",
+      "skill": "Pandas Time Series"
+    },
+    {
+      "id": "PY266",
+      "type": "output-code",
+      "topic": "Pandas Time Series",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "1",
+      "choices": [
+        "import pandas as pd\ns=pd.Series([10,20,30])\nprint(s.shift(1).isna().sum())",
+        "print(\"2\")",
+        "print(\"0\")",
+        "print(\"0\")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 1.",
+      "skill": "Pandas Time Series"
+    },
+    {
+      "id": "PY267",
+      "type": "code-output",
+      "topic": "Pandas Time Series",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ns=pd.Series([30,10,20])\nprint(s.rank().tolist())",
+      "choices": [
+        "[3.0, 1.0, 2.0]",
+        "Error",
+        "None",
+        "[3.0, 1.0, 2.0] "
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Time Series lesson behavior.",
+      "skill": "Pandas Time Series"
+    },
+    {
+      "id": "PY268",
+      "type": "output-code",
+      "topic": "Pandas Time Series",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "[3.0, 1.0, 2.0]",
+      "choices": [
+        "import pandas as pd\ns=pd.Series([30,10,20])\nprint(s.rank().tolist())",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"[3.0, 1.0, 2.0] \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces [3.0, 1.0, 2.0].",
+      "skill": "Pandas Time Series"
+    },
+    {
+      "id": "PY269",
+      "type": "code-output",
+      "topic": "Pandas Time Series",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\nd=pd.to_datetime([\"2026-01-03\"])\nprint(d[0].day_name())",
+      "choices": [
+        "Saturday",
+        "Error",
+        "None",
+        "Saturday "
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Time Series lesson behavior.",
+      "skill": "Pandas Time Series"
+    },
+    {
+      "id": "PY270",
+      "type": "output-code",
+      "topic": "Pandas Time Series",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "Saturday",
+      "choices": [
+        "import pandas as pd\nd=pd.to_datetime([\"2026-01-03\"])\nprint(d[0].day_name())",
+        "print(\"Error\")",
+        "print(\"None\")",
+        "print(\"Saturday \")"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces Saturday.",
+      "skill": "Pandas Time Series"
     }
   ]
 }
