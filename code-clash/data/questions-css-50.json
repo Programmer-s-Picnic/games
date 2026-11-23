@@ -1,0 +1,1032 @@
+{
+  "version": 1,
+  "language": "css",
+  "count": 50,
+  "questions": [
+    {
+      "id": "CSS001",
+      "type": "code-output",
+      "topic": "Selectors & Cascade",
+      "difficulty": "Easy",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>p{color:red}</style><p>Hello</p>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>p{color:red}</style><p>Hello</p>",
+        "<style>p{color:blue}</style><p>Hello</p>",
+        "<style>p{font-weight:bold}</style><p>Hello</p>",
+        "<p>Hello</p>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Selectors & Cascade rules exactly.",
+      "skill": "Selectors & Cascade"
+    },
+    {
+      "id": "CSS002",
+      "type": "output-code",
+      "topic": "Selectors & Cascade",
+      "difficulty": "Easy",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>p{color:red}</style><p>Hello</p>",
+      "choices": [
+        "<style>p{color:red}</style><p>Hello</p>",
+        "<style>p{color:blue}</style><p>Hello</p>",
+        "<style>p{font-weight:bold}</style><p>Hello</p>",
+        "<p>Hello</p>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Selectors & Cascade result.",
+      "skill": "Selectors & Cascade"
+    },
+    {
+      "id": "CSS003",
+      "type": "code-output",
+      "topic": "Selectors & Cascade",
+      "difficulty": "Easy",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.x{background:yellow}</style><div class=\"x\">Box</div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.x{background:yellow}</style><div class=\"x\">Box</div>",
+        "<style>.x{background:lightblue}</style><div class=\"x\">Box</div>",
+        "<style>.x{color:yellow}</style><div class=\"x\">Box</div>",
+        "<div class=\"x\">Box</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Selectors & Cascade rules exactly.",
+      "skill": "Selectors & Cascade"
+    },
+    {
+      "id": "CSS004",
+      "type": "output-code",
+      "topic": "Selectors & Cascade",
+      "difficulty": "Easy",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.x{background:yellow}</style><div class=\"x\">Box</div>",
+      "choices": [
+        "<style>.x{background:yellow}</style><div class=\"x\">Box</div>",
+        "<style>.x{background:lightblue}</style><div class=\"x\">Box</div>",
+        "<style>.x{color:yellow}</style><div class=\"x\">Box</div>",
+        "<div class=\"x\">Box</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Selectors & Cascade result.",
+      "skill": "Selectors & Cascade"
+    },
+    {
+      "id": "CSS005",
+      "type": "code-output",
+      "topic": "Selectors & Cascade",
+      "difficulty": "Easy",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>#a{font-size:32px}</style><div id=\"a\">Big</div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>#a{font-size:32px}</style><div id=\"a\">Big</div>",
+        "<style>#a{font-size:12px}</style><div id=\"a\">Big</div>",
+        "<style>#a{font-weight:bold}</style><div id=\"a\">Big</div>",
+        "<div id=\"a\">Big</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Selectors & Cascade rules exactly.",
+      "skill": "Selectors & Cascade"
+    },
+    {
+      "id": "CSS006",
+      "type": "output-code",
+      "topic": "Selectors & Cascade",
+      "difficulty": "Easy",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>#a{font-size:32px}</style><div id=\"a\">Big</div>",
+      "choices": [
+        "<style>#a{font-size:32px}</style><div id=\"a\">Big</div>",
+        "<style>#a{font-size:12px}</style><div id=\"a\">Big</div>",
+        "<style>#a{font-weight:bold}</style><div id=\"a\">Big</div>",
+        "<div id=\"a\">Big</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Selectors & Cascade result.",
+      "skill": "Selectors & Cascade"
+    },
+    {
+      "id": "CSS007",
+      "type": "code-output",
+      "topic": "Selectors & Cascade",
+      "difficulty": "Easy",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>p{color:red}.x{color:green}</style><p class=\"x\">Text</p>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>p{color:red}.x{color:green}</style><p class=\"x\">Text</p>",
+        "<style>p{color:red}</style><p>Text</p>",
+        "<style>.x{color:blue}</style><p class=\"x\">Text</p>",
+        "<p>Text</p>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Selectors & Cascade rules exactly.",
+      "skill": "Selectors & Cascade"
+    },
+    {
+      "id": "CSS008",
+      "type": "output-code",
+      "topic": "Selectors & Cascade",
+      "difficulty": "Easy",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>p{color:red}.x{color:green}</style><p class=\"x\">Text</p>",
+      "choices": [
+        "<style>p{color:red}.x{color:green}</style><p class=\"x\">Text</p>",
+        "<style>p{color:red}</style><p>Text</p>",
+        "<style>.x{color:blue}</style><p class=\"x\">Text</p>",
+        "<p>Text</p>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Selectors & Cascade result.",
+      "skill": "Selectors & Cascade"
+    },
+    {
+      "id": "CSS009",
+      "type": "code-output",
+      "topic": "Selectors & Cascade",
+      "difficulty": "Easy",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>button:hover{background:orange}</style><button>Hover</button>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>button:hover{background:orange}</style><button>Hover</button>",
+        "<style>button{background:orange}</style><button>Hover</button>",
+        "<style>button:hover{color:orange}</style><button>Hover</button>",
+        "<button>Hover</button>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Selectors & Cascade rules exactly.",
+      "skill": "Selectors & Cascade"
+    },
+    {
+      "id": "CSS010",
+      "type": "output-code",
+      "topic": "Selectors & Cascade",
+      "difficulty": "Easy",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>button:hover{background:orange}</style><button>Hover</button>",
+      "choices": [
+        "<style>button:hover{background:orange}</style><button>Hover</button>",
+        "<style>button{background:orange}</style><button>Hover</button>",
+        "<style>button:hover{color:orange}</style><button>Hover</button>",
+        "<button>Hover</button>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Selectors & Cascade result.",
+      "skill": "Selectors & Cascade"
+    },
+    {
+      "id": "CSS011",
+      "type": "code-output",
+      "topic": "Box Model",
+      "difficulty": "Medium",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.b{width:120px;padding:20px;border:4px solid black;background:#ddd}</style><div class=\"b\">Box</div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.b{width:120px;padding:20px;border:4px solid black;background:#ddd}</style><div class=\"b\">Box</div>",
+        "<style>.b{width:120px;padding:0;border:0;background:#ddd}</style><div class=\"b\">Box</div>",
+        "<style>.b{width:120px;margin:20px;background:#ddd}</style><div class=\"b\">Box</div>",
+        "<style>.b{width:60px;padding:5px;background:#ddd}</style><div class=\"b\">Box</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Box Model rules exactly.",
+      "skill": "Box Model"
+    },
+    {
+      "id": "CSS012",
+      "type": "output-code",
+      "topic": "Box Model",
+      "difficulty": "Medium",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.b{width:120px;padding:20px;border:4px solid black;background:#ddd}</style><div class=\"b\">Box</div>",
+      "choices": [
+        "<style>.b{width:120px;padding:20px;border:4px solid black;background:#ddd}</style><div class=\"b\">Box</div>",
+        "<style>.b{width:120px;padding:0;border:0;background:#ddd}</style><div class=\"b\">Box</div>",
+        "<style>.b{width:120px;margin:20px;background:#ddd}</style><div class=\"b\">Box</div>",
+        "<style>.b{width:60px;padding:5px;background:#ddd}</style><div class=\"b\">Box</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Box Model result.",
+      "skill": "Box Model"
+    },
+    {
+      "id": "CSS013",
+      "type": "code-output",
+      "topic": "Box Model",
+      "difficulty": "Medium",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.b{margin:30px;background:#ddd}</style><div class=\"b\">Margin</div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.b{margin:30px;background:#ddd}</style><div class=\"b\">Margin</div>",
+        "<style>.b{padding:30px;background:#ddd}</style><div class=\"b\">Margin</div>",
+        "<style>.b{border:30px solid #ddd}</style><div>Margin</div>",
+        "<div>Margin</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Box Model rules exactly.",
+      "skill": "Box Model"
+    },
+    {
+      "id": "CSS014",
+      "type": "output-code",
+      "topic": "Box Model",
+      "difficulty": "Medium",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.b{margin:30px;background:#ddd}</style><div class=\"b\">Margin</div>",
+      "choices": [
+        "<style>.b{margin:30px;background:#ddd}</style><div class=\"b\">Margin</div>",
+        "<style>.b{padding:30px;background:#ddd}</style><div class=\"b\">Margin</div>",
+        "<style>.b{border:30px solid #ddd}</style><div>Margin</div>",
+        "<div>Margin</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Box Model result.",
+      "skill": "Box Model"
+    },
+    {
+      "id": "CSS015",
+      "type": "code-output",
+      "topic": "Box Model",
+      "difficulty": "Medium",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.b{padding:25px;background:lightgreen}</style><div class=\"b\">Padding</div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.b{padding:25px;background:lightgreen}</style><div class=\"b\">Padding</div>",
+        "<style>.b{margin:25px;background:lightgreen}</style><div class=\"b\">Padding</div>",
+        "<style>.b{padding:2px;background:lightgreen}</style><div class=\"b\">Padding</div>",
+        "<div>Padding</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Box Model rules exactly.",
+      "skill": "Box Model"
+    },
+    {
+      "id": "CSS016",
+      "type": "output-code",
+      "topic": "Box Model",
+      "difficulty": "Medium",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.b{padding:25px;background:lightgreen}</style><div class=\"b\">Padding</div>",
+      "choices": [
+        "<style>.b{padding:25px;background:lightgreen}</style><div class=\"b\">Padding</div>",
+        "<style>.b{margin:25px;background:lightgreen}</style><div class=\"b\">Padding</div>",
+        "<style>.b{padding:2px;background:lightgreen}</style><div class=\"b\">Padding</div>",
+        "<div>Padding</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Box Model result.",
+      "skill": "Box Model"
+    },
+    {
+      "id": "CSS017",
+      "type": "code-output",
+      "topic": "Box Model",
+      "difficulty": "Medium",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.b{box-sizing:border-box;width:180px;padding:20px;border:5px solid #333;background:#eee}</style><div class=\"b\">Border box</div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.b{box-sizing:border-box;width:180px;padding:20px;border:5px solid #333;background:#eee}</style><div class=\"b\">Border box</div>",
+        "<style>.b{width:180px;padding:20px;border:5px solid #333;background:#eee}</style><div class=\"b\">Border box</div>",
+        "<style>.b{width:80px;background:#eee}</style><div class=\"b\">Border box</div>",
+        "<div>Border box</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Box Model rules exactly.",
+      "skill": "Box Model"
+    },
+    {
+      "id": "CSS018",
+      "type": "output-code",
+      "topic": "Box Model",
+      "difficulty": "Medium",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.b{box-sizing:border-box;width:180px;padding:20px;border:5px solid #333;background:#eee}</style><div class=\"b\">Border box</div>",
+      "choices": [
+        "<style>.b{box-sizing:border-box;width:180px;padding:20px;border:5px solid #333;background:#eee}</style><div class=\"b\">Border box</div>",
+        "<style>.b{width:180px;padding:20px;border:5px solid #333;background:#eee}</style><div class=\"b\">Border box</div>",
+        "<style>.b{width:80px;background:#eee}</style><div class=\"b\">Border box</div>",
+        "<div>Border box</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Box Model result.",
+      "skill": "Box Model"
+    },
+    {
+      "id": "CSS019",
+      "type": "code-output",
+      "topic": "Box Model",
+      "difficulty": "Medium",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.b{border-radius:24px;background:skyblue;padding:20px}</style><div class=\"b\">Rounded</div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.b{border-radius:24px;background:skyblue;padding:20px}</style><div class=\"b\">Rounded</div>",
+        "<style>.b{background:skyblue;padding:20px}</style><div class=\"b\">Rounded</div>",
+        "<style>.b{border:8px solid skyblue;padding:20px}</style><div>Rounded</div>",
+        "<div>Rounded</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Box Model rules exactly.",
+      "skill": "Box Model"
+    },
+    {
+      "id": "CSS020",
+      "type": "output-code",
+      "topic": "Box Model",
+      "difficulty": "Medium",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.b{border-radius:24px;background:skyblue;padding:20px}</style><div class=\"b\">Rounded</div>",
+      "choices": [
+        "<style>.b{border-radius:24px;background:skyblue;padding:20px}</style><div class=\"b\">Rounded</div>",
+        "<style>.b{background:skyblue;padding:20px}</style><div class=\"b\">Rounded</div>",
+        "<style>.b{border:8px solid skyblue;padding:20px}</style><div>Rounded</div>",
+        "<div>Rounded</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Box Model result.",
+      "skill": "Box Model"
+    },
+    {
+      "id": "CSS021",
+      "type": "code-output",
+      "topic": "Flexbox",
+      "difficulty": "Medium",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.row{display:flex;gap:12px}.x{padding:12px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.row{display:flex;gap:12px}.x{padding:12px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<style>.row{display:block}.x{padding:12px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<style>.row{display:flex;flex-direction:column}.x{padding:12px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<div>A</div><div>B</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Flexbox rules exactly.",
+      "skill": "Flexbox"
+    },
+    {
+      "id": "CSS022",
+      "type": "output-code",
+      "topic": "Flexbox",
+      "difficulty": "Medium",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.row{display:flex;gap:12px}.x{padding:12px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+      "choices": [
+        "<style>.row{display:flex;gap:12px}.x{padding:12px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<style>.row{display:block}.x{padding:12px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<style>.row{display:flex;flex-direction:column}.x{padding:12px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<div>A</div><div>B</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Flexbox result.",
+      "skill": "Flexbox"
+    },
+    {
+      "id": "CSS023",
+      "type": "code-output",
+      "topic": "Flexbox",
+      "difficulty": "Medium",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.row{display:flex;justify-content:center;gap:8px}.x{padding:10px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.row{display:flex;justify-content:center;gap:8px}.x{padding:10px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<style>.row{display:flex;justify-content:flex-start}.x{padding:10px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<style>.row{display:flex;justify-content:flex-end}.x{padding:10px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<div>A B</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Flexbox rules exactly.",
+      "skill": "Flexbox"
+    },
+    {
+      "id": "CSS024",
+      "type": "output-code",
+      "topic": "Flexbox",
+      "difficulty": "Medium",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.row{display:flex;justify-content:center;gap:8px}.x{padding:10px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+      "choices": [
+        "<style>.row{display:flex;justify-content:center;gap:8px}.x{padding:10px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<style>.row{display:flex;justify-content:flex-start}.x{padding:10px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<style>.row{display:flex;justify-content:flex-end}.x{padding:10px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<div>A B</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Flexbox result.",
+      "skill": "Flexbox"
+    },
+    {
+      "id": "CSS025",
+      "type": "code-output",
+      "topic": "Flexbox",
+      "difficulty": "Medium",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.row{display:flex;flex-direction:column;gap:6px}.x{padding:8px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.row{display:flex;flex-direction:column;gap:6px}.x{padding:8px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<style>.row{display:flex;gap:6px}.x{padding:8px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<style>.row{display:grid;grid-template-columns:1fr 1fr}.x{padding:8px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<div>A</div><div>B</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Flexbox rules exactly.",
+      "skill": "Flexbox"
+    },
+    {
+      "id": "CSS026",
+      "type": "output-code",
+      "topic": "Flexbox",
+      "difficulty": "Medium",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.row{display:flex;flex-direction:column;gap:6px}.x{padding:8px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+      "choices": [
+        "<style>.row{display:flex;flex-direction:column;gap:6px}.x{padding:8px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<style>.row{display:flex;gap:6px}.x{padding:8px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<style>.row{display:grid;grid-template-columns:1fr 1fr}.x{padding:8px;background:#ddd}</style><div class=\"row\"><div class=\"x\">A</div><div class=\"x\">B</div></div>",
+        "<div>A</div><div>B</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Flexbox result.",
+      "skill": "Flexbox"
+    },
+    {
+      "id": "CSS027",
+      "type": "code-output",
+      "topic": "Flexbox",
+      "difficulty": "Medium",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.row{display:flex;justify-content:space-between}.x{padding:8px;background:#ddd}</style><div class=\"row\"><div class=\"x\">Left</div><div class=\"x\">Right</div></div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.row{display:flex;justify-content:space-between}.x{padding:8px;background:#ddd}</style><div class=\"row\"><div class=\"x\">Left</div><div class=\"x\">Right</div></div>",
+        "<style>.row{display:flex;justify-content:center}.x{padding:8px;background:#ddd}</style><div class=\"row\"><div class=\"x\">Left</div><div class=\"x\">Right</div></div>",
+        "<style>.row{display:flex}.x{padding:8px;background:#ddd}</style><div class=\"row\"><div class=\"x\">Left</div><div class=\"x\">Right</div></div>",
+        "<div>Left Right</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Flexbox rules exactly.",
+      "skill": "Flexbox"
+    },
+    {
+      "id": "CSS028",
+      "type": "output-code",
+      "topic": "Flexbox",
+      "difficulty": "Medium",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.row{display:flex;justify-content:space-between}.x{padding:8px;background:#ddd}</style><div class=\"row\"><div class=\"x\">Left</div><div class=\"x\">Right</div></div>",
+      "choices": [
+        "<style>.row{display:flex;justify-content:space-between}.x{padding:8px;background:#ddd}</style><div class=\"row\"><div class=\"x\">Left</div><div class=\"x\">Right</div></div>",
+        "<style>.row{display:flex;justify-content:center}.x{padding:8px;background:#ddd}</style><div class=\"row\"><div class=\"x\">Left</div><div class=\"x\">Right</div></div>",
+        "<style>.row{display:flex}.x{padding:8px;background:#ddd}</style><div class=\"row\"><div class=\"x\">Left</div><div class=\"x\">Right</div></div>",
+        "<div>Left Right</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Flexbox result.",
+      "skill": "Flexbox"
+    },
+    {
+      "id": "CSS029",
+      "type": "code-output",
+      "topic": "Flexbox",
+      "difficulty": "Medium",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.row{display:flex;align-items:center;height:120px;background:#eee}.x{padding:8px;background:#ccc}</style><div class=\"row\"><div class=\"x\">Center</div></div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.row{display:flex;align-items:center;height:120px;background:#eee}.x{padding:8px;background:#ccc}</style><div class=\"row\"><div class=\"x\">Center</div></div>",
+        "<style>.row{height:120px;background:#eee}.x{padding:8px;background:#ccc}</style><div class=\"row\"><div class=\"x\">Center</div></div>",
+        "<style>.row{display:flex;align-items:flex-start;height:120px;background:#eee}.x{padding:8px;background:#ccc}</style><div class=\"row\"><div class=\"x\">Center</div></div>",
+        "<div>Center</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Flexbox rules exactly.",
+      "skill": "Flexbox"
+    },
+    {
+      "id": "CSS030",
+      "type": "output-code",
+      "topic": "Flexbox",
+      "difficulty": "Medium",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.row{display:flex;align-items:center;height:120px;background:#eee}.x{padding:8px;background:#ccc}</style><div class=\"row\"><div class=\"x\">Center</div></div>",
+      "choices": [
+        "<style>.row{display:flex;align-items:center;height:120px;background:#eee}.x{padding:8px;background:#ccc}</style><div class=\"row\"><div class=\"x\">Center</div></div>",
+        "<style>.row{height:120px;background:#eee}.x{padding:8px;background:#ccc}</style><div class=\"row\"><div class=\"x\">Center</div></div>",
+        "<style>.row{display:flex;align-items:flex-start;height:120px;background:#eee}.x{padding:8px;background:#ccc}</style><div class=\"row\"><div class=\"x\">Center</div></div>",
+        "<div>Center</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Flexbox result.",
+      "skill": "Flexbox"
+    },
+    {
+      "id": "CSS031",
+      "type": "code-output",
+      "topic": "Grid & Responsive",
+      "difficulty": "Expert",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.g{display:grid;grid-template-columns:1fr 1fr;gap:8px}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">1</div><div class=\"x\">2</div><div class=\"x\">3</div><div class=\"x\">4</div></div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.g{display:grid;grid-template-columns:1fr 1fr;gap:8px}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">1</div><div class=\"x\">2</div><div class=\"x\">3</div><div class=\"x\">4</div></div>",
+        "<style>.g{display:block}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">1</div><div class=\"x\">2</div><div class=\"x\">3</div><div class=\"x\">4</div></div>",
+        "<style>.g{display:flex}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">1</div><div class=\"x\">2</div><div class=\"x\">3</div><div class=\"x\">4</div></div>",
+        "<div>1 2 3 4</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Grid & Responsive rules exactly.",
+      "skill": "Grid & Responsive"
+    },
+    {
+      "id": "CSS032",
+      "type": "output-code",
+      "topic": "Grid & Responsive",
+      "difficulty": "Expert",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.g{display:grid;grid-template-columns:1fr 1fr;gap:8px}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">1</div><div class=\"x\">2</div><div class=\"x\">3</div><div class=\"x\">4</div></div>",
+      "choices": [
+        "<style>.g{display:grid;grid-template-columns:1fr 1fr;gap:8px}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">1</div><div class=\"x\">2</div><div class=\"x\">3</div><div class=\"x\">4</div></div>",
+        "<style>.g{display:block}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">1</div><div class=\"x\">2</div><div class=\"x\">3</div><div class=\"x\">4</div></div>",
+        "<style>.g{display:flex}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">1</div><div class=\"x\">2</div><div class=\"x\">3</div><div class=\"x\">4</div></div>",
+        "<div>1 2 3 4</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Grid & Responsive result.",
+      "skill": "Grid & Responsive"
+    },
+    {
+      "id": "CSS033",
+      "type": "code-output",
+      "topic": "Grid & Responsive",
+      "difficulty": "Expert",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.g{display:grid;grid-template-columns:2fr 1fr}.x{padding:10px;background:#ddd;border:1px solid #999}</style><div class=\"g\"><div class=\"x\">Wide</div><div class=\"x\">Narrow</div></div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.g{display:grid;grid-template-columns:2fr 1fr}.x{padding:10px;background:#ddd;border:1px solid #999}</style><div class=\"g\"><div class=\"x\">Wide</div><div class=\"x\">Narrow</div></div>",
+        "<style>.g{display:grid;grid-template-columns:1fr 2fr}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">Wide</div><div class=\"x\">Narrow</div></div>",
+        "<style>.g{display:grid;grid-template-columns:1fr 1fr}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">Wide</div><div class=\"x\">Narrow</div></div>",
+        "<div>Wide Narrow</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Grid & Responsive rules exactly.",
+      "skill": "Grid & Responsive"
+    },
+    {
+      "id": "CSS034",
+      "type": "output-code",
+      "topic": "Grid & Responsive",
+      "difficulty": "Expert",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.g{display:grid;grid-template-columns:2fr 1fr}.x{padding:10px;background:#ddd;border:1px solid #999}</style><div class=\"g\"><div class=\"x\">Wide</div><div class=\"x\">Narrow</div></div>",
+      "choices": [
+        "<style>.g{display:grid;grid-template-columns:2fr 1fr}.x{padding:10px;background:#ddd;border:1px solid #999}</style><div class=\"g\"><div class=\"x\">Wide</div><div class=\"x\">Narrow</div></div>",
+        "<style>.g{display:grid;grid-template-columns:1fr 2fr}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">Wide</div><div class=\"x\">Narrow</div></div>",
+        "<style>.g{display:grid;grid-template-columns:1fr 1fr}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">Wide</div><div class=\"x\">Narrow</div></div>",
+        "<div>Wide Narrow</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Grid & Responsive result.",
+      "skill": "Grid & Responsive"
+    },
+    {
+      "id": "CSS035",
+      "type": "code-output",
+      "topic": "Grid & Responsive",
+      "difficulty": "Expert",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.g{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.x{padding:8px;background:#ddd}</style><div class=\"g\"><div class=\"x\">A</div><div class=\"x\">B</div><div class=\"x\">C</div></div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.g{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.x{padding:8px;background:#ddd}</style><div class=\"g\"><div class=\"x\">A</div><div class=\"x\">B</div><div class=\"x\">C</div></div>",
+        "<style>.g{display:grid;grid-template-columns:repeat(2,1fr)}.x{padding:8px;background:#ddd}</style><div class=\"g\"><div class=\"x\">A</div><div class=\"x\">B</div><div class=\"x\">C</div></div>",
+        "<style>.g{display:flex}.x{padding:8px;background:#ddd}</style><div class=\"g\"><div class=\"x\">A</div><div class=\"x\">B</div><div class=\"x\">C</div></div>",
+        "<div>A B C</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Grid & Responsive rules exactly.",
+      "skill": "Grid & Responsive"
+    },
+    {
+      "id": "CSS036",
+      "type": "output-code",
+      "topic": "Grid & Responsive",
+      "difficulty": "Expert",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.g{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.x{padding:8px;background:#ddd}</style><div class=\"g\"><div class=\"x\">A</div><div class=\"x\">B</div><div class=\"x\">C</div></div>",
+      "choices": [
+        "<style>.g{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.x{padding:8px;background:#ddd}</style><div class=\"g\"><div class=\"x\">A</div><div class=\"x\">B</div><div class=\"x\">C</div></div>",
+        "<style>.g{display:grid;grid-template-columns:repeat(2,1fr)}.x{padding:8px;background:#ddd}</style><div class=\"g\"><div class=\"x\">A</div><div class=\"x\">B</div><div class=\"x\">C</div></div>",
+        "<style>.g{display:flex}.x{padding:8px;background:#ddd}</style><div class=\"g\"><div class=\"x\">A</div><div class=\"x\">B</div><div class=\"x\">C</div></div>",
+        "<div>A B C</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Grid & Responsive result.",
+      "skill": "Grid & Responsive"
+    },
+    {
+      "id": "CSS037",
+      "type": "code-output",
+      "topic": "Grid & Responsive",
+      "difficulty": "Expert",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.card{width:min(90%,320px);padding:14px;background:#ddd}</style><div class=\"card\">Responsive card</div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.card{width:min(90%,320px);padding:14px;background:#ddd}</style><div class=\"card\">Responsive card</div>",
+        "<style>.card{width:900px;padding:14px;background:#ddd}</style><div class=\"card\">Responsive card</div>",
+        "<style>.card{width:40px;padding:14px;background:#ddd}</style><div class=\"card\">Responsive card</div>",
+        "<div>Responsive card</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Grid & Responsive rules exactly.",
+      "skill": "Grid & Responsive"
+    },
+    {
+      "id": "CSS038",
+      "type": "output-code",
+      "topic": "Grid & Responsive",
+      "difficulty": "Expert",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.card{width:min(90%,320px);padding:14px;background:#ddd}</style><div class=\"card\">Responsive card</div>",
+      "choices": [
+        "<style>.card{width:min(90%,320px);padding:14px;background:#ddd}</style><div class=\"card\">Responsive card</div>",
+        "<style>.card{width:900px;padding:14px;background:#ddd}</style><div class=\"card\">Responsive card</div>",
+        "<style>.card{width:40px;padding:14px;background:#ddd}</style><div class=\"card\">Responsive card</div>",
+        "<div>Responsive card</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Grid & Responsive result.",
+      "skill": "Grid & Responsive"
+    },
+    {
+      "id": "CSS039",
+      "type": "code-output",
+      "topic": "Grid & Responsive",
+      "difficulty": "Expert",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">A</div><div class=\"x\">B</div><div class=\"x\">C</div></div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">A</div><div class=\"x\">B</div><div class=\"x\">C</div></div>",
+        "<style>.g{display:block}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">A</div><div class=\"x\">B</div><div class=\"x\">C</div></div>",
+        "<style>.g{display:flex;flex-direction:column}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">A</div><div class=\"x\">B</div><div class=\"x\">C</div></div>",
+        "<div>A B C</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Grid & Responsive rules exactly.",
+      "skill": "Grid & Responsive"
+    },
+    {
+      "id": "CSS040",
+      "type": "output-code",
+      "topic": "Grid & Responsive",
+      "difficulty": "Expert",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">A</div><div class=\"x\">B</div><div class=\"x\">C</div></div>",
+      "choices": [
+        "<style>.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:8px}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">A</div><div class=\"x\">B</div><div class=\"x\">C</div></div>",
+        "<style>.g{display:block}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">A</div><div class=\"x\">B</div><div class=\"x\">C</div></div>",
+        "<style>.g{display:flex;flex-direction:column}.x{padding:10px;background:#ddd}</style><div class=\"g\"><div class=\"x\">A</div><div class=\"x\">B</div><div class=\"x\">C</div></div>",
+        "<div>A B C</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Grid & Responsive result.",
+      "skill": "Grid & Responsive"
+    },
+    {
+      "id": "CSS041",
+      "type": "code-output",
+      "topic": "Animation & Pseudo-elements",
+      "difficulty": "Expert",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.x::before{content:\"★ \";color:orange}</style><div class=\"x\">Star</div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.x::before{content:\"★ \";color:orange}</style><div class=\"x\">Star</div>",
+        "<style>.x::after{content:\" ★\";color:orange}</style><div class=\"x\">Star</div>",
+        "<style>.x{color:orange}</style><div class=\"x\">Star</div>",
+        "<div>Star</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Animation & Pseudo-elements rules exactly.",
+      "skill": "Animation & Pseudo-elements"
+    },
+    {
+      "id": "CSS042",
+      "type": "output-code",
+      "topic": "Animation & Pseudo-elements",
+      "difficulty": "Expert",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.x::before{content:\"★ \";color:orange}</style><div class=\"x\">Star</div>",
+      "choices": [
+        "<style>.x::before{content:\"★ \";color:orange}</style><div class=\"x\">Star</div>",
+        "<style>.x::after{content:\" ★\";color:orange}</style><div class=\"x\">Star</div>",
+        "<style>.x{color:orange}</style><div class=\"x\">Star</div>",
+        "<div>Star</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Animation & Pseudo-elements result.",
+      "skill": "Animation & Pseudo-elements"
+    },
+    {
+      "id": "CSS043",
+      "type": "code-output",
+      "topic": "Animation & Pseudo-elements",
+      "difficulty": "Expert",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.x::after{content:\" ✓\";color:green}</style><div class=\"x\">Done</div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.x::after{content:\" ✓\";color:green}</style><div class=\"x\">Done</div>",
+        "<style>.x::before{content:\"✓ \";color:green}</style><div class=\"x\">Done</div>",
+        "<style>.x{color:green}</style><div class=\"x\">Done</div>",
+        "<div>Done</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Animation & Pseudo-elements rules exactly.",
+      "skill": "Animation & Pseudo-elements"
+    },
+    {
+      "id": "CSS044",
+      "type": "output-code",
+      "topic": "Animation & Pseudo-elements",
+      "difficulty": "Expert",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.x::after{content:\" ✓\";color:green}</style><div class=\"x\">Done</div>",
+      "choices": [
+        "<style>.x::after{content:\" ✓\";color:green}</style><div class=\"x\">Done</div>",
+        "<style>.x::before{content:\"✓ \";color:green}</style><div class=\"x\">Done</div>",
+        "<style>.x{color:green}</style><div class=\"x\">Done</div>",
+        "<div>Done</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Animation & Pseudo-elements result.",
+      "skill": "Animation & Pseudo-elements"
+    },
+    {
+      "id": "CSS045",
+      "type": "code-output",
+      "topic": "Animation & Pseudo-elements",
+      "difficulty": "Expert",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>@keyframes fade{from{opacity:.2}to{opacity:1}}.x{animation:fade 2s infinite}</style><div class=\"x\">Fade</div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>@keyframes fade{from{opacity:.2}to{opacity:1}}.x{animation:fade 2s infinite}</style><div class=\"x\">Fade</div>",
+        "<style>.x{opacity:.2}</style><div class=\"x\">Fade</div>",
+        "<style>.x{transform:rotate(45deg)}</style><div class=\"x\">Fade</div>",
+        "<div>Fade</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Animation & Pseudo-elements rules exactly.",
+      "skill": "Animation & Pseudo-elements"
+    },
+    {
+      "id": "CSS046",
+      "type": "output-code",
+      "topic": "Animation & Pseudo-elements",
+      "difficulty": "Expert",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>@keyframes fade{from{opacity:.2}to{opacity:1}}.x{animation:fade 2s infinite}</style><div class=\"x\">Fade</div>",
+      "choices": [
+        "<style>@keyframes fade{from{opacity:.2}to{opacity:1}}.x{animation:fade 2s infinite}</style><div class=\"x\">Fade</div>",
+        "<style>.x{opacity:.2}</style><div class=\"x\">Fade</div>",
+        "<style>.x{transform:rotate(45deg)}</style><div class=\"x\">Fade</div>",
+        "<div>Fade</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Animation & Pseudo-elements result.",
+      "skill": "Animation & Pseudo-elements"
+    },
+    {
+      "id": "CSS047",
+      "type": "code-output",
+      "topic": "Animation & Pseudo-elements",
+      "difficulty": "Expert",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>@keyframes move{to{transform:translateX(80px)}}.x{display:inline-block;animation:move 2s infinite alternate}</style><div class=\"x\">Move</div>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>@keyframes move{to{transform:translateX(80px)}}.x{display:inline-block;animation:move 2s infinite alternate}</style><div class=\"x\">Move</div>",
+        "<style>.x{transform:translateX(80px)}</style><div class=\"x\">Move</div>",
+        "<style>.x{color:red}</style><div class=\"x\">Move</div>",
+        "<div>Move</div>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Animation & Pseudo-elements rules exactly.",
+      "skill": "Animation & Pseudo-elements"
+    },
+    {
+      "id": "CSS048",
+      "type": "output-code",
+      "topic": "Animation & Pseudo-elements",
+      "difficulty": "Expert",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>@keyframes move{to{transform:translateX(80px)}}.x{display:inline-block;animation:move 2s infinite alternate}</style><div class=\"x\">Move</div>",
+      "choices": [
+        "<style>@keyframes move{to{transform:translateX(80px)}}.x{display:inline-block;animation:move 2s infinite alternate}</style><div class=\"x\">Move</div>",
+        "<style>.x{transform:translateX(80px)}</style><div class=\"x\">Move</div>",
+        "<style>.x{color:red}</style><div class=\"x\">Move</div>",
+        "<div>Move</div>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Animation & Pseudo-elements result.",
+      "skill": "Animation & Pseudo-elements"
+    },
+    {
+      "id": "CSS049",
+      "type": "code-output",
+      "topic": "Animation & Pseudo-elements",
+      "difficulty": "Expert",
+      "prompt": "Which rendered result matches this HTML/CSS?",
+      "code": "<style>.x{transition:transform .3s}.x:hover{transform:scale(1.4)}</style><button class=\"x\">Grow</button>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<style>.x{transition:transform .3s}.x:hover{transform:scale(1.4)}</style><button class=\"x\">Grow</button>",
+        "<style>.x:hover{color:red}</style><button class=\"x\">Grow</button>",
+        "<style>.x{transform:scale(.7)}</style><button class=\"x\">Grow</button>",
+        "<button>Grow</button>"
+      ],
+      "correct": 0,
+      "explain": "The first preview applies the Animation & Pseudo-elements rules exactly.",
+      "skill": "Animation & Pseudo-elements"
+    },
+    {
+      "id": "CSS050",
+      "type": "output-code",
+      "topic": "Animation & Pseudo-elements",
+      "difficulty": "Expert",
+      "prompt": "Which HTML/CSS code creates this rendered result?",
+      "output": "Rendered target",
+      "renderHtml": "<style>.x{transition:transform .3s}.x:hover{transform:scale(1.4)}</style><button class=\"x\">Grow</button>",
+      "choices": [
+        "<style>.x{transition:transform .3s}.x:hover{transform:scale(1.4)}</style><button class=\"x\">Grow</button>",
+        "<style>.x:hover{color:red}</style><button class=\"x\">Grow</button>",
+        "<style>.x{transform:scale(.7)}</style><button class=\"x\">Grow</button>",
+        "<button>Grow</button>"
+      ],
+      "correct": 0,
+      "explain": "The first snippet creates the displayed Animation & Pseudo-elements result.",
+      "skill": "Animation & Pseudo-elements"
+    }
+  ]
+}
