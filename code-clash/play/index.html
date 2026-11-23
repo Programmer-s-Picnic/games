@@ -6,7 +6,7 @@
   <title>Live Code Clash Match | Learn With Champak</title>
   <meta name="theme-color" content="#0b1020">
   <link rel="icon" href="../../og.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../style.css?v=20261123-0940">
+  <link rel="stylesheet" href="../style.css?v=20261123-1045">
 </head>
 <body>
 <header class="brand"><a href="https://www.learnwithchampak.live/" target="_blank" rel="noopener">Learn With Champak</a><span>Live Code Clash Match</span></header>
@@ -17,7 +17,7 @@
   <div class="game-top card">
     <span id="roundLabel">Question</span>
     <span class="timer-wrap"><canvas id="timerCanvas" width="88" height="88"></canvas><span id="timer" class="timer-number">30</span><small id="timerModeLabel" class="timer-mode-label">per question</small></span>
-    <span>Score <strong id="score">0</strong></span>
+    <span class="score-box">Score <strong id="score">0</strong><small>700 base + up to 300 speed</small></span>
     <span>Rank <strong id="rank">1/6</strong></span>
   </div>
   <div class="battle-grid">
@@ -27,7 +27,7 @@
       <div id="outputBox" class="output-box hidden"></div>
       <div id="choices" class="mcq-grid"></div>
       <button id="submitBtn" class="primary" type="button" disabled>Submit Answer</button>
-      <div id="feedback" class="feedback hidden"></div>
+      <div id="feedback" class="feedback hidden"></div><div id="scoreExplain" class="score-explain">Scoring: correct answer = 700 base points + up to 300 speed bonus. Wrong answer = 0.</div>
     </section>
     <aside class="card leaderboard"><h3>Live leaderboard</h3><div id="leaderboardList"></div></aside>
   </div>
@@ -71,6 +71,6 @@
 <footer>Developed and maintained by <a href="https://www.learnwithchampak.live/" target="_blank" rel="noopener">Learn With Champak</a></footer>
 <script src="https://cserver.learnwithchampak.live/games/code-clash/socket.io/socket.io.js"></script>
 <script src="../config.js?v=20261027-2315"></script>
-<script src="./match-20261123-0940.js"></script>
+<script src="./match-20261123-1045.js"></script>
 </body>
 </html>
