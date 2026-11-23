@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "count": 100,
+  "version": 2,
+  "count": 120,
   "questions": [
     {
       "id": "PY001",
@@ -1701,6 +1701,346 @@
       "correct": 0,
       "explain": "The function returns 6 × 2 = 12.",
       "skill": "Functions"
+    },
+    {
+      "id": "PY101",
+      "type": "code-output",
+      "topic": "Loops",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "for i in range(3):\n    print(i)",
+      "choices": [
+        "0\n1\n2",
+        "1\n2\n3",
+        "3",
+        "0\n3"
+      ],
+      "correct": 0,
+      "explain": "range(3) produces 0 through 2.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY102",
+      "type": "code-output",
+      "topic": "Loops",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "for i in range(4):\n    print(i)",
+      "choices": [
+        "0\n1\n2\n3",
+        "1\n2\n3\n4",
+        "4",
+        "0\n4"
+      ],
+      "correct": 0,
+      "explain": "range(4) produces 0 through 3.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY103",
+      "type": "code-output",
+      "topic": "Loops",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "for i in range(5):\n    print(i)",
+      "choices": [
+        "0\n1\n2\n3\n4",
+        "1\n2\n3\n4\n5",
+        "5",
+        "0\n5"
+      ],
+      "correct": 0,
+      "explain": "range(5) produces 0 through 4.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY104",
+      "type": "code-output",
+      "topic": "Loops",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "for i in range(6):\n    print(i)",
+      "choices": [
+        "0\n1\n2\n3\n4\n5",
+        "1\n2\n3\n4\n5\n6",
+        "6",
+        "0\n6"
+      ],
+      "correct": 0,
+      "explain": "range(6) produces 0 through 5.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY105",
+      "type": "code-output",
+      "topic": "Loops",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "for i in range(7):\n    print(i)",
+      "choices": [
+        "0\n1\n2\n3\n4\n5\n6",
+        "1\n2\n3\n4\n5\n6\n7",
+        "7",
+        "0\n7"
+      ],
+      "correct": 0,
+      "explain": "range(7) produces 0 through 6.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY106",
+      "type": "output-code",
+      "topic": "Loops",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "1\n2\n3",
+      "choices": [
+        "for i in range(1, 4):\n    print(i)",
+        "for i in range(3):\n    print(i)",
+        "print(list(range(1, 4)))",
+        "for i in range(1, 3):\n    print(i)"
+      ],
+      "correct": 0,
+      "explain": "range(1, 4) prints 1 through 3.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY107",
+      "type": "output-code",
+      "topic": "Loops",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "1\n2\n3\n4",
+      "choices": [
+        "for i in range(1, 5):\n    print(i)",
+        "for i in range(4):\n    print(i)",
+        "print(list(range(1, 5)))",
+        "for i in range(1, 4):\n    print(i)"
+      ],
+      "correct": 0,
+      "explain": "range(1, 5) prints 1 through 4.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY108",
+      "type": "output-code",
+      "topic": "Loops",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "1\n2\n3\n4\n5",
+      "choices": [
+        "for i in range(1, 6):\n    print(i)",
+        "for i in range(5):\n    print(i)",
+        "print(list(range(1, 6)))",
+        "for i in range(1, 5):\n    print(i)"
+      ],
+      "correct": 0,
+      "explain": "range(1, 6) prints 1 through 5.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY109",
+      "type": "output-code",
+      "topic": "Loops",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "1\n2\n3\n4\n5\n6",
+      "choices": [
+        "for i in range(1, 7):\n    print(i)",
+        "for i in range(6):\n    print(i)",
+        "print(list(range(1, 7)))",
+        "for i in range(1, 6):\n    print(i)"
+      ],
+      "correct": 0,
+      "explain": "range(1, 7) prints 1 through 6.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY110",
+      "type": "output-code",
+      "topic": "Loops",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "1\n2\n3\n4\n5\n6\n7",
+      "choices": [
+        "for i in range(1, 8):\n    print(i)",
+        "for i in range(7):\n    print(i)",
+        "print(list(range(1, 8)))",
+        "for i in range(1, 7):\n    print(i)"
+      ],
+      "correct": 0,
+      "explain": "range(1, 8) prints 1 through 7.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY111",
+      "type": "code-output",
+      "topic": "Loops",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "total = 0\nfor i in range(1, 4):\n    for j in range(i):\n        total += 1\nprint(total)",
+      "choices": [
+        "6",
+        "7",
+        "5",
+        "Error"
+      ],
+      "correct": 0,
+      "explain": "The nested loop runs 1 + 2 + 3 times.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY112",
+      "type": "code-output",
+      "topic": "Loops",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "s = 0\nfor i in range(6):\n    if i % 2 == 0:\n        continue\n    s += i\nprint(s)",
+      "choices": [
+        "9",
+        "10",
+        "8",
+        "Error"
+      ],
+      "correct": 0,
+      "explain": "Only odd values 1, 3 and 5 are added.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY113",
+      "type": "code-output",
+      "topic": "Loops",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "x = 0\nfor i in range(5):\n    if i == 3:\n        break\n    x += i\nprint(x)",
+      "choices": [
+        "3",
+        "4",
+        "2",
+        "Error"
+      ],
+      "correct": 0,
+      "explain": "The loop adds 0 + 1 + 2, then breaks at 3.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY114",
+      "type": "code-output",
+      "topic": "Loops",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "count = 0\nfor i in range(3):\n    for j in range(3):\n        if i == j:\n            count += 1\nprint(count)",
+      "choices": [
+        "3",
+        "4",
+        "2",
+        "Error"
+      ],
+      "correct": 0,
+      "explain": "i equals j for (0,0), (1,1), and (2,2).",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY115",
+      "type": "code-output",
+      "topic": "Loops",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "a = [i*j for i in range(1,4) for j in range(1,3)]\nprint(sum(a))",
+      "choices": [
+        "18",
+        "19",
+        "17",
+        "Error"
+      ],
+      "correct": 0,
+      "explain": "The list is [1,2,2,4,3,6], whose sum is 18.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY116",
+      "type": "output-code",
+      "topic": "Loops",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "6",
+      "choices": [
+        "total = 0\nfor i in range(1, 4):\n    for j in range(i):\n        total += 1\nprint(total)",
+        "total = 0\nfor i in range(3):\n    total += i\nprint(total)",
+        "print(7)",
+        "print(5)"
+      ],
+      "correct": 0,
+      "explain": "Tracing the loop structure produces the shown value.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY117",
+      "type": "output-code",
+      "topic": "Loops",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "4",
+      "choices": [
+        "x = 0\nfor i in range(5):\n    if i == 4:\n        break\n    x += 1\nprint(x)",
+        "print(sum(range(4)))",
+        "print(5)",
+        "print(3)"
+      ],
+      "correct": 0,
+      "explain": "Tracing the loop structure produces the shown value.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY118",
+      "type": "output-code",
+      "topic": "Loops",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "9",
+      "choices": [
+        "s = 0\nfor i in range(6):\n    if i % 2 == 0:\n        continue\n    s += i\nprint(s)",
+        "print(sum(range(6)))",
+        "print(10)",
+        "print(8)"
+      ],
+      "correct": 0,
+      "explain": "Tracing the loop structure produces the shown value.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY119",
+      "type": "output-code",
+      "topic": "Loops",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "3",
+      "choices": [
+        "count = 0\nfor i in range(3):\n    for j in range(3):\n        if i == j:\n            count += 1\nprint(count)",
+        "print(3 * 3)",
+        "print(4)",
+        "print(2)"
+      ],
+      "correct": 0,
+      "explain": "Tracing the loop structure produces the shown value.",
+      "skill": "Loops"
+    },
+    {
+      "id": "PY120",
+      "type": "output-code",
+      "topic": "Loops",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "18",
+      "choices": [
+        "a = [i*j for i in range(1,4) for j in range(1,3)]\nprint(sum(a))",
+        "print(sum(range(1,7)))",
+        "print(19)",
+        "print(17)"
+      ],
+      "correct": 0,
+      "explain": "Tracing the loop structure produces the shown value.",
+      "skill": "Loops"
     }
   ]
 }
