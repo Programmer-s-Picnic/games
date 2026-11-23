@@ -1,7 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "language": "javascript",
-  "count": 80,
+  "count": 90,
   "questions": [
     {
       "id": "JS001",
@@ -1362,6 +1362,176 @@
       "correct": 0,
       "explain": "The first snippet produces true.",
       "skill": "DOM & Events"
+    },
+    {
+      "id": "JS081",
+      "type": "code-output",
+      "topic": "Modules",
+      "difficulty": "Medium",
+      "prompt": "What is the exported value?",
+      "code": "const x = 5;\nexport { x };",
+      "choices": [
+        "5",
+        "undefined",
+        "Error",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "The module exports the value bound to x.",
+      "skill": "Modules"
+    },
+    {
+      "id": "JS082",
+      "type": "output-code",
+      "topic": "Modules",
+      "difficulty": "Medium",
+      "prompt": "Which module exports a default function?",
+      "output": "Default function export",
+      "choices": [
+        "export default function f(){}",
+        "export { default f }",
+        "default export function f(){}",
+        "module f(){}"
+      ],
+      "correct": 0,
+      "explain": "export default marks the function as the default export.",
+      "skill": "Modules"
+    },
+    {
+      "id": "JS083",
+      "type": "code-output",
+      "topic": "Modules",
+      "difficulty": "Medium",
+      "prompt": "Which name is imported?",
+      "code": "import { total } from \"./calc.js\";",
+      "choices": [
+        "total",
+        "calc",
+        "default",
+        "module"
+      ],
+      "correct": 0,
+      "explain": "The named import is total.",
+      "skill": "Modules"
+    },
+    {
+      "id": "JS084",
+      "type": "output-code",
+      "topic": "Modules",
+      "difficulty": "Medium",
+      "prompt": "Which code imports a default export as App?",
+      "output": "Default import named App",
+      "choices": [
+        "import App from \"./App.js\";",
+        "import { App } from \"./App.js\";",
+        "import default App from \"./App.js\";",
+        "require import App;"
+      ],
+      "correct": 0,
+      "explain": "A default import omits braces.",
+      "skill": "Modules"
+    },
+    {
+      "id": "JS085",
+      "type": "code-output",
+      "topic": "Modules",
+      "difficulty": "Medium",
+      "prompt": "How many named exports are declared?",
+      "code": "export const a=1;\nexport const b=2;",
+      "choices": [
+        "2",
+        "1",
+        "0",
+        "3"
+      ],
+      "correct": 0,
+      "explain": "Both a and b are named exports.",
+      "skill": "Modules"
+    },
+    {
+      "id": "JS086",
+      "type": "output-code",
+      "topic": "Modules",
+      "difficulty": "Medium",
+      "prompt": "Which code imports two named values?",
+      "output": "Named imports a and b",
+      "choices": [
+        "import { a, b } from \"./m.js\";",
+        "import a, b from \"./m.js\";",
+        "import [a,b] from \"./m.js\";",
+        "import \"./m.js\" as a,b;"
+      ],
+      "correct": 0,
+      "explain": "Named imports use braces.",
+      "skill": "Modules"
+    },
+    {
+      "id": "JS087",
+      "type": "code-output",
+      "topic": "Modules",
+      "difficulty": "Medium",
+      "prompt": "What kind of import is this?",
+      "code": "import \"./styles.js\";",
+      "choices": [
+        "Side-effect import",
+        "Default import",
+        "Named import",
+        "Dynamic import"
+      ],
+      "correct": 0,
+      "explain": "The module is loaded for side effects without binding a name.",
+      "skill": "Modules"
+    },
+    {
+      "id": "JS088",
+      "type": "output-code",
+      "topic": "Modules",
+      "difficulty": "Expert",
+      "prompt": "Which syntax dynamically imports a module?",
+      "output": "Dynamic module import",
+      "choices": [
+        "import(\"./page.js\")",
+        "import page from \"./page.js\"",
+        "require import(\"./page.js\")",
+        "module(\"./page.js\")"
+      ],
+      "correct": 0,
+      "explain": "import() is the dynamic import expression.",
+      "skill": "Modules"
+    },
+    {
+      "id": "JS089",
+      "type": "code-output",
+      "topic": "Modules",
+      "difficulty": "Expert",
+      "prompt": "What does this re-export?",
+      "code": "export { x } from \"./a.js\";",
+      "choices": [
+        "Named export x from a.js",
+        "Default export from a.js",
+        "All exports from a.js",
+        "Nothing"
+      ],
+      "correct": 0,
+      "explain": "This re-exports the named binding x.",
+      "skill": "Modules"
+    },
+    {
+      "id": "JS090",
+      "type": "output-code",
+      "topic": "Modules",
+      "difficulty": "Expert",
+      "prompt": "Which syntax re-exports every named export?",
+      "output": "Re-export all named exports",
+      "choices": [
+        "export * from \"./a.js\";",
+        "export all from \"./a.js\";",
+        "import * from \"./a.js\";",
+        "export default * from \"./a.js\";"
+      ],
+      "correct": 0,
+      "explain": "export * from re-exports the module's named exports.",
+      "skill": "Modules"
     }
   ]
 }
