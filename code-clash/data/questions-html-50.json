@@ -18,7 +18,8 @@
       ],
       "correct": 0,
       "explain": "h1 creates a level-1 heading.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML002",
@@ -35,7 +36,8 @@
       ],
       "correct": 0,
       "explain": "p creates a paragraph.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML003",
@@ -52,7 +54,8 @@
       ],
       "correct": 0,
       "explain": "br inserts a line break.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML004",
@@ -69,7 +72,8 @@
       ],
       "correct": 0,
       "explain": "strong marks strong importance and is usually bold.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML005",
@@ -86,7 +90,8 @@
       ],
       "correct": 0,
       "explain": "em marks emphasized text and is usually italic.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML006",
@@ -103,7 +108,8 @@
       ],
       "correct": 0,
       "explain": "a with href creates a hyperlink.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Links & Images"
     },
     {
       "id": "HTML007",
@@ -120,7 +126,8 @@
       ],
       "correct": 0,
       "explain": "img embeds an image and alt provides alternative text.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Links & Images"
     },
     {
       "id": "HTML008",
@@ -137,7 +144,8 @@
       ],
       "correct": 0,
       "explain": "ul creates an unordered list and li creates list items.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Lists & Tables"
     },
     {
       "id": "HTML009",
@@ -154,7 +162,8 @@
       ],
       "correct": 0,
       "explain": "ol creates an ordered list.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Lists & Tables"
     },
     {
       "id": "HTML010",
@@ -171,7 +180,8 @@
       ],
       "correct": 0,
       "explain": "tr creates one row and each td creates a cell.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Lists & Tables"
     },
     {
       "id": "HTML011",
@@ -188,7 +198,8 @@
       ],
       "correct": 0,
       "explain": "button creates a clickable button.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Forms & Inputs"
     },
     {
       "id": "HTML012",
@@ -205,7 +216,8 @@
       ],
       "correct": 0,
       "explain": "input type=text creates a text field; value sets its initial content.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Forms & Inputs"
     },
     {
       "id": "HTML013",
@@ -222,7 +234,8 @@
       ],
       "correct": 0,
       "explain": "type=checkbox creates a checkbox and checked selects it initially.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Forms & Inputs"
     },
     {
       "id": "HTML014",
@@ -239,7 +252,8 @@
       ],
       "correct": 0,
       "explain": "type=radio creates a radio button.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Forms & Inputs"
     },
     {
       "id": "HTML015",
@@ -256,7 +270,8 @@
       ],
       "correct": 0,
       "explain": "select with option elements creates a drop-down list.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Forms & Inputs"
     },
     {
       "id": "HTML016",
@@ -273,7 +288,8 @@
       ],
       "correct": 0,
       "explain": "textarea creates a multi-line text control.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Forms & Inputs"
     },
     {
       "id": "HTML017",
@@ -290,7 +306,8 @@
       ],
       "correct": 0,
       "explain": "details/summary creates an expandable disclosure widget.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Semantic & Interactive"
     },
     {
       "id": "HTML018",
@@ -307,7 +324,8 @@
       ],
       "correct": 0,
       "explain": "progress shows 40 out of 100, i.e. 40%.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Semantic & Interactive"
     },
     {
       "id": "HTML019",
@@ -324,7 +342,8 @@
       ],
       "correct": 0,
       "explain": "&amp; represents an ampersand character.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML020",
@@ -341,7 +360,8 @@
       ],
       "correct": 0,
       "explain": "sup displays text as superscript.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML021",
@@ -358,7 +378,8 @@
       ],
       "correct": 0,
       "explain": "sub displays text as subscript.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML022",
@@ -375,7 +396,8 @@
       ],
       "correct": 0,
       "explain": "hr represents a thematic break, commonly shown as a horizontal rule.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML023",
@@ -392,7 +414,8 @@
       ],
       "correct": 0,
       "explain": "pre preserves whitespace and line breaks.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML024",
@@ -409,7 +432,8 @@
       ],
       "correct": 0,
       "explain": "for matches the input id, associating the label with that control.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Forms & Inputs"
     },
     {
       "id": "HTML025",
@@ -426,7 +450,8 @@
       ],
       "correct": 0,
       "explain": "nav represents a section of navigation links.",
-      "skill": "Semantic HTML"
+      "skill": "Semantic HTML",
+      "topicGroup": "Semantic & Interactive"
     },
     {
       "id": "HTML026",
@@ -443,7 +468,8 @@
       ],
       "correct": 0,
       "explain": "h2 creates a level-2 heading.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML027",
@@ -460,7 +486,8 @@
       ],
       "correct": 0,
       "explain": "p creates a paragraph.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML028",
@@ -477,7 +504,8 @@
       ],
       "correct": 0,
       "explain": "a with href creates the requested hyperlink.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Links & Images"
     },
     {
       "id": "HTML029",
@@ -494,7 +522,8 @@
       ],
       "correct": 0,
       "explain": "img uses src for the image URL and alt for alternative text.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Links & Images"
     },
     {
       "id": "HTML030",
@@ -511,7 +540,8 @@
       ],
       "correct": 0,
       "explain": "ul creates a bulleted list.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Lists & Tables"
     },
     {
       "id": "HTML031",
@@ -528,7 +558,8 @@
       ],
       "correct": 0,
       "explain": "ol creates a numbered/ordered list.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Lists & Tables"
     },
     {
       "id": "HTML032",
@@ -545,7 +576,8 @@
       ],
       "correct": 0,
       "explain": "tr is the row and td elements are its cells.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Lists & Tables"
     },
     {
       "id": "HTML033",
@@ -562,7 +594,8 @@
       ],
       "correct": 0,
       "explain": "button creates a push button.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Forms & Inputs"
     },
     {
       "id": "HTML034",
@@ -579,7 +612,8 @@
       ],
       "correct": 0,
       "explain": "type=password creates a password field.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Forms & Inputs"
     },
     {
       "id": "HTML035",
@@ -596,7 +630,8 @@
       ],
       "correct": 0,
       "explain": "checkbox plus checked gives the requested state.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Forms & Inputs"
     },
     {
       "id": "HTML036",
@@ -613,7 +648,8 @@
       ],
       "correct": 0,
       "explain": "type=radio creates the radio control.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Forms & Inputs"
     },
     {
       "id": "HTML037",
@@ -630,7 +666,8 @@
       ],
       "correct": 0,
       "explain": "select with option elements creates the drop-down.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Forms & Inputs"
     },
     {
       "id": "HTML038",
@@ -647,7 +684,8 @@
       ],
       "correct": 0,
       "explain": "textarea is the multi-line text control.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Forms & Inputs"
     },
     {
       "id": "HTML039",
@@ -664,7 +702,8 @@
       ],
       "correct": 0,
       "explain": "br inserts a line break.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML040",
@@ -681,7 +720,8 @@
       ],
       "correct": 0,
       "explain": "strong marks strong importance.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML041",
@@ -698,7 +738,8 @@
       ],
       "correct": 0,
       "explain": "em represents stress emphasis.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML042",
@@ -715,7 +756,8 @@
       ],
       "correct": 0,
       "explain": "&lt; represents the less-than character.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML043",
@@ -732,7 +774,8 @@
       ],
       "correct": 0,
       "explain": "sup creates superscript text.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML044",
@@ -749,7 +792,8 @@
       ],
       "correct": 0,
       "explain": "sub creates subscript text.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Text & Structure"
     },
     {
       "id": "HTML045",
@@ -766,7 +810,8 @@
       ],
       "correct": 0,
       "explain": "details and summary create a disclosure widget.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Semantic & Interactive"
     },
     {
       "id": "HTML046",
@@ -783,7 +828,8 @@
       ],
       "correct": 0,
       "explain": "progress with value 75 and max 100 represents 75%.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Semantic & Interactive"
     },
     {
       "id": "HTML047",
@@ -800,7 +846,8 @@
       ],
       "correct": 0,
       "explain": "footer represents footer content.",
-      "skill": "Semantic HTML"
+      "skill": "Semantic HTML",
+      "topicGroup": "Semantic & Interactive"
     },
     {
       "id": "HTML048",
@@ -817,7 +864,8 @@
       ],
       "correct": 0,
       "explain": "main represents the dominant content of the document body.",
-      "skill": "Semantic HTML"
+      "skill": "Semantic HTML",
+      "topicGroup": "Semantic & Interactive"
     },
     {
       "id": "HTML049",
@@ -834,7 +882,8 @@
       ],
       "correct": 0,
       "explain": "The form method attribute selects the HTTP method.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Forms & Inputs"
     },
     {
       "id": "HTML050",
@@ -851,7 +900,8 @@
       ],
       "correct": 0,
       "explain": "The label for value must match the control id.",
-      "skill": "HTML Basics"
+      "skill": "HTML Basics",
+      "topicGroup": "Forms & Inputs"
     }
   ]
 }
