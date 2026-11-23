@@ -22,8 +22,8 @@
 <script src="../config.js?v=20261027-1940"></script>
 <script>
 (() => {
-  const qs=new URLSearchParams(location.search),ts=Number(qs.get("start")||0),label=qs.get("label")||"your next",language=qs.get("language")==="html"?"html":"python",mode=["mixed","code-output","output-code"].includes(qs.get("mode"))?qs.get("mode"):"mixed",topic=qs.get("topic")||"all",difficulty=["all","easy","medium","expert"].includes(qs.get("difficulty"))?qs.get("difficulty"):"all";
-  const langLabel=language==="html"?"HTML":"Python",modeLabel=mode==="code-output"?"Code → Output":mode==="output-code"?"Output → Code":"Mixed";document.getElementById("readyTitle").textContent="Joined "+label+" "+langLabel+" Clash";
+  const qs=new URLSearchParams(location.search),ts=Number(qs.get("start")||0),label=qs.get("label")||"your next",language=["python","html","css","javascript"].includes(qs.get("language"))?qs.get("language"):"python",mode=["mixed","code-output","output-code"].includes(qs.get("mode"))?qs.get("mode"):"mixed",topic=qs.get("topic")||"all",difficulty=["all","easy","medium","expert"].includes(qs.get("difficulty"))?qs.get("difficulty"):"all";
+  const langLabel=language==="html"?"HTML":language==="css"?"CSS":language==="javascript"?"JavaScript":"Python",modeLabel=mode==="code-output"?"Code → Output":mode==="output-code"?"Output → Code":"Mixed";document.getElementById("readyTitle").textContent="Joined "+label+" "+langLabel+" Clash";
   function tick(){
     if(!ts)return;
     const sec=Math.max(0,Math.ceil((ts-Date.now())/1000)),h=Math.floor(sec/3600),m=Math.floor((sec%3600)/60),s=sec%60;
