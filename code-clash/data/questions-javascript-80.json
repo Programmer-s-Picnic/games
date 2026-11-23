@@ -1,0 +1,1367 @@
+{
+  "version": 1,
+  "language": "javascript",
+  "count": 80,
+  "questions": [
+    {
+      "id": "JS001",
+      "type": "code-output",
+      "topic": "Variables & Data Types",
+      "difficulty": "Easy",
+      "prompt": "What is printed to the console?",
+      "code": "let x = 5;\nconsole.log(typeof x);",
+      "choices": [
+        "number",
+        "undefined",
+        "Error",
+        "number!"
+      ],
+      "correct": 0,
+      "explain": "This follows the Variables & Data Types behavior used in the lesson.",
+      "skill": "Variables & Data Types"
+    },
+    {
+      "id": "JS002",
+      "type": "output-code",
+      "topic": "Variables & Data Types",
+      "difficulty": "Easy",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "number",
+      "choices": [
+        "let x = 5;\nconsole.log(typeof x);",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"number!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces number.",
+      "skill": "Variables & Data Types"
+    },
+    {
+      "id": "JS003",
+      "type": "code-output",
+      "topic": "Variables & Data Types",
+      "difficulty": "Easy",
+      "prompt": "What is printed to the console?",
+      "code": "let x = \"5\";\nconsole.log(typeof x);",
+      "choices": [
+        "string",
+        "undefined",
+        "Error",
+        "string!"
+      ],
+      "correct": 0,
+      "explain": "This follows the Variables & Data Types behavior used in the lesson.",
+      "skill": "Variables & Data Types"
+    },
+    {
+      "id": "JS004",
+      "type": "output-code",
+      "topic": "Variables & Data Types",
+      "difficulty": "Easy",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "string",
+      "choices": [
+        "let x = \"5\";\nconsole.log(typeof x);",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"string!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces string.",
+      "skill": "Variables & Data Types"
+    },
+    {
+      "id": "JS005",
+      "type": "code-output",
+      "topic": "Variables & Data Types",
+      "difficulty": "Easy",
+      "prompt": "What is printed to the console?",
+      "code": "let x = true;\nconsole.log(typeof x);",
+      "choices": [
+        "boolean",
+        "undefined",
+        "Error",
+        "boolean!"
+      ],
+      "correct": 0,
+      "explain": "This follows the Variables & Data Types behavior used in the lesson.",
+      "skill": "Variables & Data Types"
+    },
+    {
+      "id": "JS006",
+      "type": "output-code",
+      "topic": "Variables & Data Types",
+      "difficulty": "Easy",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "boolean",
+      "choices": [
+        "let x = true;\nconsole.log(typeof x);",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"boolean!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces boolean.",
+      "skill": "Variables & Data Types"
+    },
+    {
+      "id": "JS007",
+      "type": "code-output",
+      "topic": "Variables & Data Types",
+      "difficulty": "Easy",
+      "prompt": "What is printed to the console?",
+      "code": "let x;\nconsole.log(typeof x);",
+      "choices": [
+        "undefined",
+        "undefined",
+        "Error",
+        "undefined!"
+      ],
+      "correct": 0,
+      "explain": "This follows the Variables & Data Types behavior used in the lesson.",
+      "skill": "Variables & Data Types"
+    },
+    {
+      "id": "JS008",
+      "type": "output-code",
+      "topic": "Variables & Data Types",
+      "difficulty": "Easy",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "undefined",
+      "choices": [
+        "let x;\nconsole.log(typeof x);",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"undefined!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces undefined.",
+      "skill": "Variables & Data Types"
+    },
+    {
+      "id": "JS009",
+      "type": "code-output",
+      "topic": "Variables & Data Types",
+      "difficulty": "Easy",
+      "prompt": "What is printed to the console?",
+      "code": "const a = 2, b = 3;\nconsole.log(a + b);",
+      "choices": [
+        "5",
+        "6",
+        "4",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Variables & Data Types behavior used in the lesson.",
+      "skill": "Variables & Data Types"
+    },
+    {
+      "id": "JS010",
+      "type": "output-code",
+      "topic": "Variables & Data Types",
+      "difficulty": "Easy",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "5",
+      "choices": [
+        "const a = 2, b = 3;\nconsole.log(a + b);",
+        "console.log(\"6\");",
+        "console.log(\"4\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 5.",
+      "skill": "Variables & Data Types"
+    },
+    {
+      "id": "JS011",
+      "type": "code-output",
+      "topic": "Operators & Conditions",
+      "difficulty": "Easy",
+      "prompt": "What is printed to the console?",
+      "code": "let x = 7;\nconsole.log(x > 5 && x < 10);",
+      "choices": [
+        "true",
+        "false",
+        "1",
+        "undefined"
+      ],
+      "correct": 0,
+      "explain": "This follows the Operators & Conditions behavior used in the lesson.",
+      "skill": "Operators & Conditions"
+    },
+    {
+      "id": "JS012",
+      "type": "output-code",
+      "topic": "Operators & Conditions",
+      "difficulty": "Easy",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "true",
+      "choices": [
+        "let x = 7;\nconsole.log(x > 5 && x < 10);",
+        "console.log(\"false\");",
+        "console.log(\"1\");",
+        "console.log(\"undefined\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces true.",
+      "skill": "Operators & Conditions"
+    },
+    {
+      "id": "JS013",
+      "type": "code-output",
+      "topic": "Operators & Conditions",
+      "difficulty": "Easy",
+      "prompt": "What is printed to the console?",
+      "code": "let x = 4;\nconsole.log(x % 2 === 0 ? \"Even\" : \"Odd\");",
+      "choices": [
+        "Even",
+        "undefined",
+        "Error",
+        "Even!"
+      ],
+      "correct": 0,
+      "explain": "This follows the Operators & Conditions behavior used in the lesson.",
+      "skill": "Operators & Conditions"
+    },
+    {
+      "id": "JS014",
+      "type": "output-code",
+      "topic": "Operators & Conditions",
+      "difficulty": "Easy",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "Even",
+      "choices": [
+        "let x = 4;\nconsole.log(x % 2 === 0 ? \"Even\" : \"Odd\");",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"Even!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces Even.",
+      "skill": "Operators & Conditions"
+    },
+    {
+      "id": "JS015",
+      "type": "code-output",
+      "topic": "Operators & Conditions",
+      "difficulty": "Easy",
+      "prompt": "What is printed to the console?",
+      "code": "let x = 5;\nconsole.log(x === \"5\");",
+      "choices": [
+        "false",
+        "true",
+        "0",
+        "undefined"
+      ],
+      "correct": 0,
+      "explain": "This follows the Operators & Conditions behavior used in the lesson.",
+      "skill": "Operators & Conditions"
+    },
+    {
+      "id": "JS016",
+      "type": "output-code",
+      "topic": "Operators & Conditions",
+      "difficulty": "Easy",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "false",
+      "choices": [
+        "let x = 5;\nconsole.log(x === \"5\");",
+        "console.log(\"true\");",
+        "console.log(\"0\");",
+        "console.log(\"undefined\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces false.",
+      "skill": "Operators & Conditions"
+    },
+    {
+      "id": "JS017",
+      "type": "code-output",
+      "topic": "Operators & Conditions",
+      "difficulty": "Easy",
+      "prompt": "What is printed to the console?",
+      "code": "let x = 10;\nif (x >= 10) console.log(\"Yes\"); else console.log(\"No\");",
+      "choices": [
+        "Yes",
+        "undefined",
+        "Error",
+        "Yes!"
+      ],
+      "correct": 0,
+      "explain": "This follows the Operators & Conditions behavior used in the lesson.",
+      "skill": "Operators & Conditions"
+    },
+    {
+      "id": "JS018",
+      "type": "output-code",
+      "topic": "Operators & Conditions",
+      "difficulty": "Easy",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "Yes",
+      "choices": [
+        "let x = 10;\nif (x >= 10) console.log(\"Yes\"); else console.log(\"No\");",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"Yes!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces Yes.",
+      "skill": "Operators & Conditions"
+    },
+    {
+      "id": "JS019",
+      "type": "code-output",
+      "topic": "Operators & Conditions",
+      "difficulty": "Easy",
+      "prompt": "What is printed to the console?",
+      "code": "console.log(2 ** 3);",
+      "choices": [
+        "8",
+        "9",
+        "7",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Operators & Conditions behavior used in the lesson.",
+      "skill": "Operators & Conditions"
+    },
+    {
+      "id": "JS020",
+      "type": "output-code",
+      "topic": "Operators & Conditions",
+      "difficulty": "Easy",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "8",
+      "choices": [
+        "console.log(2 ** 3);",
+        "console.log(\"9\");",
+        "console.log(\"7\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 8.",
+      "skill": "Operators & Conditions"
+    },
+    {
+      "id": "JS021",
+      "type": "code-output",
+      "topic": "Loops & Functions",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "let s = 0;\nfor (let i=1;i<=3;i++) s += i;\nconsole.log(s);",
+      "choices": [
+        "6",
+        "7",
+        "5",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Loops & Functions behavior used in the lesson.",
+      "skill": "Loops & Functions"
+    },
+    {
+      "id": "JS022",
+      "type": "output-code",
+      "topic": "Loops & Functions",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "6",
+      "choices": [
+        "let s = 0;\nfor (let i=1;i<=3;i++) s += i;\nconsole.log(s);",
+        "console.log(\"7\");",
+        "console.log(\"5\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 6.",
+      "skill": "Loops & Functions"
+    },
+    {
+      "id": "JS023",
+      "type": "code-output",
+      "topic": "Loops & Functions",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "function f(x){ return x*2; }\nconsole.log(f(4));",
+      "choices": [
+        "8",
+        "9",
+        "7",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Loops & Functions behavior used in the lesson.",
+      "skill": "Loops & Functions"
+    },
+    {
+      "id": "JS024",
+      "type": "output-code",
+      "topic": "Loops & Functions",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "8",
+      "choices": [
+        "function f(x){ return x*2; }\nconsole.log(f(4));",
+        "console.log(\"9\");",
+        "console.log(\"7\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 8.",
+      "skill": "Loops & Functions"
+    },
+    {
+      "id": "JS025",
+      "type": "code-output",
+      "topic": "Loops & Functions",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "let i=0;\nwhile(i<3){i++;}\nconsole.log(i);",
+      "choices": [
+        "3",
+        "4",
+        "2",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Loops & Functions behavior used in the lesson.",
+      "skill": "Loops & Functions"
+    },
+    {
+      "id": "JS026",
+      "type": "output-code",
+      "topic": "Loops & Functions",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "3",
+      "choices": [
+        "let i=0;\nwhile(i<3){i++;}\nconsole.log(i);",
+        "console.log(\"4\");",
+        "console.log(\"2\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 3.",
+      "skill": "Loops & Functions"
+    },
+    {
+      "id": "JS027",
+      "type": "code-output",
+      "topic": "Loops & Functions",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "function add(a,b=2){return a+b;}\nconsole.log(add(3));",
+      "choices": [
+        "5",
+        "6",
+        "4",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Loops & Functions behavior used in the lesson.",
+      "skill": "Loops & Functions"
+    },
+    {
+      "id": "JS028",
+      "type": "output-code",
+      "topic": "Loops & Functions",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "5",
+      "choices": [
+        "function add(a,b=2){return a+b;}\nconsole.log(add(3));",
+        "console.log(\"6\");",
+        "console.log(\"4\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 5.",
+      "skill": "Loops & Functions"
+    },
+    {
+      "id": "JS029",
+      "type": "code-output",
+      "topic": "Loops & Functions",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "[1,2,3].forEach(x => console.log(x));",
+      "choices": [
+        "1\n2\n3",
+        "undefined",
+        "Error",
+        "1\n2\n3!"
+      ],
+      "correct": 0,
+      "explain": "This follows the Loops & Functions behavior used in the lesson.",
+      "skill": "Loops & Functions"
+    },
+    {
+      "id": "JS030",
+      "type": "output-code",
+      "topic": "Loops & Functions",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "1\n2\n3",
+      "choices": [
+        "[1,2,3].forEach(x => console.log(x));",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"1\\n2\\n3!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 1\n2\n3.",
+      "skill": "Loops & Functions"
+    },
+    {
+      "id": "JS031",
+      "type": "code-output",
+      "topic": "Arrays & Array Methods",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "const a=[1,2,3];\nconsole.log(a.map(x=>x*2));",
+      "choices": [
+        "[ 2, 4, 6 ]",
+        "undefined",
+        "Error",
+        "[ 2, 4, 6 ]!"
+      ],
+      "correct": 0,
+      "explain": "This follows the Arrays & Array Methods behavior used in the lesson.",
+      "skill": "Arrays & Array Methods"
+    },
+    {
+      "id": "JS032",
+      "type": "output-code",
+      "topic": "Arrays & Array Methods",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "[ 2, 4, 6 ]",
+      "choices": [
+        "const a=[1,2,3];\nconsole.log(a.map(x=>x*2));",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"[ 2, 4, 6 ]!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces [ 2, 4, 6 ].",
+      "skill": "Arrays & Array Methods"
+    },
+    {
+      "id": "JS033",
+      "type": "code-output",
+      "topic": "Arrays & Array Methods",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "const a=[10,20,30];\nconsole.log(a.filter(x=>x>=20));",
+      "choices": [
+        "[ 20, 30 ]",
+        "undefined",
+        "Error",
+        "[ 20, 30 ]!"
+      ],
+      "correct": 0,
+      "explain": "This follows the Arrays & Array Methods behavior used in the lesson.",
+      "skill": "Arrays & Array Methods"
+    },
+    {
+      "id": "JS034",
+      "type": "output-code",
+      "topic": "Arrays & Array Methods",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "[ 20, 30 ]",
+      "choices": [
+        "const a=[10,20,30];\nconsole.log(a.filter(x=>x>=20));",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"[ 20, 30 ]!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces [ 20, 30 ].",
+      "skill": "Arrays & Array Methods"
+    },
+    {
+      "id": "JS035",
+      "type": "code-output",
+      "topic": "Arrays & Array Methods",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "const a=[3,5,7];\nconsole.log(a.find(x=>x>4));",
+      "choices": [
+        "5",
+        "6",
+        "4",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Arrays & Array Methods behavior used in the lesson.",
+      "skill": "Arrays & Array Methods"
+    },
+    {
+      "id": "JS036",
+      "type": "output-code",
+      "topic": "Arrays & Array Methods",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "5",
+      "choices": [
+        "const a=[3,5,7];\nconsole.log(a.find(x=>x>4));",
+        "console.log(\"6\");",
+        "console.log(\"4\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 5.",
+      "skill": "Arrays & Array Methods"
+    },
+    {
+      "id": "JS037",
+      "type": "code-output",
+      "topic": "Arrays & Array Methods",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "const a=[1,2,3];\nconsole.log(a.reduce((s,x)=>s+x,0));",
+      "choices": [
+        "6",
+        "7",
+        "5",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Arrays & Array Methods behavior used in the lesson.",
+      "skill": "Arrays & Array Methods"
+    },
+    {
+      "id": "JS038",
+      "type": "output-code",
+      "topic": "Arrays & Array Methods",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "6",
+      "choices": [
+        "const a=[1,2,3];\nconsole.log(a.reduce((s,x)=>s+x,0));",
+        "console.log(\"7\");",
+        "console.log(\"5\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 6.",
+      "skill": "Arrays & Array Methods"
+    },
+    {
+      "id": "JS039",
+      "type": "code-output",
+      "topic": "Arrays & Array Methods",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "const a=[\"A\",\"B\"];\nconsole.log(a.includes(\"B\"));",
+      "choices": [
+        "true",
+        "false",
+        "1",
+        "undefined"
+      ],
+      "correct": 0,
+      "explain": "This follows the Arrays & Array Methods behavior used in the lesson.",
+      "skill": "Arrays & Array Methods"
+    },
+    {
+      "id": "JS040",
+      "type": "output-code",
+      "topic": "Arrays & Array Methods",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "true",
+      "choices": [
+        "const a=[\"A\",\"B\"];\nconsole.log(a.includes(\"B\"));",
+        "console.log(\"false\");",
+        "console.log(\"1\");",
+        "console.log(\"undefined\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces true.",
+      "skill": "Arrays & Array Methods"
+    },
+    {
+      "id": "JS041",
+      "type": "code-output",
+      "topic": "Objects & Destructuring",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "const s={name:\"Asha\",marks:90};\nconsole.log(s.name);",
+      "choices": [
+        "Asha",
+        "undefined",
+        "Error",
+        "Asha!"
+      ],
+      "correct": 0,
+      "explain": "This follows the Objects & Destructuring behavior used in the lesson.",
+      "skill": "Objects & Destructuring"
+    },
+    {
+      "id": "JS042",
+      "type": "output-code",
+      "topic": "Objects & Destructuring",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "Asha",
+      "choices": [
+        "const s={name:\"Asha\",marks:90};\nconsole.log(s.name);",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"Asha!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces Asha.",
+      "skill": "Objects & Destructuring"
+    },
+    {
+      "id": "JS043",
+      "type": "code-output",
+      "topic": "Objects & Destructuring",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "const s={name:\"Asha\",marks:90};\nconst {marks}=s;\nconsole.log(marks);",
+      "choices": [
+        "90",
+        "91",
+        "89",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Objects & Destructuring behavior used in the lesson.",
+      "skill": "Objects & Destructuring"
+    },
+    {
+      "id": "JS044",
+      "type": "output-code",
+      "topic": "Objects & Destructuring",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "90",
+      "choices": [
+        "const s={name:\"Asha\",marks:90};\nconst {marks}=s;\nconsole.log(marks);",
+        "console.log(\"91\");",
+        "console.log(\"89\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 90.",
+      "skill": "Objects & Destructuring"
+    },
+    {
+      "id": "JS045",
+      "type": "code-output",
+      "topic": "Objects & Destructuring",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "const a=[10,20];\nconst [x,y]=a;\nconsole.log(y);",
+      "choices": [
+        "20",
+        "21",
+        "19",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Objects & Destructuring behavior used in the lesson.",
+      "skill": "Objects & Destructuring"
+    },
+    {
+      "id": "JS046",
+      "type": "output-code",
+      "topic": "Objects & Destructuring",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "20",
+      "choices": [
+        "const a=[10,20];\nconst [x,y]=a;\nconsole.log(y);",
+        "console.log(\"21\");",
+        "console.log(\"19\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 20.",
+      "skill": "Objects & Destructuring"
+    },
+    {
+      "id": "JS047",
+      "type": "code-output",
+      "topic": "Objects & Destructuring",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "const s={a:1,b:2};\nconsole.log(Object.keys(s).length);",
+      "choices": [
+        "2",
+        "3",
+        "1",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Objects & Destructuring behavior used in the lesson.",
+      "skill": "Objects & Destructuring"
+    },
+    {
+      "id": "JS048",
+      "type": "output-code",
+      "topic": "Objects & Destructuring",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "2",
+      "choices": [
+        "const s={a:1,b:2};\nconsole.log(Object.keys(s).length);",
+        "console.log(\"3\");",
+        "console.log(\"1\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 2.",
+      "skill": "Objects & Destructuring"
+    },
+    {
+      "id": "JS049",
+      "type": "code-output",
+      "topic": "Objects & Destructuring",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "const s={name:\"A\"};\ns.name=\"B\";\nconsole.log(s.name);",
+      "choices": [
+        "B",
+        "undefined",
+        "Error",
+        "B!"
+      ],
+      "correct": 0,
+      "explain": "This follows the Objects & Destructuring behavior used in the lesson.",
+      "skill": "Objects & Destructuring"
+    },
+    {
+      "id": "JS050",
+      "type": "output-code",
+      "topic": "Objects & Destructuring",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "B",
+      "choices": [
+        "const s={name:\"A\"};\ns.name=\"B\";\nconsole.log(s.name);",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"B!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces B.",
+      "skill": "Objects & Destructuring"
+    },
+    {
+      "id": "JS051",
+      "type": "code-output",
+      "topic": "Spread & Rest",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "const a=[1,2];\nconst b=[...a,3];\nconsole.log(b);",
+      "choices": [
+        "[ 1, 2, 3 ]",
+        "undefined",
+        "Error",
+        "[ 1, 2, 3 ]!"
+      ],
+      "correct": 0,
+      "explain": "This follows the Spread & Rest behavior used in the lesson.",
+      "skill": "Spread & Rest"
+    },
+    {
+      "id": "JS052",
+      "type": "output-code",
+      "topic": "Spread & Rest",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "[ 1, 2, 3 ]",
+      "choices": [
+        "const a=[1,2];\nconst b=[...a,3];\nconsole.log(b);",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"[ 1, 2, 3 ]!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces [ 1, 2, 3 ].",
+      "skill": "Spread & Rest"
+    },
+    {
+      "id": "JS053",
+      "type": "code-output",
+      "topic": "Spread & Rest",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "const a={x:1};\nconst b={...a,y:2};\nconsole.log(b.y);",
+      "choices": [
+        "2",
+        "3",
+        "1",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Spread & Rest behavior used in the lesson.",
+      "skill": "Spread & Rest"
+    },
+    {
+      "id": "JS054",
+      "type": "output-code",
+      "topic": "Spread & Rest",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "2",
+      "choices": [
+        "const a={x:1};\nconst b={...a,y:2};\nconsole.log(b.y);",
+        "console.log(\"3\");",
+        "console.log(\"1\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 2.",
+      "skill": "Spread & Rest"
+    },
+    {
+      "id": "JS055",
+      "type": "code-output",
+      "topic": "Spread & Rest",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "function sum(...x){return x.reduce((a,b)=>a+b,0)}\nconsole.log(sum(1,2,3));",
+      "choices": [
+        "6",
+        "7",
+        "5",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Spread & Rest behavior used in the lesson.",
+      "skill": "Spread & Rest"
+    },
+    {
+      "id": "JS056",
+      "type": "output-code",
+      "topic": "Spread & Rest",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "6",
+      "choices": [
+        "function sum(...x){return x.reduce((a,b)=>a+b,0)}\nconsole.log(sum(1,2,3));",
+        "console.log(\"7\");",
+        "console.log(\"5\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 6.",
+      "skill": "Spread & Rest"
+    },
+    {
+      "id": "JS057",
+      "type": "code-output",
+      "topic": "Spread & Rest",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "const a=[1,2,3];\nconst [x,...rest]=a;\nconsole.log(rest);",
+      "choices": [
+        "[ 2, 3 ]",
+        "undefined",
+        "Error",
+        "[ 2, 3 ]!"
+      ],
+      "correct": 0,
+      "explain": "This follows the Spread & Rest behavior used in the lesson.",
+      "skill": "Spread & Rest"
+    },
+    {
+      "id": "JS058",
+      "type": "output-code",
+      "topic": "Spread & Rest",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "[ 2, 3 ]",
+      "choices": [
+        "const a=[1,2,3];\nconst [x,...rest]=a;\nconsole.log(rest);",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"[ 2, 3 ]!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces [ 2, 3 ].",
+      "skill": "Spread & Rest"
+    },
+    {
+      "id": "JS059",
+      "type": "code-output",
+      "topic": "Spread & Rest",
+      "difficulty": "Medium",
+      "prompt": "What is printed to the console?",
+      "code": "const a={x:1,y:2};\nconst b={...a,x:9};\nconsole.log(b.x);",
+      "choices": [
+        "9",
+        "10",
+        "8",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Spread & Rest behavior used in the lesson.",
+      "skill": "Spread & Rest"
+    },
+    {
+      "id": "JS060",
+      "type": "output-code",
+      "topic": "Spread & Rest",
+      "difficulty": "Medium",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "9",
+      "choices": [
+        "const a={x:1,y:2};\nconst b={...a,x:9};\nconsole.log(b.x);",
+        "console.log(\"10\");",
+        "console.log(\"8\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 9.",
+      "skill": "Spread & Rest"
+    },
+    {
+      "id": "JS061",
+      "type": "code-output",
+      "topic": "Promises & Async Await",
+      "difficulty": "Expert",
+      "prompt": "What is printed to the console?",
+      "code": "Promise.resolve(5).then(x=>console.log(x));",
+      "choices": [
+        "5",
+        "6",
+        "4",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Promises & Async Await behavior used in the lesson.",
+      "skill": "Promises & Async Await"
+    },
+    {
+      "id": "JS062",
+      "type": "output-code",
+      "topic": "Promises & Async Await",
+      "difficulty": "Expert",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "5",
+      "choices": [
+        "Promise.resolve(5).then(x=>console.log(x));",
+        "console.log(\"6\");",
+        "console.log(\"4\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 5.",
+      "skill": "Promises & Async Await"
+    },
+    {
+      "id": "JS063",
+      "type": "code-output",
+      "topic": "Promises & Async Await",
+      "difficulty": "Expert",
+      "prompt": "What is printed to the console?",
+      "code": "async function f(){return 7}\nf().then(x=>console.log(x));",
+      "choices": [
+        "7",
+        "8",
+        "6",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Promises & Async Await behavior used in the lesson.",
+      "skill": "Promises & Async Await"
+    },
+    {
+      "id": "JS064",
+      "type": "output-code",
+      "topic": "Promises & Async Await",
+      "difficulty": "Expert",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "7",
+      "choices": [
+        "async function f(){return 7}\nf().then(x=>console.log(x));",
+        "console.log(\"8\");",
+        "console.log(\"6\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 7.",
+      "skill": "Promises & Async Await"
+    },
+    {
+      "id": "JS065",
+      "type": "code-output",
+      "topic": "Promises & Async Await",
+      "difficulty": "Expert",
+      "prompt": "What is printed to the console?",
+      "code": "async function f(){const x=await Promise.resolve(3);console.log(x*2)}\nf();",
+      "choices": [
+        "6",
+        "7",
+        "5",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Promises & Async Await behavior used in the lesson.",
+      "skill": "Promises & Async Await"
+    },
+    {
+      "id": "JS066",
+      "type": "output-code",
+      "topic": "Promises & Async Await",
+      "difficulty": "Expert",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "6",
+      "choices": [
+        "async function f(){const x=await Promise.resolve(3);console.log(x*2)}\nf();",
+        "console.log(\"7\");",
+        "console.log(\"5\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 6.",
+      "skill": "Promises & Async Await"
+    },
+    {
+      "id": "JS067",
+      "type": "code-output",
+      "topic": "Promises & Async Await",
+      "difficulty": "Expert",
+      "prompt": "What is printed to the console?",
+      "code": "Promise.resolve(\"A\").then(x=>x+\"B\").then(console.log);",
+      "choices": [
+        "AB",
+        "undefined",
+        "Error",
+        "AB!"
+      ],
+      "correct": 0,
+      "explain": "This follows the Promises & Async Await behavior used in the lesson.",
+      "skill": "Promises & Async Await"
+    },
+    {
+      "id": "JS068",
+      "type": "output-code",
+      "topic": "Promises & Async Await",
+      "difficulty": "Expert",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "AB",
+      "choices": [
+        "Promise.resolve(\"A\").then(x=>x+\"B\").then(console.log);",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"AB!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces AB.",
+      "skill": "Promises & Async Await"
+    },
+    {
+      "id": "JS069",
+      "type": "code-output",
+      "topic": "Promises & Async Await",
+      "difficulty": "Expert",
+      "prompt": "What is printed to the console?",
+      "code": "async function f(){return await Promise.resolve(\"Done\")}\nf().then(console.log);",
+      "choices": [
+        "Done",
+        "undefined",
+        "Error",
+        "Done!"
+      ],
+      "correct": 0,
+      "explain": "This follows the Promises & Async Await behavior used in the lesson.",
+      "skill": "Promises & Async Await"
+    },
+    {
+      "id": "JS070",
+      "type": "output-code",
+      "topic": "Promises & Async Await",
+      "difficulty": "Expert",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "Done",
+      "choices": [
+        "async function f(){return await Promise.resolve(\"Done\")}\nf().then(console.log);",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"Done!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces Done.",
+      "skill": "Promises & Async Await"
+    },
+    {
+      "id": "JS071",
+      "type": "code-output",
+      "topic": "DOM & Events",
+      "difficulty": "Expert",
+      "prompt": "What is printed to the console?",
+      "code": "const buttonText=\"Save\";\nfunction handleClick(){console.log(buttonText+\" clicked\")}\nhandleClick();",
+      "choices": [
+        "Save clicked",
+        "undefined",
+        "Error",
+        "Save clicked!"
+      ],
+      "correct": 0,
+      "explain": "This follows the DOM & Events behavior used in the lesson.",
+      "skill": "DOM & Events"
+    },
+    {
+      "id": "JS072",
+      "type": "output-code",
+      "topic": "DOM & Events",
+      "difficulty": "Expert",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "Save clicked",
+      "choices": [
+        "const buttonText=\"Save\";\nfunction handleClick(){console.log(buttonText+\" clicked\")}\nhandleClick();",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"Save clicked!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces Save clicked.",
+      "skill": "DOM & Events"
+    },
+    {
+      "id": "JS073",
+      "type": "code-output",
+      "topic": "DOM & Events",
+      "difficulty": "Expert",
+      "prompt": "What is printed to the console?",
+      "code": "let value=\"\";\nfunction onInput(v){value=v}\nonInput(\"Hi\");\nconsole.log(value);",
+      "choices": [
+        "Hi",
+        "undefined",
+        "Error",
+        "Hi!"
+      ],
+      "correct": 0,
+      "explain": "This follows the DOM & Events behavior used in the lesson.",
+      "skill": "DOM & Events"
+    },
+    {
+      "id": "JS074",
+      "type": "output-code",
+      "topic": "DOM & Events",
+      "difficulty": "Expert",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "Hi",
+      "choices": [
+        "let value=\"\";\nfunction onInput(v){value=v}\nonInput(\"Hi\");\nconsole.log(value);",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"Hi!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces Hi.",
+      "skill": "DOM & Events"
+    },
+    {
+      "id": "JS075",
+      "type": "code-output",
+      "topic": "DOM & Events",
+      "difficulty": "Expert",
+      "prompt": "What is printed to the console?",
+      "code": "let count=0;\nfunction click(){count++}\nclick();click();\nconsole.log(count);",
+      "choices": [
+        "2",
+        "3",
+        "1",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the DOM & Events behavior used in the lesson.",
+      "skill": "DOM & Events"
+    },
+    {
+      "id": "JS076",
+      "type": "output-code",
+      "topic": "DOM & Events",
+      "difficulty": "Expert",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "2",
+      "choices": [
+        "let count=0;\nfunction click(){count++}\nclick();click();\nconsole.log(count);",
+        "console.log(\"3\");",
+        "console.log(\"1\");",
+        "console.log(\"0\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces 2.",
+      "skill": "DOM & Events"
+    },
+    {
+      "id": "JS077",
+      "type": "code-output",
+      "topic": "DOM & Events",
+      "difficulty": "Expert",
+      "prompt": "What is printed to the console?",
+      "code": "const event={key:\"Enter\"};\nconsole.log(event.key);",
+      "choices": [
+        "Enter",
+        "undefined",
+        "Error",
+        "Enter!"
+      ],
+      "correct": 0,
+      "explain": "This follows the DOM & Events behavior used in the lesson.",
+      "skill": "DOM & Events"
+    },
+    {
+      "id": "JS078",
+      "type": "output-code",
+      "topic": "DOM & Events",
+      "difficulty": "Expert",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "Enter",
+      "choices": [
+        "const event={key:\"Enter\"};\nconsole.log(event.key);",
+        "console.log(\"undefined\");",
+        "console.log(\"Error\");",
+        "console.log(\"Enter!\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces Enter.",
+      "skill": "DOM & Events"
+    },
+    {
+      "id": "JS079",
+      "type": "code-output",
+      "topic": "DOM & Events",
+      "difficulty": "Expert",
+      "prompt": "What is printed to the console?",
+      "code": "const form={submitted:false};\nform.submitted=true;\nconsole.log(form.submitted);",
+      "choices": [
+        "true",
+        "false",
+        "1",
+        "undefined"
+      ],
+      "correct": 0,
+      "explain": "This follows the DOM & Events behavior used in the lesson.",
+      "skill": "DOM & Events"
+    },
+    {
+      "id": "JS080",
+      "type": "output-code",
+      "topic": "DOM & Events",
+      "difficulty": "Expert",
+      "prompt": "Which JavaScript code produces this console output?",
+      "output": "true",
+      "choices": [
+        "const form={submitted:false};\nform.submitted=true;\nconsole.log(form.submitted);",
+        "console.log(\"false\");",
+        "console.log(\"1\");",
+        "console.log(\"undefined\");"
+      ],
+      "correct": 0,
+      "explain": "The first snippet produces true.",
+      "skill": "DOM & Events"
+    }
+  ]
+}
