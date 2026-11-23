@@ -39,3 +39,11 @@
 .review-chip strong{font-size:1.35rem}
 .result-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
 @media(max-width:720px){.result-hero,.results-grid,.match-review,.result-actions{grid-template-columns:1fr}.result-head{align-items:flex-start}.result-medal{min-width:58px;height:58px;font-size:1.5rem}}
+
+.score-box{display:grid;gap:2px}
+.score-box small{font-size:.68rem;color:#94a3b8;font-weight:600}
+.score-explain{margin-top:12px;padding:10px 12px;border:1px solid #33436f;border-radius:12px;background:#11192d;color:#aeb9d8;font-size:.85rem}
+.points-breakdown{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.points-breakdown span{padding:7px 10px;border:1px solid #33436f;border-radius:10px;background:#151d34}
+.points-breakdown strong{color:#facc15}
+.wrong-points strong{color:#f87171}
