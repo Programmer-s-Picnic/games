@@ -6,7 +6,7 @@
   <title>Live Code Clash Match | Learn With Champak</title>
   <meta name="theme-color" content="#0b1020">
   <link rel="icon" href="../../og.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../style.css?v=20261027-2315">
+  <link rel="stylesheet" href="../style.css?v=20261123-0845">
 </head>
 <body>
 <header class="brand"><a href="https://www.learnwithchampak.live/" target="_blank" rel="noopener">Learn With Champak</a><span>Live Code Clash Match</span></header>
@@ -34,15 +34,43 @@
   <div id="opponents" class="opponents"></div>
 </section>
 <section id="resultPanel" class="card results hidden">
-  <p class="eyebrow">MATCH COMPLETE</p><h2>Live Code Clash Results</h2>
-  <div class="result-hero"><div><span>Final score</span><strong id="finalScore">0</strong></div><div><span>Rank</span><strong id="finalRank">1/6</strong></div><div><span>Accuracy</span><strong id="finalAccuracy">0%</strong></div></div>
-  <div id="skillBars" class="skill-bars"></div><p id="assessment" class="assessment"></p>
-  <a class="primary big" href="../">Return to waiting lobby</a>
+  <div class="result-head">
+    <div><p class="eyebrow">MATCH COMPLETE</p><h2 id="resultHeading">Code Clash Results</h2><p id="resultArena" class="small"></p></div>
+    <div id="resultMedal" class="result-medal">2</div>
+  </div>
+  <div class="result-hero">
+    <div><span>Final score</span><strong id="finalScore">0</strong></div>
+    <div><span>Rank</span><strong id="finalRank">1/3</strong></div>
+    <div><span>Accuracy</span><strong id="finalAccuracy">0%</strong></div>
+    <div><span>Correct</span><strong id="correctAnswers">0/10</strong></div>
+    <div><span>Avg response</span><strong id="avgResponse">0.0s</strong></div>
+    <div><span>Performance</span><strong id="performanceGrade">A</strong></div>
+  </div>
+  <div class="results-grid">
+    <section class="result-section">
+      <h3>Final standings</h3>
+      <div id="finalStandings"></div>
+    </section>
+    <section class="result-section">
+      <h3>Topic performance</h3>
+      <div id="skillBars" class="skill-bars"></div>
+    </section>
+  </div>
+  <section class="result-section">
+    <h3>Match review</h3>
+    <div id="matchReview" class="match-review"></div>
+    <p id="assessment" class="assessment"></p>
+  </section>
+  <div class="result-actions">
+    <a id="playAgainLink" class="primary big" href="../">Play Again</a>
+    <a class="secondary big" href="../">Change Arena</a>
+    <a class="secondary big" href="../">Back to Lobby</a>
+  </div>
 </section>
 </main>
 <footer>Developed and maintained by <a href="https://www.learnwithchampak.live/" target="_blank" rel="noopener">Learn With Champak</a></footer>
 <script src="https://cserver.learnwithchampak.live/games/code-clash/socket.io/socket.io.js"></script>
 <script src="../config.js?v=20261027-2315"></script>
-<script src="./match-20261120-1535.js"></script>
+<script src="./match-20261123-0845.js"></script>
 </body>
 </html>
