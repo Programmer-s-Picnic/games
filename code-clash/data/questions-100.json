@@ -1,6 +1,6 @@
 {
-  "version": 2,
-  "count": 120,
+  "version": 3,
+  "count": 200,
   "questions": [
     {
       "id": "PY001",
@@ -2041,6 +2041,1366 @@
       "correct": 0,
       "explain": "Tracing the loop structure produces the shown value.",
       "skill": "Loops"
+    },
+    {
+      "id": "PY121",
+      "type": "code-output",
+      "topic": "Conditions & Booleans",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "x = 7\nprint(x > 5 and x < 10)",
+      "choices": [
+        "True",
+        "False",
+        "1",
+        "None"
+      ],
+      "correct": 0,
+      "explain": "This follows the Conditions & Booleans operation shown in the lesson pattern.",
+      "skill": "Python Conditions"
+    },
+    {
+      "id": "PY122",
+      "type": "output-code",
+      "topic": "Conditions & Booleans",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "True",
+      "choices": [
+        "x = 7\nprint(x > 5 and x < 10)",
+        "x = 7\nprint(None)",
+        "print(\"True\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces True.",
+      "skill": "Python Conditions"
+    },
+    {
+      "id": "PY123",
+      "type": "code-output",
+      "topic": "Conditions & Booleans",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "x = 4\nprint(\"Even\" if x % 2 == 0 else \"Odd\")",
+      "choices": [
+        "Even",
+        "Error",
+        "None",
+        "Even"
+      ],
+      "correct": 0,
+      "explain": "This follows the Conditions & Booleans operation shown in the lesson pattern.",
+      "skill": "Python Conditions"
+    },
+    {
+      "id": "PY124",
+      "type": "output-code",
+      "topic": "Conditions & Booleans",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "Even",
+      "choices": [
+        "x = 4\nprint(\"Even\" if x % 2 == 0 else \"Odd\")",
+        "x = 4\nprint(None)",
+        "print(\"Even\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces Even.",
+      "skill": "Python Conditions"
+    },
+    {
+      "id": "PY125",
+      "type": "code-output",
+      "topic": "Conditions & Booleans",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "x = 12\nif x > 10:\n    print(\"High\")\nelse:\n    print(\"Low\")",
+      "choices": [
+        "High",
+        "Error",
+        "None",
+        "High"
+      ],
+      "correct": 0,
+      "explain": "This follows the Conditions & Booleans operation shown in the lesson pattern.",
+      "skill": "Python Conditions"
+    },
+    {
+      "id": "PY126",
+      "type": "output-code",
+      "topic": "Conditions & Booleans",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "High",
+      "choices": [
+        "x = 12\nif x > 10:\n    print(\"High\")\nelse:\n    print(\"Low\")",
+        "x = 12\nif x > 10:\n    print(None)\nelse:\n    print(\"Low\")",
+        "print(\"High\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces High.",
+      "skill": "Python Conditions"
+    },
+    {
+      "id": "PY127",
+      "type": "code-output",
+      "topic": "Conditions & Booleans",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "x = 5\nprint(not (x == 5))",
+      "choices": [
+        "False",
+        "True",
+        "0",
+        "None"
+      ],
+      "correct": 0,
+      "explain": "This follows the Conditions & Booleans operation shown in the lesson pattern.",
+      "skill": "Python Conditions"
+    },
+    {
+      "id": "PY128",
+      "type": "output-code",
+      "topic": "Conditions & Booleans",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "False",
+      "choices": [
+        "x = 5\nprint(not (x == 5))",
+        "x = 5\nprint(None))",
+        "print(\"False\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces False.",
+      "skill": "Python Conditions"
+    },
+    {
+      "id": "PY129",
+      "type": "code-output",
+      "topic": "Conditions & Booleans",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "x = 8\nprint(x >= 8 or x < 0)",
+      "choices": [
+        "True",
+        "False",
+        "1",
+        "None"
+      ],
+      "correct": 0,
+      "explain": "This follows the Conditions & Booleans operation shown in the lesson pattern.",
+      "skill": "Python Conditions"
+    },
+    {
+      "id": "PY130",
+      "type": "output-code",
+      "topic": "Conditions & Booleans",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "True",
+      "choices": [
+        "x = 8\nprint(x >= 8 or x < 0)",
+        "x = 8\nprint(None)",
+        "print(\"True\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces True.",
+      "skill": "Python Conditions"
+    },
+    {
+      "id": "PY131",
+      "type": "code-output",
+      "topic": "NumPy Arrays",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "import numpy as np\na = np.array([1, 2, 3])\nprint(a.shape)",
+      "choices": [
+        "(3,)",
+        "Error",
+        "None",
+        "(4,)"
+      ],
+      "correct": 0,
+      "explain": "This follows the NumPy Arrays operation shown in the lesson pattern.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY132",
+      "type": "output-code",
+      "topic": "NumPy Arrays",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "(3,)",
+      "choices": [
+        "import numpy as np\na = np.array([1, 2, 3])\nprint(a.shape)",
+        "import numpy as np\na = np.array([1, 2, 3])\nprint(None)",
+        "print(\"(3,)\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces (3,).",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY133",
+      "type": "code-output",
+      "topic": "NumPy Arrays",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "import numpy as np\na = np.array([2, 4, 6])\nprint(a[1])",
+      "choices": [
+        "4",
+        "5",
+        "3",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the NumPy Arrays operation shown in the lesson pattern.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY134",
+      "type": "output-code",
+      "topic": "NumPy Arrays",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "4",
+      "choices": [
+        "import numpy as np\na = np.array([2, 4, 6])\nprint(a[1])",
+        "import numpy as np\na = np.array([2, 4, 6])\nprint(None)",
+        "print(\"4\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces 4.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY135",
+      "type": "code-output",
+      "topic": "NumPy Arrays",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "import numpy as np\na = np.array([[1,2],[3,4]])\nprint(a.ndim)",
+      "choices": [
+        "2",
+        "3",
+        "1",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the NumPy Arrays operation shown in the lesson pattern.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY136",
+      "type": "output-code",
+      "topic": "NumPy Arrays",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "2",
+      "choices": [
+        "import numpy as np\na = np.array([[1,2],[3,4]])\nprint(a.ndim)",
+        "import numpy as np\na = np.array([[1,2],[3,4]])\nprint(None)",
+        "print(\"2\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces 2.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY137",
+      "type": "code-output",
+      "topic": "NumPy Arrays",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "import numpy as np\na = np.array([1,2,3])\nprint(a.dtype.kind)",
+      "choices": [
+        "i",
+        "Error",
+        "None",
+        "i"
+      ],
+      "correct": 0,
+      "explain": "This follows the NumPy Arrays operation shown in the lesson pattern.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY138",
+      "type": "output-code",
+      "topic": "NumPy Arrays",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "i",
+      "choices": [
+        "import numpy as np\na = np.array([1,2,3])\nprint(a.dtype.kind)",
+        "import numpy as np\na = np.array([1,2,3])\nprint(None)",
+        "print(\"i\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces i.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY139",
+      "type": "code-output",
+      "topic": "NumPy Arrays",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "import numpy as np\na = np.arange(1,5)\nprint(a.tolist())",
+      "choices": [
+        "[1, 2, 3, 4]",
+        "Error",
+        "None",
+        "[2, 3, 4, 5]"
+      ],
+      "correct": 0,
+      "explain": "This follows the NumPy Arrays operation shown in the lesson pattern.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY140",
+      "type": "output-code",
+      "topic": "NumPy Arrays",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "[1, 2, 3, 4]",
+      "choices": [
+        "import numpy as np\na = np.arange(1,5)\nprint(a.tolist())",
+        "import numpy as np\na = np.arange(1,5)\nprint(None))",
+        "print(\"[1, 2, 3, 4]\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces [1, 2, 3, 4].",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY141",
+      "type": "code-output",
+      "topic": "NumPy Operations",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import numpy as np\na = np.array([1,2,3])\nprint((a * 2).tolist())",
+      "choices": [
+        "[2, 4, 6]",
+        "Error",
+        "None",
+        "[3, 5, 7]"
+      ],
+      "correct": 0,
+      "explain": "This follows the NumPy Operations operation shown in the lesson pattern.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY142",
+      "type": "output-code",
+      "topic": "NumPy Operations",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "[2, 4, 6]",
+      "choices": [
+        "import numpy as np\na = np.array([1,2,3])\nprint((a * 2).tolist())",
+        "import numpy as np\na = np.array([1,2,3])\nprint(None).tolist())",
+        "print(\"[2, 4, 6]\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces [2, 4, 6].",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY143",
+      "type": "code-output",
+      "topic": "NumPy Operations",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import numpy as np\na = np.arange(6).reshape(2,3)\nprint(a.shape)",
+      "choices": [
+        "(2, 3)",
+        "Error",
+        "None",
+        "(3, 4)"
+      ],
+      "correct": 0,
+      "explain": "This follows the NumPy Operations operation shown in the lesson pattern.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY144",
+      "type": "output-code",
+      "topic": "NumPy Operations",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "(2, 3)",
+      "choices": [
+        "import numpy as np\na = np.arange(6).reshape(2,3)\nprint(a.shape)",
+        "import numpy as np\na = np.arange(6).reshape(2,3)\nprint(None)",
+        "print(\"(2, 3)\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces (2, 3).",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY145",
+      "type": "code-output",
+      "topic": "NumPy Operations",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import numpy as np\na = np.array([5,2,8])\nprint(np.sort(a).tolist())",
+      "choices": [
+        "[2, 5, 8]",
+        "Error",
+        "None",
+        "[3, 6, 9]"
+      ],
+      "correct": 0,
+      "explain": "This follows the NumPy Operations operation shown in the lesson pattern.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY146",
+      "type": "output-code",
+      "topic": "NumPy Operations",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "[2, 5, 8]",
+      "choices": [
+        "import numpy as np\na = np.array([5,2,8])\nprint(np.sort(a).tolist())",
+        "import numpy as np\na = np.array([5,2,8])\nprint(None).tolist())",
+        "print(\"[2, 5, 8]\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces [2, 5, 8].",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY147",
+      "type": "code-output",
+      "topic": "NumPy Operations",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import numpy as np\na = np.array([1,2,3,4])\nprint(a[a > 2].tolist())",
+      "choices": [
+        "[3, 4]",
+        "Error",
+        "None",
+        "[4, 5]"
+      ],
+      "correct": 0,
+      "explain": "This follows the NumPy Operations operation shown in the lesson pattern.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY148",
+      "type": "output-code",
+      "topic": "NumPy Operations",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "[3, 4]",
+      "choices": [
+        "import numpy as np\na = np.array([1,2,3,4])\nprint(a[a > 2].tolist())",
+        "import numpy as np\na = np.array([1,2,3,4])\nprint(None))",
+        "print(\"[3, 4]\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces [3, 4].",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY149",
+      "type": "code-output",
+      "topic": "NumPy Operations",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import numpy as np\na = np.array([[1,2],[3,4]])\nprint(a.T.tolist())",
+      "choices": [
+        "[[1, 3], [2, 4]]",
+        "Error",
+        "None",
+        "[[2, 4], [3, 5]]"
+      ],
+      "correct": 0,
+      "explain": "This follows the NumPy Operations operation shown in the lesson pattern.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY150",
+      "type": "output-code",
+      "topic": "NumPy Operations",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "[[1, 3], [2, 4]]",
+      "choices": [
+        "import numpy as np\na = np.array([[1,2],[3,4]])\nprint(a.T.tolist())",
+        "import numpy as np\na = np.array([[1,2],[3,4]])\nprint(None))",
+        "print(\"[[1, 3], [2, 4]]\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces [[1, 3], [2, 4]].",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY151",
+      "type": "code-output",
+      "topic": "NumPy Cleaning",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import numpy as np\na = np.array([1.0, np.nan, 3.0])\nprint(np.isnan(a).sum())",
+      "choices": [
+        "1",
+        "2",
+        "0",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the NumPy Cleaning operation shown in the lesson pattern.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY152",
+      "type": "output-code",
+      "topic": "NumPy Cleaning",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "1",
+      "choices": [
+        "import numpy as np\na = np.array([1.0, np.nan, 3.0])\nprint(np.isnan(a).sum())",
+        "import numpy as np\na = np.array([1.0, np.nan, 3.0])\nprint(None).sum())",
+        "print(\"1\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces 1.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY153",
+      "type": "code-output",
+      "topic": "NumPy Cleaning",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import numpy as np\na = np.array([1,1,2,3,3])\nprint(np.unique(a).tolist())",
+      "choices": [
+        "[1, 2, 3]",
+        "Error",
+        "None",
+        "[2, 3, 4]"
+      ],
+      "correct": 0,
+      "explain": "This follows the NumPy Cleaning operation shown in the lesson pattern.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY154",
+      "type": "output-code",
+      "topic": "NumPy Cleaning",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "[1, 2, 3]",
+      "choices": [
+        "import numpy as np\na = np.array([1,1,2,3,3])\nprint(np.unique(a).tolist())",
+        "import numpy as np\na = np.array([1,1,2,3,3])\nprint(None).tolist())",
+        "print(\"[1, 2, 3]\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces [1, 2, 3].",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY155",
+      "type": "code-output",
+      "topic": "NumPy Cleaning",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import numpy as np\na = np.array([1.0, np.nan, 5.0])\nprint(np.nanmean(a))",
+      "choices": [
+        "3.0",
+        "4",
+        "2",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the NumPy Cleaning operation shown in the lesson pattern.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY156",
+      "type": "output-code",
+      "topic": "NumPy Cleaning",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "3.0",
+      "choices": [
+        "import numpy as np\na = np.array([1.0, np.nan, 5.0])\nprint(np.nanmean(a))",
+        "import numpy as np\na = np.array([1.0, np.nan, 5.0])\nprint(None))",
+        "print(\"3.0\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces 3.0.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY157",
+      "type": "code-output",
+      "topic": "NumPy Cleaning",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import numpy as np\na = np.array([10,20,30])\nprint(np.where(a >= 20, 1, 0).tolist())",
+      "choices": [
+        "[0, 1, 1]",
+        "Error",
+        "None",
+        "[1, 2, 2]"
+      ],
+      "correct": 0,
+      "explain": "This follows the NumPy Cleaning operation shown in the lesson pattern.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY158",
+      "type": "output-code",
+      "topic": "NumPy Cleaning",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "[0, 1, 1]",
+      "choices": [
+        "import numpy as np\na = np.array([10,20,30])\nprint(np.where(a >= 20, 1, 0).tolist())",
+        "import numpy as np\na = np.array([10,20,30])\nprint(None).tolist())",
+        "print(\"[0, 1, 1]\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces [0, 1, 1].",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY159",
+      "type": "code-output",
+      "topic": "NumPy Cleaning",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import numpy as np\na = np.array([2,4,100,6])\nprint(a[a < 50].tolist())",
+      "choices": [
+        "[2, 4, 6]",
+        "Error",
+        "None",
+        "[3, 5, 7]"
+      ],
+      "correct": 0,
+      "explain": "This follows the NumPy Cleaning operation shown in the lesson pattern.",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY160",
+      "type": "output-code",
+      "topic": "NumPy Cleaning",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "[2, 4, 6]",
+      "choices": [
+        "import numpy as np\na = np.array([2,4,100,6])\nprint(a[a < 50].tolist())",
+        "import numpy as np\na = np.array([2,4,100,6])\nprint(None))",
+        "print(\"[2, 4, 6]\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces [2, 4, 6].",
+      "skill": "NumPy"
+    },
+    {
+      "id": "PY161",
+      "type": "code-output",
+      "topic": "Pandas DataFrames",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,2],\"B\":[3,4]})\nprint(df.shape)",
+      "choices": [
+        "(2, 2)",
+        "Error",
+        "None",
+        "(3, 3)"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas DataFrames operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY162",
+      "type": "output-code",
+      "topic": "Pandas DataFrames",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "(2, 2)",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,2],\"B\":[3,4]})\nprint(df.shape)",
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,2],\"B\":[3,4]})\nprint(None)",
+        "print(\"(2, 2)\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces (2, 2).",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY163",
+      "type": "code-output",
+      "topic": "Pandas DataFrames",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ns = pd.Series([10,20,30])\nprint(s.iloc[1])",
+      "choices": [
+        "20",
+        "21",
+        "19",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas DataFrames operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY164",
+      "type": "output-code",
+      "topic": "Pandas DataFrames",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "20",
+      "choices": [
+        "import pandas as pd\ns = pd.Series([10,20,30])\nprint(s.iloc[1])",
+        "import pandas as pd\ns = pd.Series([10,20,30])\nprint(None)",
+        "print(\"20\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces 20.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY165",
+      "type": "code-output",
+      "topic": "Pandas DataFrames",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"Name\":[\"A\",\"B\"],\"Marks\":[80,90]})\nprint(df.columns.tolist())",
+      "choices": [
+        "['Name', 'Marks']",
+        "Error",
+        "None",
+        "['Name', 'Marks']"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas DataFrames operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY166",
+      "type": "output-code",
+      "topic": "Pandas DataFrames",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "['Name', 'Marks']",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"Name\":[\"A\",\"B\"],\"Marks\":[80,90]})\nprint(df.columns.tolist())",
+        "import pandas as pd\ndf = pd.DataFrame({\"Name\":[\"A\",\"B\"],\"Marks\":[80,90]})\nprint(None))",
+        "print(\"['Name', 'Marks']\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces ['Name', 'Marks'].",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY167",
+      "type": "code-output",
+      "topic": "Pandas DataFrames",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,2,3]})\nprint(len(df))",
+      "choices": [
+        "3",
+        "4",
+        "2",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas DataFrames operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY168",
+      "type": "output-code",
+      "topic": "Pandas DataFrames",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "3",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,2,3]})\nprint(len(df))",
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,2,3]})\nprint(None))",
+        "print(\"3\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces 3.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY169",
+      "type": "code-output",
+      "topic": "Pandas DataFrames",
+      "difficulty": "Easy",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,2],\"B\":[3,4]})\nprint(df[\"B\"].sum())",
+      "choices": [
+        "7",
+        "8",
+        "6",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas DataFrames operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY170",
+      "type": "output-code",
+      "topic": "Pandas DataFrames",
+      "difficulty": "Easy",
+      "prompt": "Which code produces this output?",
+      "output": "7",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,2],\"B\":[3,4]})\nprint(df[\"B\"].sum())",
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,2],\"B\":[3,4]})\nprint(None))",
+        "print(\"7\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces 7.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY171",
+      "type": "code-output",
+      "topic": "Pandas Search & Filter",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"Marks\":[40,80,90]})\nprint(df[df[\"Marks\"] >= 80].shape[0])",
+      "choices": [
+        "2",
+        "3",
+        "1",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Search & Filter operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY172",
+      "type": "output-code",
+      "topic": "Pandas Search & Filter",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "2",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"Marks\":[40,80,90]})\nprint(df[df[\"Marks\"] >= 80].shape[0])",
+        "import pandas as pd\ndf = pd.DataFrame({\"Marks\":[40,80,90]})\nprint(None)",
+        "print(\"2\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces 2.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY173",
+      "type": "code-output",
+      "topic": "Pandas Search & Filter",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"A\":[10,20,30]})\nprint(df.iloc[1,0])",
+      "choices": [
+        "20",
+        "21",
+        "19",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Search & Filter operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY174",
+      "type": "output-code",
+      "topic": "Pandas Search & Filter",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "20",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[10,20,30]})\nprint(df.iloc[1,0])",
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[10,20,30]})\nprint(None)",
+        "print(\"20\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces 20.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY175",
+      "type": "code-output",
+      "topic": "Pandas Search & Filter",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"Name\":[\"A\",\"B\"],\"Marks\":[70,90]})\nprint(df.loc[1,\"Name\"])",
+      "choices": [
+        "B",
+        "Error",
+        "None",
+        "B"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Search & Filter operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY176",
+      "type": "output-code",
+      "topic": "Pandas Search & Filter",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "B",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"Name\":[\"A\",\"B\"],\"Marks\":[70,90]})\nprint(df.loc[1,\"Name\"])",
+        "import pandas as pd\ndf = pd.DataFrame({\"Name\":[\"A\",\"B\"],\"Marks\":[70,90]})\nprint(None)",
+        "print(\"B\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces B.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY177",
+      "type": "code-output",
+      "topic": "Pandas Search & Filter",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"City\":[\"VNS\",\"PAT\",\"VNS\"]})\nprint((df[\"City\"]==\"VNS\").sum())",
+      "choices": [
+        "2",
+        "3",
+        "1",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Search & Filter operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY178",
+      "type": "output-code",
+      "topic": "Pandas Search & Filter",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "2",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"City\":[\"VNS\",\"PAT\",\"VNS\"]})\nprint((df[\"City\"]==\"VNS\").sum())",
+        "import pandas as pd\ndf = pd.DataFrame({\"City\":[\"VNS\",\"PAT\",\"VNS\"]})\nprint(None).sum())",
+        "print(\"2\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces 2.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY179",
+      "type": "code-output",
+      "topic": "Pandas Search & Filter",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,2,3,4]})\nprint(df.query(\"A > 2\")[\"A\"].tolist())",
+      "choices": [
+        "[3, 4]",
+        "Error",
+        "None",
+        "[4, 5]"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Search & Filter operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY180",
+      "type": "output-code",
+      "topic": "Pandas Search & Filter",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "[3, 4]",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,2,3,4]})\nprint(df.query(\"A > 2\")[\"A\"].tolist())",
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,2,3,4]})\nprint(None)[\"A\"].tolist())",
+        "print(\"[3, 4]\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces [3, 4].",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY181",
+      "type": "code-output",
+      "topic": "Pandas Cleaning",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,None,3]})\nprint(df[\"A\"].isna().sum())",
+      "choices": [
+        "1",
+        "2",
+        "0",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Cleaning operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY182",
+      "type": "output-code",
+      "topic": "Pandas Cleaning",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "1",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,None,3]})\nprint(df[\"A\"].isna().sum())",
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,None,3]})\nprint(None).sum())",
+        "print(\"1\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces 1.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY183",
+      "type": "code-output",
+      "topic": "Pandas Cleaning",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,None,3]})\nprint(df[\"A\"].fillna(0).tolist())",
+      "choices": [
+        "[1.0, 0.0, 3.0]",
+        "Error",
+        "None",
+        "[2.1, 1.1, 4.1]"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Cleaning operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY184",
+      "type": "output-code",
+      "topic": "Pandas Cleaning",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "[1.0, 0.0, 3.0]",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,None,3]})\nprint(df[\"A\"].fillna(0).tolist())",
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,None,3]})\nprint(None).tolist())",
+        "print(\"[1.0, 0.0, 3.0]\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces [1.0, 0.0, 3.0].",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY185",
+      "type": "code-output",
+      "topic": "Pandas Cleaning",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,1,2]})\nprint(df.drop_duplicates().shape[0])",
+      "choices": [
+        "2",
+        "3",
+        "1",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Cleaning operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY186",
+      "type": "output-code",
+      "topic": "Pandas Cleaning",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "2",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,1,2]})\nprint(df.drop_duplicates().shape[0])",
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,1,2]})\nprint(None).shape[0])",
+        "print(\"2\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces 2.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY187",
+      "type": "code-output",
+      "topic": "Pandas Cleaning",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"A\":[\"1\",\"2\"]})\ndf[\"A\"]=df[\"A\"].astype(int)\nprint(df[\"A\"].sum())",
+      "choices": [
+        "3",
+        "4",
+        "2",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Cleaning operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY188",
+      "type": "output-code",
+      "topic": "Pandas Cleaning",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "3",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[\"1\",\"2\"]})\ndf[\"A\"]=df[\"A\"].astype(int)\nprint(df[\"A\"].sum())",
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[\"1\",\"2\"]})\ndf[\"A\"]=df[\"A\"].astype(int)\nprint(None))",
+        "print(\"3\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces 3.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY189",
+      "type": "code-output",
+      "topic": "Pandas Cleaning",
+      "difficulty": "Medium",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,None,3]})\nprint(df.dropna().shape[0])",
+      "choices": [
+        "2",
+        "3",
+        "1",
+        "0"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas Cleaning operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY190",
+      "type": "output-code",
+      "topic": "Pandas Cleaning",
+      "difficulty": "Medium",
+      "prompt": "Which code produces this output?",
+      "output": "2",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,None,3]})\nprint(df.dropna().shape[0])",
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[1,None,3]})\nprint(None).shape[0])",
+        "print(\"2\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces 2.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY191",
+      "type": "code-output",
+      "topic": "Pandas GroupBy",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"City\":[\"A\",\"A\",\"B\"],\"Marks\":[10,20,30]})\nprint(df.groupby(\"City\")[\"Marks\"].sum().to_dict())",
+      "choices": [
+        "{'A': 30, 'B': 30}",
+        "Error",
+        "None",
+        "{'A': 41, 'B': 41}"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas GroupBy operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY192",
+      "type": "output-code",
+      "topic": "Pandas GroupBy",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "{'A': 30, 'B': 30}",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"City\":[\"A\",\"A\",\"B\"],\"Marks\":[10,20,30]})\nprint(df.groupby(\"City\")[\"Marks\"].sum().to_dict())",
+        "import pandas as pd\ndf = pd.DataFrame({\"City\":[\"A\",\"A\",\"B\"],\"Marks\":[10,20,30]})\nprint(None)[\"Marks\"].sum().to_dict())",
+        "print(\"{'A': 30, 'B': 30}\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces {'A': 30, 'B': 30}.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY193",
+      "type": "code-output",
+      "topic": "Pandas GroupBy",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"G\":[\"X\",\"X\",\"Y\"],\"V\":[2,4,8]})\nprint(df.groupby(\"G\")[\"V\"].mean().to_dict())",
+      "choices": [
+        "{'X': 3.0, 'Y': 8.0}",
+        "Error",
+        "None",
+        "{'X': 4.1, 'Y': 9.1}"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas GroupBy operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY194",
+      "type": "output-code",
+      "topic": "Pandas GroupBy",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "{'X': 3.0, 'Y': 8.0}",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"G\":[\"X\",\"X\",\"Y\"],\"V\":[2,4,8]})\nprint(df.groupby(\"G\")[\"V\"].mean().to_dict())",
+        "import pandas as pd\ndf = pd.DataFrame({\"G\":[\"X\",\"X\",\"Y\"],\"V\":[2,4,8]})\nprint(None)[\"V\"].mean().to_dict())",
+        "print(\"{'X': 3.0, 'Y': 8.0}\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces {'X': 3.0, 'Y': 8.0}.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY195",
+      "type": "code-output",
+      "topic": "Pandas GroupBy",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"A\":[3,1,2]})\nprint(df.sort_values(\"A\")[\"A\"].tolist())",
+      "choices": [
+        "[1, 2, 3]",
+        "Error",
+        "None",
+        "[2, 3, 4]"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas GroupBy operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY196",
+      "type": "output-code",
+      "topic": "Pandas GroupBy",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "[1, 2, 3]",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[3,1,2]})\nprint(df.sort_values(\"A\")[\"A\"].tolist())",
+        "import pandas as pd\ndf = pd.DataFrame({\"A\":[3,1,2]})\nprint(None)[\"A\"].tolist())",
+        "print(\"[1, 2, 3]\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces [1, 2, 3].",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY197",
+      "type": "code-output",
+      "topic": "Pandas GroupBy",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"G\":[\"A\",\"A\",\"B\"],\"V\":[1,2,3]})\ndf[\"S\"]=df.groupby(\"G\")[\"V\"].transform(\"sum\")\nprint(df[\"S\"].tolist())",
+      "choices": [
+        "[3, 3, 3]",
+        "Error",
+        "None",
+        "[4, 4, 4]"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas GroupBy operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY198",
+      "type": "output-code",
+      "topic": "Pandas GroupBy",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "[3, 3, 3]",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"G\":[\"A\",\"A\",\"B\"],\"V\":[1,2,3]})\ndf[\"S\"]=df.groupby(\"G\")[\"V\"].transform(\"sum\")\nprint(df[\"S\"].tolist())",
+        "import pandas as pd\ndf = pd.DataFrame({\"G\":[\"A\",\"A\",\"B\"],\"V\":[1,2,3]})\ndf[\"S\"]=df.groupby(\"G\")[\"V\"].transform(\"sum\")\nprint(None))",
+        "print(\"[3, 3, 3]\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces [3, 3, 3].",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY199",
+      "type": "code-output",
+      "topic": "Pandas GroupBy",
+      "difficulty": "Expert",
+      "prompt": "What is the output?",
+      "code": "import pandas as pd\ndf = pd.DataFrame({\"G\":[\"A\",\"A\",\"B\"],\"V\":[1,2,3]})\nprint(df.groupby(\"G\").size().to_dict())",
+      "choices": [
+        "{'A': 2, 'B': 1}",
+        "Error",
+        "None",
+        "{'A': 3, 'B': 2}"
+      ],
+      "correct": 0,
+      "explain": "This follows the Pandas GroupBy operation shown in the lesson pattern.",
+      "skill": "Pandas"
+    },
+    {
+      "id": "PY200",
+      "type": "output-code",
+      "topic": "Pandas GroupBy",
+      "difficulty": "Expert",
+      "prompt": "Which code produces this output?",
+      "output": "{'A': 2, 'B': 1}",
+      "choices": [
+        "import pandas as pd\ndf = pd.DataFrame({\"G\":[\"A\",\"A\",\"B\"],\"V\":[1,2,3]})\nprint(df.groupby(\"G\").size().to_dict())",
+        "import pandas as pd\ndf = pd.DataFrame({\"G\":[\"A\",\"A\",\"B\"],\"V\":[1,2,3]})\nprint(None).size().to_dict())",
+        "print(\"{'A': 2, 'B': 1}\")",
+        "print(\"Error\")"
+      ],
+      "correct": 0,
+      "explain": "The first program produces {'A': 2, 'B': 1}.",
+      "skill": "Pandas"
     }
   ]
 }
