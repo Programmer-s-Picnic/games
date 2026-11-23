@@ -1,7 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "language": "html",
-  "count": 50,
+  "count": 63,
   "questions": [
     {
       "id": "HTML001",
@@ -902,6 +902,282 @@
       "explain": "The label for value must match the control id.",
       "skill": "HTML Basics",
       "topicGroup": "Forms & Inputs"
+    },
+    {
+      "id": "HTMLX01",
+      "type": "code-output",
+      "topic": "Images",
+      "topicGroup": "Links & Images",
+      "difficulty": "Easy",
+      "prompt": "Which rendered result matches this HTML?",
+      "code": "<img src=\"x.jpg\" alt=\"Flower\" width=\"80\">",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<div><span style=\"display:inline-block;width:80px;height:50px;background:#ddd\">Flower</span></div>",
+        "<a>Flower</a>",
+        "<button>Flower</button>",
+        "<h2>Flower</h2>"
+      ],
+      "correct": 0,
+      "explain": "The img element creates an image area with alternative text.",
+      "skill": "HTML"
+    },
+    {
+      "id": "HTMLX02",
+      "type": "output-code",
+      "topic": "Images",
+      "topicGroup": "Links & Images",
+      "difficulty": "Easy",
+      "prompt": "Which HTML creates this rendered target?",
+      "output": "Rendered target",
+      "renderHtml": "<figure><img src=\"x.jpg\" alt=\"Photo\"><figcaption>Photo</figcaption></figure>",
+      "choices": [
+        "<figure><img src=\"x.jpg\" alt=\"Photo\"><figcaption>Photo</figcaption></figure>",
+        "<p>Photo</p>",
+        "<a>Photo</a>",
+        "<button>Photo</button>"
+      ],
+      "correct": 0,
+      "explain": "figure and figcaption group an image with its caption.",
+      "skill": "HTML"
+    },
+    {
+      "id": "HTMLX03",
+      "type": "code-output",
+      "topic": "Links",
+      "topicGroup": "Links & Images",
+      "difficulty": "Medium",
+      "prompt": "Which rendered result matches this HTML?",
+      "code": "<a href=\"/about\" target=\"_blank\">About</a>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<a href=\"#\">About</a>",
+        "<button>About</button>",
+        "<p>About</p>",
+        "<h3>About</h3>"
+      ],
+      "correct": 0,
+      "explain": "The anchor renders as a clickable link.",
+      "skill": "HTML"
+    },
+    {
+      "id": "HTMLX04",
+      "type": "output-code",
+      "topic": "Links",
+      "topicGroup": "Links & Images",
+      "difficulty": "Medium",
+      "prompt": "Which HTML creates a clickable email link?",
+      "output": "Email link",
+      "renderHtml": "<a href=\"mailto:test@example.com\">Email us</a>",
+      "choices": [
+        "<a href=\"mailto:test@example.com\">Email us</a>",
+        "<p>Email us</p>",
+        "<button>Email us</button>",
+        "<label>Email us</label>"
+      ],
+      "correct": 0,
+      "explain": "mailto: creates an email link.",
+      "skill": "HTML"
+    },
+    {
+      "id": "HTMLX05",
+      "type": "code-output",
+      "topic": "Images",
+      "topicGroup": "Links & Images",
+      "difficulty": "Medium",
+      "prompt": "Which rendered result matches this HTML?",
+      "code": "<a href=\"/\"><img src=\"logo.png\" alt=\"Home\"></a>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<a href=\"#\"><span style=\"display:inline-block;padding:14px;background:#eee\">Home</span></a>",
+        "<button>Home</button>",
+        "<p>Home</p>",
+        "<h1>Home</h1>"
+      ],
+      "correct": 0,
+      "explain": "The image is wrapped inside a clickable anchor.",
+      "skill": "HTML"
+    },
+    {
+      "id": "HTMLX06",
+      "type": "output-code",
+      "topic": "Images",
+      "topicGroup": "Links & Images",
+      "difficulty": "Medium",
+      "prompt": "Which HTML provides responsive image alternatives?",
+      "output": "Responsive image element",
+      "renderHtml": "<picture><source media=\"(min-width:600px)\" srcset=\"large.jpg\"><img src=\"small.jpg\" alt=\"Scene\"></picture>",
+      "choices": [
+        "<picture><source media=\"(min-width:600px)\" srcset=\"large.jpg\"><img src=\"small.jpg\" alt=\"Scene\"></picture>",
+        "<img href=\"large.jpg\">",
+        "<source>large.jpg</source>",
+        "<a src=\"small.jpg\">Scene</a>"
+      ],
+      "correct": 0,
+      "explain": "picture and source provide alternate image resources.",
+      "skill": "HTML"
+    },
+    {
+      "id": "HTMLX07",
+      "type": "code-output",
+      "topic": "Tables",
+      "topicGroup": "Lists & Tables",
+      "difficulty": "Medium",
+      "prompt": "Which rendered result matches this HTML?",
+      "code": "<table><tr><th>Name</th><th>Marks</th></tr><tr><td>Asha</td><td>90</td></tr></table>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<table border=\"1\"><tr><th>Name</th><th>Marks</th></tr><tr><td>Asha</td><td>90</td></tr></table>",
+        "<ul><li>Asha 90</li></ul>",
+        "<p>Name Marks Asha 90</p>",
+        "<button>Asha 90</button>"
+      ],
+      "correct": 0,
+      "explain": "th and td create header and data cells in a table.",
+      "skill": "HTML"
+    },
+    {
+      "id": "HTMLX08",
+      "type": "output-code",
+      "topic": "Tables",
+      "topicGroup": "Lists & Tables",
+      "difficulty": "Medium",
+      "prompt": "Which HTML creates a table caption?",
+      "output": "Table with caption",
+      "renderHtml": "<table><caption>Scores</caption><tr><td>90</td></tr></table>",
+      "choices": [
+        "<table><caption>Scores</caption><tr><td>90</td></tr></table>",
+        "<table><title>Scores</title><tr><td>90</td></tr></table>",
+        "<ul><caption>Scores</caption></ul>",
+        "<p>Scores 90</p>"
+      ],
+      "correct": 0,
+      "explain": "caption supplies a table caption.",
+      "skill": "HTML"
+    },
+    {
+      "id": "HTMLX09",
+      "type": "code-output",
+      "topic": "Ordered Lists",
+      "topicGroup": "Lists & Tables",
+      "difficulty": "Easy",
+      "prompt": "Which rendered result matches this HTML?",
+      "code": "<ol start=\"3\"><li>A</li><li>B</li></ol>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<ol start=\"3\"><li>A</li><li>B</li></ol>",
+        "<ol><li>A</li><li>B</li></ol>",
+        "<ul><li>A</li><li>B</li></ul>",
+        "<p>A B</p>"
+      ],
+      "correct": 0,
+      "explain": "start=3 makes numbering begin at 3.",
+      "skill": "HTML"
+    },
+    {
+      "id": "HTMLX10",
+      "type": "output-code",
+      "topic": "Unordered Lists",
+      "topicGroup": "Lists & Tables",
+      "difficulty": "Easy",
+      "prompt": "Which HTML creates a nested list?",
+      "output": "Nested list",
+      "renderHtml": "<ul><li>Web<ul><li>HTML</li></ul></li></ul>",
+      "choices": [
+        "<ul><li>Web<ul><li>HTML</li></ul></li></ul>",
+        "<ul><li>Web</li><li>HTML</li></ul>",
+        "<ol><li>Web</li><li>HTML</li></ol>",
+        "<p>Web HTML</p>"
+      ],
+      "correct": 0,
+      "explain": "A list inside a list item creates nesting.",
+      "skill": "HTML"
+    },
+    {
+      "id": "HTMLX11",
+      "type": "code-output",
+      "topic": "Semantic HTML",
+      "topicGroup": "Semantic & Interactive",
+      "difficulty": "Medium",
+      "prompt": "What semantic region is created?",
+      "code": "<article><h2>News</h2><p>Story</p></article>",
+      "choices": [
+        "Article",
+        "Navigation",
+        "Footer",
+        "Form"
+      ],
+      "correct": 0,
+      "explain": "article represents self-contained content.",
+      "skill": "Semantic HTML"
+    },
+    {
+      "id": "HTMLX12",
+      "type": "output-code",
+      "topic": "Semantic HTML",
+      "topicGroup": "Semantic & Interactive",
+      "difficulty": "Medium",
+      "prompt": "Which HTML creates supplementary sidebar content?",
+      "output": "Sidebar content",
+      "renderHtml": "<aside>Related links</aside>",
+      "choices": [
+        "<aside>Related links</aside>",
+        "<main>Related links</main>",
+        "<nav>Related links</nav>",
+        "<footer>Related links</footer>"
+      ],
+      "correct": 0,
+      "explain": "aside represents complementary content.",
+      "skill": "Semantic HTML"
+    },
+    {
+      "id": "HTMLX13",
+      "type": "code-output",
+      "topic": "Details",
+      "topicGroup": "Semantic & Interactive",
+      "difficulty": "Medium",
+      "prompt": "Which rendered result matches an open disclosure?",
+      "code": "<details open><summary>More</summary><p>Visible</p></details>",
+      "choices": [
+        "Preview A",
+        "Preview B",
+        "Preview C",
+        "Preview D"
+      ],
+      "choiceHtml": [
+        "<details open><summary>More</summary><p>Visible</p></details>",
+        "<details><summary>More</summary><p>Visible</p></details>",
+        "<button>More</button>",
+        "<p>More Visible</p>"
+      ],
+      "correct": 0,
+      "explain": "open makes the details content visible initially.",
+      "skill": "HTML"
     }
   ]
 }
